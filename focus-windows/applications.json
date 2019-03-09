@@ -1,0 +1,8 @@
+[
+    [ "terminal", "io.elementary.terminal" ],
+    [ "files", "io.elementary.files" ],
+    [ "chrome", "google-chrome" ],
+    [ "sun-awt-X11-XFramePeer", "pycharm-community" ],
+    [ "code", "code" ],
+    [ "evince", "evince" ]
+]

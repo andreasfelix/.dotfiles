@@ -1,0 +1,4 @@
+ideavim # emulates vim
+KJump # emulates vim-easymotion
+Relative Line Numbers # show relative line numbers
+CodeGlance # code minimap similar to sublime text

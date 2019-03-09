@@ -1,0 +1,47 @@
+"### Plugins ###
+set surround
+set multiple-cursors
+
+"### Set stuff ###
+set showmode
+
+"### KJump ###
+nmap <space> :action KJumpAction.Word0<cr>
+nmap <leader><leader>l :action KJumpAction.Line<cr>
+
+"### ----REMAPS---- ###
+let mapleader=','
+
+"### Standard Editor Commands ###
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+nnoremap <CR> o<Esc>
+nnoremap <S-CR> moo<Esc>`o
+nnoremap <S-CR> moO<Esc>`o
+noremap <C-s> :w <Enter>
+noremap <C-z> u
+noremap <C-a> GVgg
+" needs +clipboard (check with vim --version)
+vnoremap <C-c> "+y
+vnoremap <C-x> "+ygvd
+noremap <C-v> "+p
+" remap visual block mode to S
+nnoremap S <C-v>
+
+"### easier moving of code blocks ###
+vnoremap > >gv
+vnoremap < <gv
+nnoremap > >>
+nnoremap < <<
+
+"### Searching ###
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
+
+"### Page Up/Down ###
+nnoremap <PageUp> 4<C-y>
+nnoremap <PageDown> 4<C-e>
