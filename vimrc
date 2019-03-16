@@ -70,9 +70,9 @@ hi Visual term=reverse cterm=reverse " change visual color
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro "disable autocomment for newline
 
 "### Tabs ###
-set tabstop=4 " number of visual spaces per TAB
+set tabstop=2 " number of visual spaces per TAB
 set expandtab " tabs are spaces
-set shiftwidth=4
+set shiftwidth=2
 set smartindent
 
 "### set relative line numbers ###

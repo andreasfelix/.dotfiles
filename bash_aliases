@@ -1,7 +1,7 @@
 # edit run commands
 alias avim='vim $HOME/.bash_aliases'
 alias bvim='vim $HOME/.bashrc'
-alias cvim='vim $HOME/.bashrc_custom'
+alias cvim='vim $HOME/.bash_custom'
 alias vvim='vim $HOME/.vimrc'
 alias ivvim='vim $HOME/.ideavimrc'
 alias vscvim='vim $HOME/.config/Code/User/settings.json'
