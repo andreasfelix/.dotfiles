@@ -1,3 +1,72 @@
+"### ----VIM-CONFIG---- ###
+"### Basics ###
+set mouse=a " enable mouse
+set wildmenu " visual autocomplete for command menu
+set timeoutlen=1000 ttimeoutlen=0 " reduce O delay
+set splitbelow splitright " splits open at bottom and right
+filetype plugin indent on " load filetype-specific indent files
+autocmd FileType * setlocal formatoptions-=cro " don't commment new lines
+
+"### Visuals ###
+syntax enable
+set showcmd " show command in status bar
+hi Visual term=reverse cterm=reverse
+
+"### Tabs ###
+set tabstop=2 " number of visual spaces per TAB
+set expandtab " tabs are spaces
+set shiftwidth=2
+set smartindent
+
+"### set relative line numbers ###
+:set number relativenumber
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
+
+"### ----REMAPS---- ###
+let mapleader=','
+
+"### Standard Editor Commands
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+nnoremap <CR> o<Esc>
+nnoremap <S-CR> moO<Esc>`o
+noremap <C-s> :w <Enter>
+noremap <C-z> u
+noremap <C-a> GVgg
+" needs +clipboard (check with vim --version)
+" vnoremap <C-c> "*y :let @+=@*<CR>gv
+vnoremap <C-c> "+ygv
+vnoremap <C-x> "+ygvd
+noremap <C-v> "+p
+nnoremap <C-f> /
+" remap visual block mode to leader v
+nnoremap <leader>v <C-v>
+
+"### easier moving of code blocks ###
+vnoremap > >gv
+vnoremap < <gv
+nnoremap > >>
+nnoremap < <<
+
+"### Searching ###
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
+
+"### Page Up/Down ###
+nnoremap <PageUp> 4<C-y>
+nnoremap <PageDown> 4<C-e>
+
+"### Buffers ###
+nnoremap gb :ls<CR>:b<Space>
+
 " ### ----VIM-PLUGINS---- ###
 " Place this file at ~/.vimrc
 " To install plugins type : then PlugInstall
@@ -53,70 +122,3 @@ let g:vala_syntax_folding_enabled=0
 
 "### Initialize plugin system ###
 call plug#end()
-
-
-"### ----VIM-CONFIG---- ###
-"### Basics ###
-set mouse=a " enable mouse
-filetype plugin indent on " load filetype-specific indent files
-set wildmenu " visual autocomplete for command menu
-set timeoutlen=1000 ttimeoutlen=0 " reduce O delay
-set splitbelow splitright " splits open at bottom and right
-
-"### Visuals ###
-syntax enable
-set showcmd " show command in status bar
-hi Visual term=reverse cterm=reverse " change visual color
-autocmd BufNewFile,BufRead * setlocal formatoptions-=cro "disable autocomment for newline
-
-"### Tabs ###
-set tabstop=2 " number of visual spaces per TAB
-set expandtab " tabs are spaces
-set shiftwidth=2
-set smartindent
-
-"### set relative line numbers ###
-:set number relativenumber
-:augroup numbertoggle
-:  autocmd!
-:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-:augroup END
-
-"### ----REMAPS---- ###
-let mapleader=','
-
-"### Standard Enoremap <Tab> >>
-nnoremap <Tab> >>
-nnoremap <S-Tab> <<
-vnoremap <Tab> >gv
-vnoremap <S-Tab> <gv
-nnoremap <CR> o<Esc>
-nnoremap <S-CR> moO<Esc>`o
-noremap <C-s> :w <Enter>
-noremap <C-z> u
-noremap <C-a> GVgg
-" needs +clipboard (check with vim --version)
-" vnoremap <C-c> "*y :let @+=@*<CR>gv
-vnoremap <C-c> "+ygv
-vnoremap <C-x> "+ygvd
-noremap <C-v> "+p
-nnoremap <C-f> /
-" remap visual block mode to leader v
-nnoremap <leader>v <C-v>
-
-"### easier moving of code blocks ###
-vnoremap > >gv
-vnoremap < <gv
-nnoremap > >>
-nnoremap < <<
-
-"### Searching ###
-set incsearch           " search as characters are entered
-set hlsearch            " highlight matches
-" turn off search highlight
-nnoremap <leader><space> :nohlsearch<CR>
-
-"### Page Up/Down ###
-nnoremap <PageUp> 4<C-y>
-nnoremap <PageDown> 4<C-e>
