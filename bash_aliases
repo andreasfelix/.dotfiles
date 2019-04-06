@@ -27,6 +27,7 @@ alias ggraph='git log --all --decorate --oneline --graph'
 
 # python
 alias py="$HOME/anaconda3/bin/python"
+alias ip="$HOME/anaconda3/bin/ipython"
 alias pm="py manage.py"
 
 # flask

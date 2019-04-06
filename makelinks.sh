@@ -7,3 +7,4 @@ ln -sf $dotfiles/vimrc $HOME/.vimrc
 ln -sf $dotfiles/vscode/settings.json $HOME/.var/app/com.visualstudio.code.oss/config/Code\ -\ OSS/User
 ln -sf $dotfiles/vscode/settings.json $HOME/.config/Code/User/settings.json
 ln -sf $dotfiles/inputrc $HOME/.inputrc
+ln -sf $dotfiles/pyrc $HOME/.pyrc

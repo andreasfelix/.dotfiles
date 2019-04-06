@@ -6,8 +6,8 @@ set multiple-cursors
 set showmode
 
 "### KJump ###
-nmap <space> :action KJumpAction.Word0<cr>
-nmap <leader><leader>l :action KJumpAction.Line<cr>
+map <space> :action KJumpAction.Word0<cr>
+map <leader><leader>l :action KJumpAction.Line<cr>
 
 "### ----REMAPS---- ###
 let mapleader=','
