@@ -2,28 +2,30 @@
 alias avim='vim $HOME/.bash_aliases'
 alias bvim='vim $HOME/.bashrc'
 alias cvim='vim $HOME/.bash_custom'
+alias gvim='vim $HOME/.gitconfig'
 alias vvim='vim $HOME/.vimrc'
 alias ivvim='vim $HOME/.ideavimrc'
 alias vscvim='vim $HOME/.config/Code/User/settings.json'
 
 # useful shortcuts
+alias cdo='builtin cd'
+cd() { builtin cd "$@" && clear && ls -A; }
+alias c='cd'
 alias cd..='cd ..'
-alias ..='cd ..'
-cl() { builtin cd $1 && ls ; }
-cla() { builtin cd $1 && ls -A ; }
+alias ..='c ..'
+ca() { builtin cd $1 && ls -A ; }
 cdg() { cd $HOME/Git ; [ -n "$1" ] && cd $1 ; }
 mkdircd() { mkdir $1 && cd $1 ; }
 alias type='type -a'
-alias g='grep -i'
 alias trash='gio trash'
 alias tra='gio trash'
 alias open='xdg-open'
-alias sbash='source ~/.bashrc'
-alias ebash='exec bash'
 alias dfs='df -x"squashfs"' # dont show snaps
 
 # git
+alias g='git'
 alias ggraph='git log --all --decorate --oneline --graph'
+tg() { touch $1; git add $1; git commit -m"$1"; }
 
 # python
 alias py="$HOME/anaconda3/bin/python"

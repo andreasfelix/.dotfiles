@@ -6,6 +6,12 @@
 # disable terminal scroll lock (Ctrl+S/Ctrl+q)
 stty -ixon
 
+# auto change directories
+shopt -s autocd
+
+# git to g
+_xfunc git __git_complete g _git
+
 # set bash mode to vi instead of emacs
 set -o vi
 bind -m vi-insert "\C-l":clear-screen
@@ -15,14 +21,14 @@ bind "set vi-cmd-mode-string \1\e[35m\2(cmd)\1\e[0m\2"
 bind "set vi-ins-mode-string \1\e[31m\2(ins)\1\e[0m\2"
 
 # PS1
-parse_git_branch() {
-  tmp=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
-  if [ -n "$tmp" ]; then
-    echo "\[\e[m\]on \[\033[33m\]$tmp"
-    # echo "\[\033[33m\]$tmp"
-  fi
-}
-export PS1="\[\e[36m\]\u \[\e[m\]at \[\e[m\]\h \[\e[m\]in \[\e[34m\]\w $(parse_git_branch)\[\033[00m\]\n "
+# parse_git_branch() {
+#   tmp=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+#   if [ -n "$tmp" ]; then
+#     echo "\[\e[m\]on \e[33m$tmp"
+#   fi
+# }
+
+export PS1="\[\e[36m\]\u \[\e[m\]at \[\e[m\]\h \[\e[m\]in \[\e[34m\]\w\[\e[m\] \$(__git_ps1 'on \e[33m%s')\[\033[00m\]\n "
 
 # Python
 export PYTHONSTARTUP=~/.pyrc
