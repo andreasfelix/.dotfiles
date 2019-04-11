@@ -2,9 +2,8 @@
 	email = felix
 	name = felix
 
-# https://gist.github.com/mwhite/6887990
+# based on https://gist.github.com/mwhite/6887990
 [alias]
-  # one-line log
   l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
 
   a = add
@@ -24,12 +23,9 @@
   co = checkout
   cob = checkout -b
   b = branch
-  # list branches sorted by last modified
-  lb = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
 
-  # list aliases
+  lb = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
   la = "!git config -l | grep alias | cut -c 7-"
 
-  # custom
   graph = log --all --decorate --oneline --graph
 
