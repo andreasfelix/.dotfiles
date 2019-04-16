@@ -1,26 +1,27 @@
 {
-    "workbench.colorTheme": "Quiet Light",
-    "vim.useCtrlKeys": false,
-    "vim.easymotion": true,
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": [" "],
-            "after": ["<leader>", "<leader>", "<leader>", "b", "d", "w"]
-        }
-    ],
-    "vim.easymotionMarkerFontSize": "22",
-    "vim.easymotionMarkerBackgroundColor": "#434CFF",
-    "vim.easymotionMarkerFontFamily": "Inconsolata",
-    "vim.easymotionMarkerHeight": 22,
-    "vim.easymotionMarkerWidthPerChar": 12,
-    "vim.leader": ",",
-    "editor.wordWrap": "on",
-    "editor.fontSize": 13,
-    "emmet.triggerExpansionOnTab": true,
-    "window.zoomLevel": 0,
-    "editor.formatOnPaste": true,
-    "liveServer.settings.donotShowInfoMsg": true,
-    "files.autoSave": "off",
-    "editor.tabSize": 2
+  "workbench.colorTheme": "Quiet Light",
+  "vim.useCtrlKeys": false,
+  "vim.easymotion": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [" "],
+      "after": ["<leader>", "<leader>", "<leader>", "b", "d", "w"]
+    }
+  ],
+  "vim.easymotionMarkerFontSize": "22",
+  "vim.easymotionMarkerBackgroundColor": "#434CFF",
+  "vim.easymotionMarkerFontFamily": "Inconsolata",
+  "vim.easymotionMarkerHeight": 22,
+  "vim.easymotionMarkerWidthPerChar": 12,
+  "vim.leader": ",",
+  "editor.wordWrap": "on",
+  "editor.fontSize": 13,
+  "emmet.triggerExpansionOnTab": true,
+  "window.zoomLevel": 0,
+  "editor.formatOnPaste": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "files.autoSave": "off",
+  "editor.tabSize": 2,
+  "liveshare.featureSet": "insiders",
+  "editor.formatOnSave": true
 }
-
