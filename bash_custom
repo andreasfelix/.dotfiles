@@ -11,9 +11,7 @@ shopt -s autocd
 
 # PS 1
 export PS1="\[\e[36m\]\u \[\e[m\]at \[\e[m\]\h \[\e[m\]in \[\e[34m\]\w\[\e[m\] \$(__git_ps1 'on \e[33m%s')\[\033[00m\]\n "
-
-# git to g
-_xfunc git __git_complete g _git
+export PS2=" "
 
 # Python
 export PYTHONSTARTUP=~/.pyrc
