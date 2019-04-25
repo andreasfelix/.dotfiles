@@ -120,5 +120,8 @@ Plug 'https://github.com/ap/vim-css-color.git'
 Plug 'arrufat/vala.vim'
 let g:vala_syntax_folding_enabled=0
 
+" Vue.JS, syntax and indent plugin
+Plug 'leafOfTree/vim-vue-plugin'
+
 "### Initialize plugin system ###
 call plug#end()

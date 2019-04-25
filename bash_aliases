@@ -23,10 +23,10 @@ alias tra='gio trash'
 alias open='xdg-open'
 
 # useful shortcuts
-alias type='type -a'
+alias type='builtin type -a'
 alias dfs='df -x"squashfs"' # dont show snaps
 ch() { curl cheat.sh/$1; }
-alias rebash='exec sudo -iu $USER'
+alias rebash='exec sudo -u $USER bash'
 
 # git
 alias g='git'
@@ -39,6 +39,7 @@ alias py="$HOME/anaconda3/bin/python"
 alias ipy="$HOME/anaconda3/bin/ipython"
 alias pm="py manage.py"
 pydis() { echo $1 | python -m dis; }
+alias pytime="python -m timeit"
 
 # flask
 frun() {

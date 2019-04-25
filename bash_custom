@@ -16,6 +16,7 @@ export PS2=" "
 # Python
 export PYTHONSTARTUP=~/.pyrc
 
+
 # tty colors
 # from https://github.com/joepvd/tty-solarized/blob/master/tty-solarized-light.sh
 if [ "$TERM" = "linux" ]; then
