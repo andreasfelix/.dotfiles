@@ -2,7 +2,7 @@
 "### Basics ###
 set mouse=a " enable mouse
 set wildmenu " visual autocomplete for command menu
-set timeoutlen=1000 ttimeoutlen=0 " reduce O delay
+set timeoutlen=500 ttimeoutlen=0 " reduce O delay
 set splitbelow splitright " splits open at bottom and right
 filetype plugin indent on " load filetype-specific indent files
 autocmd FileType * setlocal formatoptions-=cro " don't commment new lines
@@ -12,13 +12,13 @@ syntax enable
 set showcmd " show command in status bar
 hi Visual term=reverse cterm=reverse
 
-"### Tabs ###
+"### Indent ###
 set tabstop=2 " number of visual spaces per TAB
 set expandtab " tabs are spaces
 set shiftwidth=2
 set smartindent
 
-"### set relative line numbers ###
+"### Relative line numbers ###
 :set number relativenumber
 :augroup numbertoggle
 :  autocmd!
@@ -28,23 +28,25 @@ set smartindent
 
 "### ----REMAPS---- ###
 let mapleader=','
+inoremap jk <esc>
+inoremap kj <esc>
 
 "### Standard Editor Commands
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
-nnoremap <CR> o<Esc>
-nnoremap <S-CR> moO<Esc>`o
 noremap <C-s> :w <Enter>
 noremap <C-z> u
 noremap <C-a> GVgg
 " needs +clipboard (check with vim --version)
-" vnoremap <C-c> "*y :let @+=@*<CR>gv
-vnoremap <C-c> "+ygv
+vnoremap <C-c> "*y :let @+=@*<CR>gv
+" vnoremap <C-c> "+ygv
 vnoremap <C-x> "+ygvd
 noremap <C-v> "+p
 nnoremap <C-f> /
+" autoformat
+nnoremap <C-l> mogg=G`o
 " remap visual block mode to leader v
 nnoremap <leader>v <C-v>
 
@@ -73,7 +75,7 @@ nnoremap gb :ls<CR>:b<Space>
 " ### automatic installation of vim-plug ###
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 

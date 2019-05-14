@@ -2,6 +2,7 @@
 alias avim='vim $HOME/.bash_aliases'
 alias bvim='vim $HOME/.bashrc'
 alias cvim='vim $HOME/.bash_custom'
+alias fvim='vim $HOME/.config/fish/config.fish'
 alias gvim='vim $HOME/.gitconfig'
 alias ivim='vim $HOME/.inputrc'
 alias ivvim='vim $HOME/.ideavimrc'
@@ -17,16 +18,21 @@ alias c='cd'
 alias cd..='cd ..'
 alias ..='cd ..'
 cdg() { cd $HOME/Git ; [ -n "$1" ] && cd $1 ; }
-mkdircd() { mkdir $1 && cd $1 ; }
+mkcd() { mkdir $1 && cd $1 ; }
 alias trash='gio trash'
 alias tra='gio trash'
 alias open='xdg-open'
 
 # useful shortcuts
 alias type='builtin type -a'
-alias dfs='df -x"squashfs"' # dont show snaps
+alias dfs='df -hx"squashfs"' # dont show snaps
 ch() { curl cheat.sh/$1; }
 alias rebash='exec sudo -u $USER bash'
+alias childs='pstree -pauls $$'
+
+# elementary
+files() { nohup io.elementary.files -t $([ $# -gt 0 ] && echo "$@" || echo "." ) &>/dev/null & }
+lfiles() { nohup pantheon-files -t $([ $# -gt 0 ] && echo "$@" || echo "." ) &>/dev/null & }
 
 # git
 alias g='git'
@@ -35,8 +41,8 @@ __git_complete g __git_main
 tg() { touch $1; git add $1; git commit -m "$1"; }
 
 # python
-alias py="$HOME/anaconda3/bin/python"
-alias ipy="$HOME/anaconda3/bin/ipython"
+alias py="python"
+alias ipy="ipython"
 alias pm="py manage.py"
 pydis() { echo $1 | python -m dis; }
 alias pytime="python -m timeit"
@@ -50,14 +56,7 @@ frun() {
 
 
 # vala
-bmeson() {
-    if (rm -rf build ; meson build --prefix=/usr); then
-        if cd build && ninja ; then
-            [ -n "$1" ] && ./$1
-        fi
-        cd ..
-    fi
-}
+bmeson() { rm -rf build ; meson build --prefix=/usr && ninja -C build ; }
 
 # browser-sync
 alias bsserve="browser-sync start --server --files . --no-notify"

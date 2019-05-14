@@ -13,7 +13,7 @@ print("""
     System Settings > Keyboard > Shortcuts > Custom Shortcut
     e.g. Shift+Super+T to open Terminal and Super+T to focus Terminal
 
-    close current application: xdotool key --window getactivewindow --clearmodifiers alt+F4
+    close current application: xdotool key --master getactivewindow --clearmodifiers alt+F4
 """)
 
 for wm_class, program_path in applications:

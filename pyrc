@@ -1,2 +1,4 @@
 import sys
 sys.ps1 = sys.ps2 = ' '
+# sys.ps1 = '(Python %s.%s.%s) ' % sys.version_info[:3]
+# sys.ps2 = ' ' * len(sys.ps1)

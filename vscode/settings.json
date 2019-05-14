@@ -1,5 +1,4 @@
 {
-  "workbench.colorTheme": "Quiet Light",
   "vim.useCtrlKeys": false,
   "vim.easymotion": true,
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -15,7 +14,6 @@
   "vim.easymotionMarkerWidthPerChar": 12,
   "vim.leader": ",",
   "editor.wordWrap": "on",
-  "editor.fontSize": 13,
   "emmet.triggerExpansionOnTab": true,
   "window.zoomLevel": 0,
   "editor.formatOnPaste": true,
@@ -23,5 +21,41 @@
   "files.autoSave": "off",
   "editor.tabSize": 2,
   "liveshare.featureSet": "insiders",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "C_Cpp.updateChannel": "Insiders",
+  "C_Cpp.clang_format_fallbackStyle": "Google",
+  "bracket-pair-colorizer-2.colors": ["#0a3d62", "#e58e26", "#079992"],
+  "bracket-pair-colorizer-2.unmatchedScopeColor": "#b71540",
+  "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
+  "workbench.colorCustomizations": {
+    "editorCursor.foreground": "#B3ECFF",
+    "editorCursor.background": "#000000",
+    "editor.selectionBackground": "#B3ECFF77",
+    "editor.inactiveSelectionBackground": "#B3ECFF77",
+    "[Solarized Custom Light]": {
+      "sideBar.background": "#F5F5F5",
+      "activityBar.background": "#f5f5f5",
+      "statusBar.background": "#f5f5f5",
+      "tab.activeBackground": "#f5f5f5",
+      "tab.inactiveBackground": "#e4e4e4",
+      "editor.background": "#F5F5F5",
+      "editor.foreground": "#23476a"
+      // "editor.background": "#FFFAEA"
+    }
+  },
+  "editor.renderLineHighlight": "gutter",
+  "editor.cursorBlinking": "solid",
+  "bracket-pair-colorizer-2.showVerticalScopeLine": false,
+  "editor.matchBrackets": false,
+  "editor.fontSize": 14,
+  "editor.fontFamily": "Ubuntu Mono",
+  "workbench.editor.tabSizing": "shrink",
+  "latex-workshop.view.pdf.viewer": "external",
+  "[latex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
+  },
+  "workbench.colorTheme": "Solarized Custom Light",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

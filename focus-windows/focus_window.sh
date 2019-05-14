@@ -1,4 +1,4 @@
-# case 1: application is running         -> activate window
+# case 1: application is running         -> activate app
 # case 2: multiple instances are running -> toggle focus
 # case 3: application is not running     -> open application
 # Arg1: WM_CLASS of application, Arg2: /path/to/application

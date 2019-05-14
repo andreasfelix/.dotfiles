@@ -18,8 +18,8 @@
   ds = diff --stat
   dc = diff --cached
 
-  s = status -s
-  ss = status
+  s = status
+  ss = status -s
   co = checkout
   cob = checkout -b
   b = branch
