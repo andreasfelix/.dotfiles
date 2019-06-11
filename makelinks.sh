@@ -1,4 +1,4 @@
-dotfiles="$(cd $(dirname "$0"); pwd)"
+dotfiles=$(dirname $(readlink -f $0))
 
 ln -sfv $dotfiles/bash_aliases $HOME/.bash_aliases
 ln -sfv $dotfiles/bash_custom $HOME/.bash_custom

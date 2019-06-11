@@ -1,5 +1,13 @@
 {
+  "vim.leader": ",",
   "vim.useCtrlKeys": false,
+  "vim.handleKeys": {
+    "<C-c>": false,
+    "<C-d>": false,
+    "<A-S-Up>": false,
+    "<A-S-Down>": false
+  },
+  "vim.camelCaseMotion.enable": true,
   "vim.easymotion": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
@@ -12,7 +20,6 @@
   "vim.easymotionMarkerFontFamily": "Inconsolata",
   "vim.easymotionMarkerHeight": 22,
   "vim.easymotionMarkerWidthPerChar": 12,
-  "vim.leader": ",",
   "editor.wordWrap": "on",
   "emmet.triggerExpansionOnTab": true,
   "window.zoomLevel": 0,
@@ -57,5 +64,6 @@
   "workbench.colorTheme": "Solarized Custom Light",
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "window.titleBarStyle": "custom"
 }

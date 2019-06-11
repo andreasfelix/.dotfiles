@@ -38,7 +38,7 @@ vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 noremap <C-s> :w <Enter>
 noremap <C-z> u
-noremap <C-a> GVgg
+noremap <C-a> moGVgg
 " needs +clipboard (check with vim --version)
 vnoremap <C-c> "*y :let @+=@*<CR>gv
 " vnoremap <C-c> "+ygv
