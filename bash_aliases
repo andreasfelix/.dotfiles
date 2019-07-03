@@ -38,7 +38,7 @@ lfiles() { nohup pantheon-files -t $([ $# -gt 0 ] && echo "$@" || echo "." ) &>/
 alias g='git'
 source /usr/share/bash-completion/completions/git
 __git_complete g __git_main
-tg() { touch $1; git add $1; git commit -m "$1"; }
+tg() { touch $1 && git add $1 && git commit -m "$1"; }
 
 # python
 alias py="python"
