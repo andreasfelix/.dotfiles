@@ -9,3 +9,4 @@ ln -sfv $dotfiles/vscode/settings.json $HOME/.var/app/com.visualstudio.code.oss/
 ln -sfv $dotfiles/vscode/settings.json $HOME/.config/Code/User/settings.json
 ln -sfv $dotfiles/inputrc $HOME/.inputrc
 ln -sfv $dotfiles/pyrc $HOME/.pyrc
+ln -sfv $dotfiles/fish $HOME/.config

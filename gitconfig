@@ -1,5 +1,5 @@
 [user]
-	email = felix
+	email = felix.andreas95@googlemail.com
 	name = felix
 
 # based on https://gist.github.com/mwhite/6887990
@@ -32,3 +32,4 @@
 
   # custom
   graph = "!git l --graph --all"
+  pa = "!m=${@:-push all}; echo message is: $m; f() { git add -A && git commit -m \"$m\" && git push; }; f"

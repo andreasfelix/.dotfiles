@@ -1,5 +1,5 @@
-"### ----VIM-CONFIG---- ###
-"### Basics ###
+" ### ----VIM-CONFIG---- ###
+" ### Basics ###
 set mouse=a " enable mouse
 set wildmenu " visual autocomplete for command menu
 set timeoutlen=500 ttimeoutlen=0 " reduce O delay
@@ -7,18 +7,18 @@ set splitbelow splitright " splits open at bottom and right
 filetype plugin indent on " load filetype-specific indent files
 autocmd FileType * setlocal formatoptions-=cro " don't commment new lines
 
-"### Visuals ###
+" ### Visuals ###
 syntax enable
 set showcmd " show command in status bar
 hi Visual term=reverse cterm=reverse
 
-"### Indent ###
+" ### Indent ###
 set tabstop=2 " number of visual spaces per TAB
 set expandtab " tabs are spaces
 set shiftwidth=2
 set smartindent
 
-"### Relative line numbers ###
+" ### Relative line numbers ###
 :set number relativenumber
 :augroup numbertoggle
 :  autocmd!
@@ -26,18 +26,18 @@ set smartindent
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
 
-"### ----REMAPS---- ###
+" ### ----REMAPS---- ###
 let mapleader=','
 inoremap jk <esc>
 inoremap kj <esc>
 
-"### Standard Editor Commands
+" ### Standard Editor Commands
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 noremap <C-s> :w <Enter>
-noremap <C-z> u
+" noremap <C-z> u
 noremap <C-a> moGVgg
 " needs +clipboard (check with vim --version)
 vnoremap <C-c> "*y :let @+=@*<CR>gv
@@ -50,23 +50,23 @@ nnoremap <C-l> mogg=G`o
 " remap visual block mode to leader v
 nnoremap <leader>v <C-v>
 
-"### easier moving of code blocks ###
+" ### easier moving of code blocks ###
 vnoremap > >gv
 vnoremap < <gv
 nnoremap > >>
 nnoremap < <<
 
-"### Searching ###
+" ### Searching ###
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
-"### Page Up/Down ###
+" ### Page Up/Down ###
 nnoremap <PageUp> 4<C-y>
 nnoremap <PageDown> 4<C-e>
 
-"### Buffers ###
+" ### Buffers ###
 nnoremap gb :ls<CR>:b<Space>
 
 " ### ----VIM-PLUGINS---- ###
@@ -79,7 +79,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-"### load plugins ###
+" ### load plugins ###
 call plug#begin('~/.vim/plugged')
 
 " # IDE features #
