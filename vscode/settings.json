@@ -1,5 +1,5 @@
 {
-  "vim.leader": ",",
+  // "vim.leader": ",",
   "vim.useCtrlKeys": false,
   "vim.handleKeys": {
     "<C-c>": false,
