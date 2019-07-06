@@ -23,12 +23,10 @@
   "editor.wordWrap": "on",
   "emmet.triggerExpansionOnTab": true,
   "window.zoomLevel": 0,
-  "editor.formatOnPaste": true,
   "liveServer.settings.donotShowInfoMsg": true,
   "files.autoSave": "off",
   "editor.tabSize": 2,
   "liveshare.featureSet": "insiders",
-  "editor.formatOnSave": true,
   "C_Cpp.updateChannel": "Insiders",
   "C_Cpp.clang_format_fallbackStyle": "Google",
   "bracket-pair-colorizer-2.colors": ["#0a3d62", "#e58e26", "#079992"],
@@ -65,5 +63,6 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "window.titleBarStyle": "custom"
+  "window.titleBarStyle": "custom",
+  "editor.formatOnSave": true
 }
