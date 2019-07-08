@@ -2,7 +2,7 @@
 #  ARG1: WM_CLASS of application
 #  ARG2: /path/to/application
 # Description: Use this script to create a keyboard shortcut to focus an application.
-#  Case 1: application is not running           --> open an new instance
+#  Case 1: application is not running           --> open a new instance
 #  Case 2: application is running without focus --> focus instance with highest z-index
 #  Case 3: application is running and has focus --> focus another instance (lowest z-index)
 

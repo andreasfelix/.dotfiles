@@ -33,6 +33,9 @@ alias childs='pstree -pauls $$'
 # elementary
 files() { nohup io.elementary.files -t $([ $# -gt 0 ] && echo "$@" || echo "." ) &>/dev/null & }
 lfiles() { nohup pantheon-files -t $([ $# -gt 0 ] && echo "$@" || echo "." ) &>/dev/null & }
+alias reinstall_granite="sudo apt install --reinstall gir1.2-granite-1.0 granite-demo libgranite-common libgranite-dev libgranite5"
+alias view_changed_packages="sudo debsums -c | xargs -rd '\n' -- dpkg -S | cut -d : -f 1 | sort -u"
+alias bmeson="rm -rf build ; meson build --prefix=/usr && ninja -C build"
 
 # git
 alias g='git'
@@ -53,10 +56,6 @@ frun() {
     export FLASK_ENV=development
     flask run --host=0.0.0.0
 }
-
-
-# vala
-bmeson() { rm -rf build ; meson build --prefix=/usr && ninja -C build ; }
 
 # browser-sync
 alias bsserve="browser-sync start --server --files . --no-notify"
