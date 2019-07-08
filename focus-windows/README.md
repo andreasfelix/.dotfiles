@@ -1,12 +1,12 @@
 # Focus windows 
-The shell script `focus_window.sh` can be used to create a keyboard shortcut to switch focus to a specific application.
+Use `focus_windows.sh` to create a keyboard shortcut which focuses an application. The script behaves in that way that if ..
 
-- **Case 1**: If the application is running, the script will focus the application.
-- **Case 2**: If the application is not running, the script will open the application.
-- **Case 3**: If multiple instances of the applications are running the script switches focus between them.
+- **Case 1**: ... the application is not running, it opens a new instance.
+- **Case 2**: ... the application is running but is not focused, it focuses the instance with highest z-index.
+- **Case 3**: ... the application is running and has focus, it focuses another instance (lowest z-index).
 
 ## Install dependencies
-The Script uses xdotool and wmctrl.
+The the depends on xdotool and wmctrl, which can be installed with:
 
 `apt install xdotool wmctrl`
 
@@ -19,6 +19,8 @@ The shell script `focus_window.sh` takes to input arguments:
 Run the script:
 
 `./focus_window.sh <WM_class of application> /path/to/application`
+
+Don't forget to make the scirpt executable before (`chmod +x script`).
 
 ## Set Keyboard Shortcuts
 ### Create commands manually
