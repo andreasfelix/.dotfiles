@@ -13,6 +13,24 @@
     {
       "before": [" "],
       "after": ["<leader>", "<leader>", "<leader>", "b", "d", "w"]
+    },
+    {
+      "before": [">"],
+      "after": [">", ">"]
+    },
+    {
+      "before": ["<"],
+      "after": ["<", "<"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
     }
   ],
   "vim.easymotionMarkerFontSize": "22",
@@ -64,5 +82,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "window.titleBarStyle": "custom",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "mesonbuild.configureOnOpen": false
 }

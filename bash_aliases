@@ -29,6 +29,7 @@ alias dfs='df -hx"squashfs"' # dont show snaps
 ch() { curl cheat.sh/$1; }
 alias rebash='exec sudo -u $USER bash'
 alias childs='pstree -pauls $$'
+alias screenkey='unset XMODIFIERS ; unset GTK_IM_MODULES; unset QT_IM_MODULES; /usr/bin/screenkey'
 
 # elementary
 files() { nohup io.elementary.files -t $([ $# -gt 0 ] && echo "$@" || echo "." ) &>/dev/null & }
@@ -49,6 +50,7 @@ alias ipy="ipython"
 alias pm="py manage.py"
 pydis() { echo $1 | python -m dis; }
 alias pytime="python -m timeit"
+
 
 # flask
 frun() {
