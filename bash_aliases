@@ -12,11 +12,12 @@ alias vscvim='vim $HOME/.config/Code/User/settings.json'
 
 # file management
 alias bcd='builtin cd'
-cd() { builtin cd "$@" && clear && ls ; }
+cd() { builtin cd "$@" && clear && ls -A ; }
 ca() { builtin cd "$@" && clear && ls -A ; }
 alias c='cd'
 alias cd..='cd ..'
 alias ..='cd ..'
+alias cd-='cd -'
 cdg() { cd $HOME/Git ; [ -n "$1" ] && cd $1 ; }
 mkcd() { mkdir $1 && cd $1 ; }
 alias trash='gio trash'
@@ -30,6 +31,7 @@ ch() { curl cheat.sh/$1; }
 alias rebash='exec sudo -u $USER bash'
 alias childs='pstree -pauls $$'
 alias screenkey='unset XMODIFIERS ; unset GTK_IM_MODULES; unset QT_IM_MODULES; /usr/bin/screenkey'
+alias code='/var/lib/flatpak/exports/bin/com.visualstudio.code'
 
 # elementary
 files() { nohup io.elementary.files -t $([ $# -gt 0 ] && echo "$@" || echo "." ) &>/dev/null & }
@@ -38,6 +40,9 @@ alias reinstall_granite="sudo apt install --reinstall gir1.2-granite-1.0 granite
 alias reinstall_gala="sudo apt install --reinstall gala libgala0 libgala-dev"
 alias view_changed_packages="sudo debsums -c | xargs -rd '\n' -- dpkg -S | cut -d : -f 1 | sort -u"
 alias bmeson="rm -rf build ; meson build --prefix=/usr && ninja -C build"
+alias idvim="vim $HOME/Git/eOS/ideas/ideas.md"
+
+export G_MESSAGES_DEBUG=all
 
 # git
 alias g='git'
