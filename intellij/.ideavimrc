@@ -5,6 +5,10 @@ set multiple-cursors
 "### Set stuff ###
 set showmode
 
+"### turn of sounds###
+set visualbell
+set noerrorbells
+
 "### KJump ###
 map <space> :action KJumpAction.Word0<cr>
 map <leader><leader>l :action KJumpAction.Line<cr>

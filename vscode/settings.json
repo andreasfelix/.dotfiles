@@ -169,5 +169,8 @@
     }
   ],
   "window.menuBarVisibility": "visible",
-  "window.titleBarStyle": "custom"
+  "window.titleBarStyle": "custom",
+  "terminal.integrated.inheritEnv": false,
+  "git.autofetch": true,
+  "git.confirmSync": false
 }

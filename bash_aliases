@@ -31,7 +31,7 @@ ch() { curl cheat.sh/$1; }
 alias rebash='exec sudo -u $USER bash'
 alias childs='pstree -pauls $$'
 alias screenkey='unset XMODIFIERS ; unset GTK_IM_MODULES; unset QT_IM_MODULES; /usr/bin/screenkey'
-alias code='/var/lib/flatpak/exports/bin/com.visualstudio.code'
+# alias code='/var/lib/flatpak/exports/bin/com.visualstudio.code'
 
 # elementary
 files() { nohup io.elementary.files -t $([ $# -gt 0 ] && echo "$@" || echo "." ) &>/dev/null & }
@@ -52,6 +52,7 @@ tg() { touch $1 && git add $1 && git commit -m "$1"; }
 
 # python
 alias py="python"
+alias npy='python -ic "from numpy import *;import numpy as np"'
 alias ipy="ipython"
 alias pm="py manage.py"
 pydis() { echo "$@" | python -m dis; }
@@ -66,6 +67,6 @@ frun() {
 }
 
 # browser-sync
-alias bsserve="browser-sync start --server --files . --no-notify"
+alias bsserve="browser-sync start --server --no-notify --files ."
 alias bsproxy="browser-sync start --proxy 127.0.0.1:8000 --files . --no-notify"
 alias bsproxy300="browser-sync start --proxy 127.0.0.1:8000 --files . --no-notify --reload-delay=300"

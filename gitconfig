@@ -13,6 +13,7 @@
   cm = commit -m
   cam = commit -a -m
   m = commit --amend --verbose
+  mn = commit --amend --verbose --no-edit
 
   d = diff
   ds = diff --stat
