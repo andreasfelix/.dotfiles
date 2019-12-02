@@ -172,5 +172,6 @@
   "window.titleBarStyle": "custom",
   "terminal.integrated.inheritEnv": false,
   "git.autofetch": true,
-  "git.confirmSync": false
+  "git.confirmSync": false,
+  "explorer.confirmDragAndDrop": false
 }

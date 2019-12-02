@@ -11,8 +11,9 @@ alias vvim='vim $HOME/.vimrc'
 alias vscvim='vim $HOME/.config/Code/User/settings.json'
 
 # file management
+alias ll='clear && ls -alFh'
 alias bcd='builtin cd'
-cd() { builtin cd "$@" && clear && ls -A ; }
+cd() { builtin cd "$@" && clear && ls -a ; }
 alias c='cd'
 alias cd..='cd ..'
 alias ..='cd ..'
@@ -34,6 +35,12 @@ alias g='git'
 source /usr/share/bash-completion/completions/git
 __git_complete g __git_main
 tg() { touch $1 && git add $1 && git commit -m "$1"; }
+
+# docker
+alias d='docker'
+source /usr/share/bash-completion/completions/docker
+complete -F _docker d
+alias drm='docker rm $(docker ps -aq)'
 
 # python
 alias py="python"
