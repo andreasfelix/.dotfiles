@@ -1,10 +1,9 @@
 import json, os
 
-with open('applications.json', 'r') as fh:
-    applications = json.load(fh)
+with open('applications.json') as file:
+    applications = json.load(file)
 
-base_dir = os.path.dirname(os.path.abspath(__file__))
-script_name = 'focus_window.sh'
+script_name = 'focus-application'
 
 print("""
  1. Make focus_window.sh executable!
@@ -19,6 +18,6 @@ print("""
 for wm_class, program_path in applications:
     print(f"""\
     open : {program_path}
-    focus: {base_dir}/{script_name} {wm_class} {program_path}
+    focus: {script_name} {wm_class} {program_path}
     """)
 

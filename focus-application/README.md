@@ -1,5 +1,5 @@
-# Focus windows 
-Use `focus_windows.sh` to create a keyboard shortcut which focuses an application. The script behaves in that way that if ..
+# Focus Application
+Use `focus-application.sh` to create a keyboard shortcut which focuses an application. The script behaves in that way that if ..
 
 - **Case 1**: ... the application is not running, it opens a new instance.
 - **Case 2**: ... the application is running but is not focused, it focuses the instance with highest z-index.
@@ -11,14 +11,13 @@ The the depends on xdotool and wmctrl, which can be installed with:
 `apt install xdotool wmctrl`
 
 ## Usage
-
-The shell script `focus_window.sh` takes to input arguments:
+The shell script `focus-application.sh` takes to input arguments:
 1. The WM\_class of the application.
 2. The command which invokes the application.
 
 Run the script:
 
-`./focus_window.sh <WM_class of application> /path/to/application`
+`./focus-application.sh <WM_class of application> /path/to/application`
 
 Don't forget to make the scirpt executable before (`chmod +x script`).
 
@@ -33,7 +32,7 @@ Don't forget to make the scirpt executable before (`chmod +x script`).
    
 2. Set custom a keyboard shortcut in *System Settings > Keyboard > Shortcuts > Custom Shortcut*.
 
-   `/path/to/focus_window.sh $WM_CLASS $COMMAND`
+   `/path/to/focus-application.sh $WM_CLASS $COMMAND`
 
 ### For multiple commands use print\_commands.py
 To make this a bit easier for multiple commands, you can use the `print_commands.py` Python script.
