@@ -63,7 +63,6 @@ alias bsproxy300="browser-sync start --proxy 127.0.0.1:8000 --files . --no-notif
 alias dfs='df -hx"squashfs"' # dont show snaps
 ch() { curl cheat.sh/$1; }
 alias screenkey='unset XMODIFIERS ; unset GTK_IM_MODULES; unset QT_IM_MODULES; /usr/bin/screenkey'
-# alias code='/var/lib/flatpak/exports/bin/com.visualstudio.code'
 
 # edit config files
 alias avim='vim $HOME/.bash_aliases'
