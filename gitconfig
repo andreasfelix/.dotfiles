@@ -1,6 +1,6 @@
 [user]
-	email = felix.andreas95@googlemail.com
-	name = felix
+  email = felix.andreas95@googlemail.com
+  name = felix
 
 # based on https://gist.github.com/mwhite/6887990
 [alias]
@@ -25,12 +25,12 @@
   cob = checkout -b
   b = branch
 
-  # list branches sorted by last modified
+# list branches sorted by last modified
   lsb = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
 
-  # list aliases
+# list aliases
   lsa = "!git config -l | grep alias | cut -c 7-"
 
-  # custom
+# custom
   graph = "!git l --graph --all"
   pa = "!m=${@:-push all}; echo message is: $m; f() { git add -A && git commit -m \"$m\" && git push; }; f"
