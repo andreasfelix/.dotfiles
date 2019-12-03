@@ -12,6 +12,8 @@ cd() { builtin cd "$@" && clear && ls -a ; }
 alias c='cd'
 alias cd..='cd ..'
 alias ..='cd ..'
+alias ...="cd ../.."
+alias ....="cd ../../.."
 alias cd-='cd -'
 cdg() { cd $HOME/Git ; [ -n "$1" ] && cd $1 ; }
 mkcd() { mkdir $1 && cd $1 ; }
