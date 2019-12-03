@@ -1,5 +1,5 @@
 # useful shell aliases
-alias rebash='exec sudo -u $USER bash --login'
+alias rebash='exec sudo -u $USER bash'
 alias reshell='exec sudo --login --user $USER'
 alias type='builtin type -a'
 alias childs='pstree -pauls $$'

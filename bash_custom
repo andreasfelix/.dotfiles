@@ -3,18 +3,18 @@
 #         . ~/.bash_custom
 # fi
 
+# change prompt
+export PS1='\e[36m\u \e[0mat \h in \e[34m$PWD $(__git_ps1 "\e[0mon \e[33m%s")\n '
+export PS2=">"
+
 # disable terminal scroll lock (Ctrl+S/Ctrl+q)
 stty -ixon
 
 # auto change directories
 shopt -s autocd
 
-# shopt -s cdspell
-# shopt -s dirspell
-
-# PS 1
-export PS1='\e[36m\u \e[0mat \h in \e[34m$PWD $(__git_ps1 "\e[0mon \e[33m%s")\n '
-export PS2=">"
-
-# PATH
+# add directories to PATH
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PATH=$PATH:/snap/bin
+export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/anaconda3/bin:$PATH
