@@ -9,6 +9,9 @@ stty -ixon
 # auto change directories
 shopt -s autocd
 
+# shopt -s cdspell
+# shopt -s dirspell
+
 # PS 1
 export PS1='\e[36m\u \e[0mat \h in \e[34m$PWD $(__git_ps1 "\e[0mon \e[33m%s")\n '
 export PS2=">"

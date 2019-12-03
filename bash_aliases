@@ -16,7 +16,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias cd-='cd -'
 cdg() { cd $HOME/Git ; [ -n "$1" ] && cd $1 ; }
-mkcd() { mkdir $1 && cd $1 ; }
+mk() { mkdir -p "$1" && cd "$1" ; }
 alias trash='gio trash'
 alias tra='gio trash'
 alias open='xdg-open'
