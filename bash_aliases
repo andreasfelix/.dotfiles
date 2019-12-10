@@ -38,7 +38,7 @@ pydis() { echo "$@" | python -m dis; }
 alias pytime="python -m timeit"
 alias py="python"
 alias ipy="ipython"
-alias npy='python -ic "from numpy import * ; import numpy as np"'
+alias npy='python -ic "import numpy as np ; import matplotlib.pyplot as plt"'
 
 # elementary
 files() { nohup io.elementary.files -t $([ $# -gt 0 ] && echo "$@" || echo "." ) &>/dev/null & }
