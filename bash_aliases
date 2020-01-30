@@ -16,7 +16,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias cd-='cd -'
 cdg() { cd $HOME/Git ; [ -n "$1" ] && cd $1 ; }
-mk() { mkdir -p "$1" && cd "$1" ; }
+mkcd() { mkdir -p "$1" && cd "$1" ; }
 alias trash='gio trash'
 alias tra='gio trash'
 alias open='xdg-open'
@@ -31,13 +31,16 @@ tg() { touch $1 && git add $1 && git commit -m "$1"; }
 alias d='docker'
 source /usr/share/bash-completion/completions/docker
 complete -F _docker d
-alias drm='docker rm $(docker ps -aq)'
+bashto() { docker exec -it $1 bash; }
+alias d-remove-all-container='docker rm $(docker ps -aq)'
+alias d-remove-all-images='docker rmi $(docker images -a -q)'
+alias d-remove-untagged-images='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
 
 # python
 pydis() { echo "$@" | python -m dis; }
 alias pytime="python -m timeit"
 alias py="python"
-alias ipy="ipython"
+alias ipy="ipython --TerminalInteractiveShell.editing_mode=vi"
 alias npy='python -ic "import numpy as np ; import matplotlib.pyplot as plt"'
 
 # elementary
