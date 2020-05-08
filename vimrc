@@ -1,4 +1,4 @@
-" ### ----VIM-CONFIG---- ###
+" ### --- VIM CONFIG --- ###
 " ### Basics ###
 set mouse=a " enable mouse
 set wildmenu " visual autocomplete for command menu
@@ -7,18 +7,18 @@ set splitbelow splitright " splits open at bottom and right
 filetype plugin indent on " load filetype-specific indent files
 autocmd FileType * setlocal formatoptions-=cro " don't commment new lines
 
-" ### Visuals ###
+" ### UI ###
 syntax enable
 set showcmd " show command in status bar
 hi Visual term=reverse cterm=reverse
 
-" ### Indent ###
+" ### Indentation ###
 set tabstop=2 " number of visual spaces per TAB
 set expandtab " tabs are spaces
 set shiftwidth=2
 set smartindent
 
-" ### Relative line numbers ###
+" ### Relative Line Numbers ###
 :set number relativenumber
 :augroup numbertoggle
 :  autocmd!
@@ -26,12 +26,12 @@ set smartindent
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
 
-" ### ----REMAPS---- ###
+" ### Remaps ###
 let mapleader=','
 inoremap jk <esc>
 inoremap kj <esc>
 
-" ### Standard Editor Commands
+" ### Standard Editor Commands ###
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
 vnoremap <Tab> >gv

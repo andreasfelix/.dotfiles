@@ -19,10 +19,12 @@
     ds = diff --stat
     dc = diff --cached
 
-    s = status
+    s = status -uall
     ss = status -s
     co = checkout
     cob = checkout -b
+    sw = switch
+    swc = switch -c
     b = branch
 
     # list branches sorted by last modified

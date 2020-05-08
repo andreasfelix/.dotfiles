@@ -13,8 +13,3 @@ stty -ixon
 # auto change directories
 shopt -s autocd
 
-# add directories to PATH
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-export PATH=$PATH:/snap/bin
-export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/anaconda3/bin:$PATH

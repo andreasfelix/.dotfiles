@@ -68,6 +68,7 @@ alias bsproxy300="browser-sync start --proxy 127.0.0.1:8000 --files . --no-notif
 alias dfs='df -hx"squashfs"' # dont show snaps
 ch() { curl cheat.sh/$1; }
 alias screenkey='unset XMODIFIERS ; unset GTK_IM_MODULES; unset QT_IM_MODULES; /usr/bin/screenkey'
+watch-cpu() { watch -n 0.5 $'mpstat 1 1 | awk \'/^Average/ {print 100-$NF,"%"}\''; }
 
 # edit config files
 alias avim='vim $HOME/.bash_aliases'
@@ -78,5 +79,6 @@ alias gvim='vim $HOME/.gitconfig'
 alias ivim='vim $HOME/.inputrc'
 alias ivvim='vim $HOME/.ideavimrc'
 alias pvim='vim $HOME/.bash_private'
+alias svim='vim $HOME/.ssh/config'
 alias vvim='vim $HOME/.vimrc'
 alias vscvim='vim $HOME/.config/Code/User/settings.json'
