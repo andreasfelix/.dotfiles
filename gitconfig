@@ -36,3 +36,4 @@
     # custom
     graph = "!git l --graph --all"
     pa = "!m=${@:-push all}; echo message is: $m; f() { git add -A && git commit -m \"$m\" ; git push; }; f"
+

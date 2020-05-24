@@ -1,20 +1,65 @@
 {
-  "[markdown]": {
-    "editor.wordWrapColumn": 88,
-    "editor.wordWrap": "wordWrapColumn"
-  },
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  /* UI */
+  "workbench.colorTheme": "GitHub Light",
+  "workbench.editor.tabSizing": "shrink",
+  "window.menuBarVisibility": "visible",
+  "window.titleBarStyle": "custom",
+  /* Editor */
+  "editor.fontSize": 14,
+  "editor.fontFamily": "Ubuntu Mono",
+  "editor.formatOnSave": true,
+  "editor.renderLineHighlight": "gutter",
+  "editor.cursorBlinking": "solid",
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": false,
+  "editor.scrollBeyondLastColumn": 0,
+  "editor.lineNumbers": "relative",
+  "editor.tabCompletion": "on",
   "editor.rulers": [
     88,
     100,
     120
   ],
+  "[markdown]": {
+    "editor.wordWrapColumn": 88,
+    "editor.wordWrap": "wordWrapColumn"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  /* Python */
+  "python.formatting.provider": "black",
+  "python.dataScience.askForKernelRestart": false,
+  "python.testing.pytestEnabled": true,
+  "python.testing.autoTestDiscoverOnSaveEnabled": false,
+  "python.dataScience.sendSelectionToInteractiveWindow": false,
+  "python.terminal.activateEnvironment": false,
+  /* C/C++ */
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "C_Cpp.updateChannel": "Insiders",
+  "C_Cpp.clang_format_fallbackStyle": "\"{ BasedOnStyle: Google, IndentWidth: 4 }\"",
+  /* PLUGINS */
+  "bracket-pair-colorizer-2.colors": [
+    "#0a3d62",
+    "#e58e26",
+    "#079992"
+  ],
+  "bracket-pair-colorizer-2.unmatchedScopeColor": "#b71540",
+  "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
+  "bracket-pair-colorizer-2.showVerticalScopeLine": false,
+  "explorer.confirmDragAndDrop": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "gitlens.advanced.telemetry.enabled": false,
+  "liveServer.settings.host": "0.0.0.0",
+  "mesonbuild.configureOnOpen": true,
+  /* VIM */
   "vim.leader": ",",
   "vim.useCtrlKeys": false,
   "vim.handleKeys": {
     "<C-c>": false,
     "<C-d>": false,
-    "<A-S-Up>": false,
-    "<A-S-Down>": false
   },
   "vim.easymotion": true,
   "vim.camelCaseMotion.enable": true,
@@ -74,70 +119,7 @@
   "vim.easymotionMarkerHeight": 19,
   "vim.easymotionMarkerYOffset": 0,
   "vim.easymotionMarkerWidthPerChar": 8,
-  "emmet.triggerExpansionOnTab": true,
-  "window.zoomLevel": 0,
-  "files.autoSave": "off",
-  "liveshare.featureSet": "insiders",
-  "bracket-pair-colorizer-2.colors": [
-    "#0a3d62",
-    "#e58e26",
-    "#079992"
-  ],
-  "bracket-pair-colorizer-2.unmatchedScopeColor": "#b71540",
-  "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
-  "workbench.colorCustomizations": {
-    "[Solarized Custom Light]": {
-      "editorCursor.foreground": "#B3ECFF77",
-      "editorCursor.background": "#3d5057",
-      "editor.selectionBackground": "#B3ECFF77",
-      "editor.inactiveSelectionBackground": "#B3ECFF77",
-      "sideBar.background": "#F5F5F5",
-      "activityBar.background": "#f5f5f5",
-      "statusBar.background": "#f5f5f5",
-      "tab.activeBackground": "#f5f5f5",
-      "tab.inactiveBackground": "#e4e4e4",
-      "editor.background": "#F5F5F5",
-      "editor.foreground": "#23476a"
-    }
-  },
-  "editor.renderLineHighlight": "gutter",
-  "editor.cursorBlinking": "solid",
-  "bracket-pair-colorizer-2.showVerticalScopeLine": false,
-  "editor.fontSize": 14,
-  "editor.fontFamily": "Ubuntu Mono",
-  "workbench.editor.tabSizing": "shrink",
-  "latex-workshop.view.pdf.viewer": "external",
-  "[latex]": {
-    "editor.defaultFormatter": "James-Yu.latex-workshop"
-  },
-  "workbench.colorTheme": "GitHub Light",
-  "editor.formatOnSave": true,
-  "window.menuBarVisibility": "visible",
-  "window.titleBarStyle": "custom",
-  "git.autofetch": true,
-  "git.confirmSync": false,
-  "explorer.confirmDragAndDrop": false,
-  "diffEditor.ignoreTrimWhitespace": false,
-  "python.formatting.provider": "black",
-  "editor.tabCompletion": "on",
-  "liveServer.settings.donotShowInfoMsg": true,
-  "gitlens.advanced.telemetry.enabled": false,
-  "editor.wordWrap": "on",
-  "editor.minimap.enabled": false,
-  "editor.scrollBeyondLastColumn": 0,
-  "C_Cpp.updateChannel": "Insiders",
-  "python.dataScience.askForKernelRestart": false,
-  "python.testing.pytestEnabled": true,
-  "python.testing.autoTestDiscoverOnSaveEnabled": false,
-  "python.dataScience.sendSelectionToInteractiveWindow": false,
-  "[c]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools"
-  },
-  "C_Cpp.clang_format_fallbackStyle": "\"{ BasedOnStyle: Google, IndentWidth: 4 }\"",
-  "telemetry.enableTelemetry": false,
-  "telemetry.enableCrashReporter": false,
-  "terminal.integrated.shell.linux": "/bin/bash",
-  "python.terminal.activateEnvironment": false,
-  "liveServer.settings.host": "0.0.0.0",
-  "mesonbuild.configureOnOpen": true
+  "vim.easymotionMarkerForegroundColorOneChar": "#000",
+  "vim.easymotionMarkerForegroundColorTwoChar": "#000",
+  "vim.easymotionMarkerBackgroundColor": "#FFDF5D",
 }
