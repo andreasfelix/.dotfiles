@@ -1,8 +1,7 @@
 [
-    [ "terminal", "io.elementary.terminal" ],
-    [ "files", "io.elementary.files" ],
-    [ "chrome", "google-chrome" ],
-    [ "jetbrains-pycharm-ce", "pycharm-community" ],
-    [ "code", "code" ],
-    [ "evince", "evince" ]
+    [ "terminal", "io.elementary.terminal", "s" ],
+    [ "files", "io.elementary.files", "f"],
+    [ "chrome", "google-chrome", "d"],
+    [ "code", "code", "v"],
+    [ "evince", "evince", "e"]
 ]
