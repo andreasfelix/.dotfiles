@@ -8,7 +8,7 @@
   "window.titleBarStyle": "custom",
   /* Editor */
   "editor.fontSize": 14,
-  "editor.fontFamily": "Ubuntu Mono",
+  "editor.fontFamily": "JetBrains Mono, Ubuntu Mono",
   "editor.formatOnSave": true,
   "editor.renderLineHighlight": "gutter",
   "editor.cursorBlinking": "solid",
@@ -31,6 +31,9 @@
   "python.formatting.provider": "black",
   "python.dataScience.askForKernelRestart": false,
   "python.testing.pytestEnabled": true,
+  "python.linting.pylintArgs": [
+    "--generate-members"
+  ],
   "python.testing.autoTestDiscoverOnSaveEnabled": false,
   "python.dataScience.sendSelectionToInteractiveWindow": false,
   "python.terminal.activateEnvironment": false,
@@ -122,4 +125,7 @@
   "vim.easymotionMarkerForegroundColorOneChar": "#000",
   "vim.easymotionMarkerForegroundColorTwoChar": "#000",
   "vim.easymotionMarkerBackgroundColor": "#FFDF5D",
+  "window.zoomLevel": 0,
+  // "vscode-neovim.neovimPath": "$HOME/nvim.appimage",
+  // "vscode-neovim.neovimInitPath": "$HOME/.vimrc",
 }
