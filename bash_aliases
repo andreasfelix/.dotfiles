@@ -29,8 +29,8 @@ tg() { touch $1 && git add $1 && git commit -m "$1"; }
 
 # docker
 alias d='docker'
-source /usr/share/bash-completion/completions/docker
-complete -F _docker d
+# source /usr/share/bash-completion/completions/docker
+# complete -F _docker d
 bashto() { docker exec -it $1 bash; }
 alias d-remove-all-container='docker rm $(docker ps -aq)'
 alias d-remove-all-images='docker rmi $(docker images -a -q)'

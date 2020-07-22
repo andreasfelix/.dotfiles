@@ -9,7 +9,7 @@
   "window.titleBarStyle": "custom",
   /* Editor */
   "editor.fontSize": 14,
-  "editor.fontFamily": "Ubuntu Mono",
+  "editor.fontFamily": "JetBrains Mono, Ubuntu Mono",
   "editor.formatOnSave": true,
   "editor.renderLineHighlight": "gutter",
   "editor.cursorBlinking": "solid",
@@ -34,6 +34,9 @@
   "python.formatting.provider": "black",
   "python.dataScience.askForKernelRestart": false,
   "python.testing.pytestEnabled": true,
+  "python.linting.pylintArgs": [
+    "--generate-members"
+  ],
   "python.testing.autoTestDiscoverOnSaveEnabled": false,
   "python.dataScience.sendSelectionToInteractiveWindow": false,
   "python.terminal.activateEnvironment": false,
@@ -130,5 +133,5 @@
   "vim.easymotionMarkerBackgroundColor": "#FFDF5D",
   "git.confirmSync": false,
   "window.zoomLevel": 0,
-  "vls.languageServerPath": "/bin/vala-language-server",
+  "vls.languageServerPath": "/bin/vala-language-server"
 }
