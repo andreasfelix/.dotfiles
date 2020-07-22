@@ -1,4 +1,5 @@
 {
+  // "docker.host": "ssh://b2stud02",
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
   /* UI */
@@ -15,7 +16,7 @@
   "editor.wordWrap": "on",
   "editor.minimap.enabled": false,
   "editor.scrollBeyondLastColumn": 0,
-  "editor.lineNumbers": "relative",
+  // "editor.lineNumbers": "relative",
   "editor.tabCompletion": "on",
   "editor.rulers": [
     88,
@@ -27,6 +28,8 @@
     "editor.wordWrap": "wordWrapColumn"
   },
   "emmet.triggerExpansionOnTab": true,
+  /* Formatting */
+  "files.insertFinalNewline": true,
   /* Python */
   "python.formatting.provider": "black",
   "python.dataScience.askForKernelRestart": false,
@@ -34,6 +37,9 @@
   "python.testing.autoTestDiscoverOnSaveEnabled": false,
   "python.dataScience.sendSelectionToInteractiveWindow": false,
   "python.terminal.activateEnvironment": false,
+  "python.linting.pylintArgs": [
+    "--generate-members"
+  ],
   /* C/C++ */
   "[c]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
@@ -122,4 +128,7 @@
   "vim.easymotionMarkerForegroundColorOneChar": "#000",
   "vim.easymotionMarkerForegroundColorTwoChar": "#000",
   "vim.easymotionMarkerBackgroundColor": "#FFDF5D",
+  "git.confirmSync": false,
+  "window.zoomLevel": 0,
+  "vls.languageServerPath": "/bin/vala-language-server",
 }

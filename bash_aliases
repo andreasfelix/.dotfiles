@@ -34,13 +34,14 @@ complete -F _docker d
 bashto() { docker exec -it $1 bash; }
 alias d-remove-all-container='docker rm $(docker ps -aq)'
 alias d-remove-all-images='docker rmi $(docker images -a -q)'
-alias d-remove-untagged-images='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
+alias d-remove-untagged-images='docker rmi $(docker images -q --filter "dangling=true")'
 
 # python
 pydis() { echo "$@" | python -m dis; }
 alias pytime="python -m timeit"
 alias py="python"
-alias ipy="ipython --TerminalInteractiveShell.editing_mode=vi"
+alias ipython="ipython --TerminalInteractiveShell.editing_mode=vi"
+alias ipy="ipython"
 alias npy='python -ic "import numpy as np ; import matplotlib.pyplot as plt"'
 
 # elementary
@@ -69,6 +70,8 @@ alias dfs='df -hx"squashfs"' # dont show snaps
 ch() { curl cheat.sh/$1; }
 alias screenkey='unset XMODIFIERS ; unset GTK_IM_MODULES; unset QT_IM_MODULES; /usr/bin/screenkey'
 watch-cpu() { watch -n 0.5 $'mpstat 1 1 | awk \'/^Average/ {print 100-$NF,"%"}\''; }
+alias activate-canon="gphoto2 --stdout --capture-movie | ffmpeg -i - -vf format=yuv420p -f v4l2 /dev/video0"
+svg2png() { for file in *.svg; do inkscape -d=768 $file -e ${file%svg}png; done ; }
 
 # edit config files
 alias avim='vim $HOME/.bash_aliases'

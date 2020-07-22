@@ -28,8 +28,6 @@ set smartindent
 
 " ### Remaps ###
 let mapleader=','
-inoremap jk <esc>
-inoremap kj <esc>
 
 " ### Standard Editor Commands ###
 nnoremap <Tab> >>

@@ -4,16 +4,19 @@
 
 # based on https://gist.github.com/mwhite/6887990
 [alias]
-    l = log --all --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%f%Cblue\\ [%cn]" --decorate --date=short
+    l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%f%Cblue\\ [%cn]" --decorate --date=short
+    la = l --all
+    graph = l --graph --all
 
     a = add
     ap = add -p
     c = commit --verbose
-    ca = commit -a --verbose
-    cm = commit -m
-    cam = commit -a -m
+    cm = commit --message
+    ca = "!git add --all && git commit --verbose"
+    cam = "!git add --all && git commit --message"
     m = commit --amend --verbose
     mn = commit --amend --verbose --no-edit
+    pa = "!m=${@:-commit all}; f() { git add -A && git commit -m \"$m\" ; git push; }; f"
 
     d = diff
     ds = diff --stat
@@ -24,6 +27,7 @@
     co = checkout
     cob = checkout -b
     sw = switch
+    swd = switch --detach
     swc = switch -c
     b = branch
 
@@ -33,7 +37,4 @@
     # list aliases
     lsa = "!git config -l | grep alias | cut -c 7-"
 
-    # custom
-    graph = "!git l --graph --all"
-    pa = "!m=${@:-push all}; echo message is: $m; f() { git add -A && git commit -m \"$m\" ; git push; }; f"
 
