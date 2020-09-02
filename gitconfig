@@ -2,8 +2,7 @@
     email = felix.andreas95@googlemail.com
     name = Felix Andreas
 
-# based on https://gist.github.com/mwhite/6887990
-[alias]
+[alias] # based on https://gist.github.com/mwhite/6887990
     l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%f%Cblue\\ [%cn]" --decorate --date=short
     la = l --all
     graph = l --graph --all
@@ -12,11 +11,12 @@
     ap = add -p
     c = commit --verbose
     cm = commit --message
-    ca = "!git add --all && git commit --verbose"
-    cam = "!git add --all && git commit --message"
     m = commit --amend --verbose
     mn = commit --amend --verbose --no-edit
-    pa = "!m=${@:-commit all}; f() { git add -A && git commit -m \"$m\" ; git push; }; f"
+    ca = "!git add --all && git commit --verbose"
+    cam = "!m=${@:-commit all}; f() { git add --all && git commit --message \"$m\" ; }; f"
+    pa = "!git ca ; git push"
+    pam = "!m=${@:-commit all}; f() { git add --all && git commit --message \"$m\" ; git push ; }; f"
 
     d = diff
     ds = diff --stat
@@ -31,10 +31,20 @@
     swc = switch -c
     b = branch
 
+    # show all (squash-)merged branches (based on https://stackoverflow.com/questions/43489303)
+    show-merged = "! \
+        git switch -q master && \
+        git for-each-ref refs/heads/ '--format=%(refname:short)' | \
+        while read branch; do \
+            mergeBase=$(git merge-base master $branch); \
+            case $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) in ('-'*) \
+                echo $branch; \
+            esac; \
+        done"
+
     # list branches sorted by last modified
     lsb = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
 
     # list aliases
     lsa = "!git config -l | grep alias | cut -c 7-"
-
 
