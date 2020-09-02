@@ -13,9 +13,9 @@ set showcmd " show command in status bar
 hi Visual term=reverse cterm=reverse
 
 " ### Indentation ###
-set tabstop=2 " number of visual spaces per TAB
+set tabstop=4 " number of visual spaces per TAB
 set expandtab " tabs are spaces
-set shiftwidth=2
+set shiftwidth=4
 set smartindent
 
 " ### Relative Line Numbers ###

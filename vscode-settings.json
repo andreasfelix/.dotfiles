@@ -2,12 +2,11 @@
   // "docker.host": "ssh://b2stud02",
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
-  /* UI */
-  "workbench.colorTheme": "GitHub Light",
   "workbench.editor.tabSizing": "shrink",
   "window.menuBarVisibility": "visible",
   "window.titleBarStyle": "custom",
   /* Editor */
+  "editor.mouseWheelZoom": true,
   "editor.fontSize": 14,
   "editor.fontFamily": "JetBrains Mono, Ubuntu Mono",
   "editor.formatOnSave": true,
@@ -29,7 +28,7 @@
   },
   "emmet.triggerExpansionOnTab": true,
   /* Formatting */
-  "files.insertFinalNewline": true,
+  // "files.insertFinalNewline": true, /* conflicts with default HTML formatter */
   /* Python */
   "python.formatting.provider": "black",
   "python.dataScience.askForKernelRestart": false,
@@ -40,9 +39,6 @@
   "python.testing.autoTestDiscoverOnSaveEnabled": false,
   "python.dataScience.sendSelectionToInteractiveWindow": false,
   "python.terminal.activateEnvironment": false,
-  "python.linting.pylintArgs": [
-    "--generate-members"
-  ],
   /* C/C++ */
   "[c]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
@@ -50,6 +46,10 @@
   "C_Cpp.updateChannel": "Insiders",
   "C_Cpp.clang_format_fallbackStyle": "\"{ BasedOnStyle: Google, IndentWidth: 4 }\"",
   /* PLUGINS */
+  "cSpell.enabledLanguageIds": [
+    "markdown",
+    "plaintext",
+  ],
   "bracket-pair-colorizer-2.colors": [
     "#0a3d62",
     "#e58e26",
@@ -70,8 +70,11 @@
     "<C-c>": false,
     "<C-d>": false,
   },
-  "vim.easymotion": true,
   "vim.camelCaseMotion.enable": true,
+  "vim.easymotion": true,
+  "vim.easymotionMarkerForegroundColorOneChar": "#000",
+  "vim.easymotionMarkerForegroundColorTwoChar": "#000",
+  "vim.easymotionMarkerBackgroundColor": "#FFDF5D",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": [
@@ -123,15 +126,14 @@
       ]
     }
   ],
-  "vim.easymotionMarkerFontSize": "14",
-  "vim.easymotionMarkerFontFamily": "Ubuntu Mono",
-  "vim.easymotionMarkerHeight": 19,
-  "vim.easymotionMarkerYOffset": 0,
-  "vim.easymotionMarkerWidthPerChar": 8,
-  "vim.easymotionMarkerForegroundColorOneChar": "#000",
-  "vim.easymotionMarkerForegroundColorTwoChar": "#000",
-  "vim.easymotionMarkerBackgroundColor": "#FFDF5D",
   "git.confirmSync": false,
   "window.zoomLevel": 0,
-  "vls.languageServerPath": "/bin/vala-language-server"
+  "vls.languageServerPath": "/bin/vala-language-server",
+  "cSpell.userWords": [
+    "BESSY",
+    "MADX",
+    "Twiss",
+    "quadrupoles"
+  ],
+  "workbench.colorTheme": "GitHub Light",
 }
