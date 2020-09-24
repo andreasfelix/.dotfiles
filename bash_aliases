@@ -1,7 +1,6 @@
 # useful shell aliases
 alias rebash='exec sudo -u $USER bash'
 alias reshell='exec sudo --login --user $USER'
-alias type='builtin type -a'
 alias childs='pstree -pauls $$'
 alias view_changed_packages='sudo debsums -c | xargs -rd '\n' -- dpkg -S | cut -d : -f 1 | sort -u'
 
@@ -42,7 +41,7 @@ alias pytime="python -m timeit"
 alias py="python"
 alias ipython="ipython --TerminalInteractiveShell.editing_mode=vi"
 alias ipy="ipython"
-alias npy='python -ic "import numpy as np ; import matplotlib.pyplot as plt"'
+alias pylab="ipython --pylab"
 
 # elementary
 files() { nohup io.elementary.files -t $([ $# -gt 0 ] && echo "$@" || echo "." ) &>/dev/null & }

@@ -1,10 +1,12 @@
 {
-  // "docker.host": "ssh://b2stud02",
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
   "workbench.editor.tabSizing": "shrink",
   "window.menuBarVisibility": "visible",
   "window.titleBarStyle": "custom",
+  "window.zoomLevel": 0,
+  "workbench.colorTheme": "GitHub Light",
+  "git.confirmSync": false,
   /* Editor */
   "editor.mouseWheelZoom": true,
   "editor.fontSize": 14,
@@ -37,7 +39,7 @@
     "--generate-members"
   ],
   "python.testing.autoTestDiscoverOnSaveEnabled": false,
-  "python.dataScience.sendSelectionToInteractiveWindow": false,
+  "python.dataScience.sendSelectionToInteractiveWindow": true,
   "python.terminal.activateEnvironment": false,
   /* C/C++ */
   "[c]": {
@@ -60,7 +62,6 @@
   "bracket-pair-colorizer-2.showVerticalScopeLine": false,
   "explorer.confirmDragAndDrop": false,
   "liveServer.settings.donotShowInfoMsg": true,
-  "gitlens.advanced.telemetry.enabled": false,
   "liveServer.settings.host": "0.0.0.0",
   "mesonbuild.configureOnOpen": true,
   /* VIM */
@@ -73,7 +74,8 @@
   "vim.camelCaseMotion.enable": true,
   "vim.easymotion": true,
   "vim.easymotionMarkerForegroundColorOneChar": "#000",
-  "vim.easymotionMarkerForegroundColorTwoChar": "#000",
+  "vim.easymotionMarkerForegroundColorTwoCharFirst": "#000",
+  "vim.easymotionMarkerForegroundColorTwoCharSecond": "#000",
   "vim.easymotionMarkerBackgroundColor": "#FFDF5D",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
@@ -126,14 +128,17 @@
       ]
     }
   ],
-  "git.confirmSync": false,
-  "window.zoomLevel": 0,
-  "vls.languageServerPath": "/bin/vala-language-server",
+  /* NEO-VIM */
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/home/felix/.nix-profile/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.linux": "/home/felix/.nix-profile/bin/nvim",
+  "vscode-neovim.useCtrlKeysForNormalMode": false,
+  "vscode-neovim.useCtrlKeysForInsertMode": false,
+  /* Spelling should be in workspace-specific settings*/
   "cSpell.userWords": [
     "BESSY",
     "MADX",
     "Twiss",
     "quadrupoles"
   ],
-  "workbench.colorTheme": "GitHub Light",
 }
