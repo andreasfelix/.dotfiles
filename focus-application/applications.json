@@ -2,6 +2,7 @@
     [ "terminal", "io.elementary.terminal", "s" ],
     [ "files", "io.elementary.files", "f"],
     [ "chrome", "google-chrome", "d"],
+    ["Navigator", "firefox", "r"],
     [ "code", "code", "v"],
     [ "evince", "evince", "e"]
 ]
