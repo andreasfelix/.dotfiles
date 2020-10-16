@@ -1,30 +1,35 @@
 # useful shell aliases
 alias rebash='exec sudo -u $USER bash'
 alias reshell='exec sudo --login --user $USER'
-alias childs='pstree -pauls $$'
 alias view_changed_packages='sudo debsums -c | xargs -rd '\n' -- dpkg -S | cut -d : -f 1 | sort -u'
 
 # file management
 alias ll='clear && ls -alFh'
 alias bcd='builtin cd'
-cd() { builtin cd "$@" && clear && ls -a ; }
+cd() { builtin cd "$@" && clear && ll ; }
 alias c='cd'
 alias cd..='cd ..'
 alias ..='cd ..'
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias cd-='cd -'
-cdg() { cd $HOME/Git ; [ -n "$1" ] && cd $1 ; }
 mkcd() { mkdir -p "$1" && cd "$1" ; }
+alias open='xdg-open'
 alias trash='gio trash'
 alias tra='gio trash'
-alias open='xdg-open'
 
 # git
 alias g='git'
-source /usr/share/bash-completion/completions/git
+source $HOME/.nix-profile/share/bash-completion/completions/git
+# source /usr/share/bash-completion/completions/git
 __git_complete g __git_main
-tg() { touch $1 && git add $1 && git commit -m "$1"; }
+
+# elementary
+files() { nohup io.elementary.files -t $([ $# -gt 0 ] && echo "$@" || echo "." ) &>/dev/null & }
+alias ebuild="rm -rf build ; meson build --prefix=/usr && ninja -C build"
+export G_MESSAGES_DEBUG=all
+# alias reinstall_granite="sudo apt install --reinstall gir1.2-granite-1.0 granite-demo libgranite-common libgranite-dev libgranite5"
+# alias reinstall_gala="sudo apt install --reinstall gala libgala0 libgala-dev"
 
 # docker
 alias d='docker'
@@ -40,17 +45,8 @@ pydis() { echo "$@" | python -m dis; }
 alias pytime="python -m timeit"
 alias py="python"
 alias ipython="ipython --TerminalInteractiveShell.editing_mode=vi"
-alias ipy="ipython"
 alias pylab="ipython --pylab"
 
-# elementary
-files() { nohup io.elementary.files -t $([ $# -gt 0 ] && echo "$@" || echo "." ) &>/dev/null & }
-lfiles() { nohup pantheon-files -t $([ $# -gt 0 ] && echo "$@" || echo "." ) &>/dev/null & }
-alias ebuild="rm -rf build ; meson build --prefix=/usr && ninja -C build"
-alias reinstall_granite="sudo apt install --reinstall gir1.2-granite-1.0 granite-demo libgranite-common libgranite-dev libgranite5"
-alias reinstall_gala="sudo apt install --reinstall gala libgala0 libgala-dev"
-alias idvim="vim $HOME/Git/eOS/ideas/ideas.md"
-export G_MESSAGES_DEBUG=all
 
 # flask
 frun() {
@@ -58,11 +54,6 @@ frun() {
   export FLASK_ENV=development
   flask run --host=0.0.0.0
 }
-
-# browser-sync
-alias bsserve="browser-sync start --server --no-notify --files ."
-alias bsproxy="browser-sync start --proxy 127.0.0.1:8000 --files . --no-notify"
-alias bsproxy300="browser-sync start --proxy 127.0.0.1:8000 --files . --no-notify --reload-delay=300"
 
 # misc
 alias dfs='df -hx"squashfs"' # dont show snaps
