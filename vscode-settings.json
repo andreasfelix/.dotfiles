@@ -1,11 +1,11 @@
 {
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
+  "workbench.colorTheme": "GitHub Light",
   "workbench.editor.tabSizing": "shrink",
   "window.menuBarVisibility": "visible",
   "window.titleBarStyle": "custom",
   "window.zoomLevel": 0,
-  "workbench.colorTheme": "GitHub Light",
   "git.confirmSync": false,
   /* Editor */
   "editor.mouseWheelZoom": true,
@@ -42,11 +42,11 @@
   "python.dataScience.sendSelectionToInteractiveWindow": true,
   "python.terminal.activateEnvironment": false,
   /* C/C++ */
-  "[c]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools"
-  },
-  "C_Cpp.updateChannel": "Insiders",
-  "C_Cpp.clang_format_fallbackStyle": "\"{ BasedOnStyle: Google, IndentWidth: 4 }\"",
+  // "[c]": {
+  //   "editor.defaultFormatter": "ms-vscode.cpptools"
+  // },
+  // "C_Cpp.updateChannel": "Insiders",
+  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }",
   /* PLUGINS */
   "cSpell.enabledLanguageIds": [
     "markdown",
