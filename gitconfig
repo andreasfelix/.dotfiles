@@ -8,7 +8,7 @@
     graph = l --graph --all
 
     a = add
-    ap = add -p
+    aa = add -A
     c = commit --verbose
     cm = commit --message
     m = commit --amend --verbose
@@ -31,6 +31,9 @@
     swc = switch -c
     b = branch
 
+    # list aliases
+    lsa = "!git config -l | grep alias | cut -c 7-"
+
     # show all (squash-)merged branches (based on https://stackoverflow.com/questions/43489303)
     show-merged = "! \
         git switch -q master && \
@@ -45,6 +48,5 @@
     # list branches sorted by last modified
     lsb = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
 
-    # list aliases
-    lsa = "!git config -l | grep alias | cut -c 7-"
-
+[pull]
+	ff = only
