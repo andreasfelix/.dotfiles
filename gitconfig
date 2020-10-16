@@ -34,6 +34,9 @@
     # list aliases
     lsa = "!git config -l | grep alias | cut -c 7-"
 
+    # list branches sorted by last modified
+    lsb = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+
     # show all (squash-)merged branches (based on https://stackoverflow.com/questions/43489303)
     show-merged = "! \
         git switch -q master && \
@@ -44,9 +47,6 @@
                 echo $branch; \
             esac; \
         done"
-
-    # list branches sorted by last modified
-    lsb = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
 
 [pull]
 	ff = only
