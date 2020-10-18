@@ -68,7 +68,6 @@ alias record-gif='ffmpeg -video_size 1920x1080 -f x11grab -i :0.0+0,420 -y video
 alias avim='vim $HOME/.bash_aliases'
 alias bvim='vim $HOME/.bashrc'
 alias cvim='vim $HOME/.bash_custom'
-alias fvim='vim $HOME/.config/fish/config.fish'
 alias gvim='vim $HOME/.gitconfig'
 alias ivim='vim $HOME/.inputrc'
 alias ivvim='vim $HOME/.ideavimrc'
