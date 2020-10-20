@@ -4,9 +4,9 @@ alias reshell='exec sudo --login --user $USER'
 alias view_changed_packages='sudo debsums -c | xargs -rd '\n' -- dpkg -S | cut -d : -f 1 | sort -u'
 
 # file management
-alias ll='clear && ls -alFh'
-alias bcd='builtin cd'
+alias l='clear && ls -alFh'
 c() { builtin cd "$@" && clear && ll ; }
+# alias bcd='builtin cd'
 # alias c='cd'
 alias cd..='cd ..'
 alias ..='cd ..'
@@ -16,29 +16,18 @@ alias cd-='cd -'
 mkcd() { mkdir -p "$1" && cd "$1" ; }
 alias open='xdg-open'
 alias trash='gio trash'
-alias tra='gio trash'
-
-# git
-alias g='git'
-source $HOME/.nix-profile/share/bash-completion/completions/git
-# source /usr/share/bash-completion/completions/git
-__git_complete g __git_main
 
 # elementary
+export G_MESSAGES_DEBUG=all
 files() { nohup io.elementary.files -t $([ $# -gt 0 ] && echo "$@" || echo "." ) &>/dev/null & }
 alias ebuild="rm -rf build ; meson build --prefix=/usr && ninja -C build"
-export G_MESSAGES_DEBUG=all
 # alias reinstall_granite="sudo apt install --reinstall gir1.2-granite-1.0 granite-demo libgranite-common libgranite-dev libgranite5"
 # alias reinstall_gala="sudo apt install --reinstall gala libgala0 libgala-dev"
 
 # docker
-alias d='docker'
-# source /usr/share/bash-completion/completions/docker
-# complete -F _docker d
-bashto() { docker exec -it $1 bash; }
-alias d-remove-all-container='docker rm $(docker ps -aq)'
-alias d-remove-all-images='docker rmi $(docker images -a -q)'
-alias d-remove-untagged-images='docker rmi $(docker images -q --filter "dangling=true")'
+alias docker-remove-all-container='docker rm $(docker ps -aq)'
+alias docker-remove-all-images='docker rmi $(docker images -a -q)'
+alias docker-remove-untagged-images='docker rmi $(docker images -q --filter "dangling=true")'
 
 # python
 pydis() { echo "$@" | python -m dis; }
@@ -47,13 +36,8 @@ alias py="python"
 alias ipython="ipython --TerminalInteractiveShell.editing_mode=vi"
 alias pylab="ipython --pylab"
 
-
 # flask
-frun() {
-  export FLASK_APP=$1
-  export FLASK_ENV=development
-  flask run --host=0.0.0.0
-}
+frun() { FLASK_APP=$1 FLASK_ENV=development flask run --host=0.0.0.0 }
 
 # misc
 alias dfs='df -hx"squashfs"' # dont show snaps
@@ -72,4 +56,4 @@ alias gvim='vim $HOME/.gitconfig'
 alias hvim='vim $HOME/.config/nixpkgs/home.nix'
 alias pvim='vim $HOME/.bash_private'
 alias svim='vim $HOME/.ssh/config'
-alias vvim='vim $HOME/.comfig/init.vim'
+alias vvim='vim $HOME/.config/nvim/init.vim'
