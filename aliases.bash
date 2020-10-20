@@ -6,8 +6,8 @@ alias view_changed_packages='sudo debsums -c | xargs -rd '\n' -- dpkg -S | cut -
 # file management
 alias ll='clear && ls -alFh'
 alias bcd='builtin cd'
-cd() { builtin cd "$@" && clear && ll ; }
-alias c='cd'
+c() { builtin cd "$@" && clear && ll ; }
+# alias c='cd'
 alias cd..='cd ..'
 alias ..='cd ..'
 alias ...="cd ../.."
@@ -69,9 +69,7 @@ alias avim='vim $HOME/.bash_aliases'
 alias bvim='vim $HOME/.bashrc'
 alias cvim='vim $HOME/.bash_custom'
 alias gvim='vim $HOME/.gitconfig'
-alias ivim='vim $HOME/.inputrc'
-alias ivvim='vim $HOME/.ideavimrc'
+alias hvim='vim $HOME/.config/nixpkgs/home.nix'
 alias pvim='vim $HOME/.bash_private'
 alias svim='vim $HOME/.ssh/config'
-alias vvim='vim $HOME/.vimrc'
-alias vscvim='vim $HOME/.config/Code/User/settings.json'
+alias vvim='vim $HOME/.comfig/init.vim'
