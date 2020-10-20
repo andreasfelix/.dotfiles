@@ -7,17 +7,17 @@
   "window.titleBarStyle": "custom",
   "window.zoomLevel": 0,
   "git.confirmSync": false,
-  /* Editor */
+  /* editor */
   "editor.mouseWheelZoom": true,
   "editor.fontSize": 14,
   "editor.fontFamily": "JetBrains Mono, Ubuntu Mono",
   "editor.formatOnSave": true,
+  // "files.insertFinalNewline": true, /* conflicts with default HTML formatter */
   "editor.renderLineHighlight": "gutter",
   "editor.cursorBlinking": "solid",
   "editor.wordWrap": "on",
   "editor.minimap.enabled": false,
   "editor.scrollBeyondLastColumn": 0,
-  // "editor.lineNumbers": "relative",
   "editor.tabCompletion": "on",
   "editor.rulers": [
     88,
@@ -29,8 +29,6 @@
     "editor.wordWrap": "wordWrapColumn"
   },
   "emmet.triggerExpansionOnTab": true,
-  /* Formatting */
-  // "files.insertFinalNewline": true, /* conflicts with default HTML formatter */
   /* Python */
   "python.formatting.provider": "black",
   "python.dataScience.askForKernelRestart": false,
@@ -41,11 +39,7 @@
   "python.testing.autoTestDiscoverOnSaveEnabled": false,
   "python.dataScience.sendSelectionToInteractiveWindow": true,
   "python.terminal.activateEnvironment": false,
-  /* C/C++ */
-  // "[c]": {
-  //   "editor.defaultFormatter": "ms-vscode.cpptools"
-  // },
-  // "C_Cpp.updateChannel": "Insiders",
+  /* c/c++ */
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }",
   /* PLUGINS */
   "cSpell.enabledLanguageIds": [
@@ -64,7 +58,7 @@
   "liveServer.settings.donotShowInfoMsg": true,
   "liveServer.settings.host": "0.0.0.0",
   "mesonbuild.configureOnOpen": true,
-  /* VIM */
+  /* vim */
   "vim.leader": ",",
   "vim.useCtrlKeys": false,
   "vim.handleKeys": {
@@ -128,13 +122,13 @@
       ]
     }
   ],
-  /* NEO-VIM */
+  /* neovim */
   "vim.enableNeovim": true,
   "vim.neovimPath": "/home/felix/.nix-profile/bin/nvim",
   "vscode-neovim.neovimExecutablePaths.linux": "/home/felix/.nix-profile/bin/nvim",
   "vscode-neovim.useCtrlKeysForNormalMode": false,
   "vscode-neovim.useCtrlKeysForInsertMode": false,
-  /* Spelling should be in workspace-specific settings*/
+  /* Spelling should be in workspace-specific settings */
   "cSpell.userWords": [
     "BESSY",
     "MADX",
