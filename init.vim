@@ -1,15 +1,6 @@
 " basics
-set mouse=a " enable mouse
-set wildmenu " visual autocomplete for command menu
-set timeoutlen=500 ttimeoutlen=0 " reduce O delay
 set splitbelow splitright " splits open at bottom and right
-filetype plugin indent on " load filetype-specific indent files
-autocmd FileType * setlocal formatoptions-=cro " don't commment new lines
-
-" ui
-syntax enable
-set showcmd " show command in status bar
-hi Visual term=reverse cterm=reverse
+autocmd FileType * setlocal formatoptions-=cro " don't comment new lines
 
 " whitespace
 set tabstop=4 " number of visual spaces per TAB
@@ -25,47 +16,46 @@ set smartindent
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
 
-" remaps
-let mapleader=','
-
 " standard editor commands
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 noremap <C-s> :w <Enter>
-" noremap <C-z> u
 noremap <C-a> moGVgg
 " needs +clipboard (check with vim --version)
 vnoremap <C-c> "*y :let @+=@*<CR>gv
-" vnoremap <C-c> "+ygv
 vnoremap <C-x> "+ygvd
 noremap <C-v> "+p
 nnoremap <C-f> /
-" autoformat
-nnoremap <C-l> mogg=G`o
-" remap visual block mode to leader v
-nnoremap <leader>v <C-v>
 nnoremap <PageUp> 4<C-y>
 nnoremap <PageDown> 4<C-e>
 
-" # easier moving of code blocks
+" easier moving of code blocks
 vnoremap > >gv
 vnoremap < <gv
 nnoremap > >>
 nnoremap < <<
 
-" # Searching
-set incsearch " search as characters are entered
-set hlsearch " highlight matches
-" turn off search highlight
+" remaps
+let mapleader=','
+" remap visual block mode to leader v
+nnoremap <leader>v <C-v>
+" clear search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
-" # Buffers
-nnoremap gb :ls<CR>:b<Space>
-
 if !has('nvim')
-    " # VIM-PLUGINS
+    " defaults in neovim
+    syntax enable
+    filetype plugin indent on " load filetype-specific indent files
+    set mouse=a               " enable mouse
+    set hlsearch              " highlight matches
+    set incsearch             " search as characters are entered
+    set showcmd               " show command in status bar
+    set ttimeoutlen=0         " reduce O delay
+    set wildmenu              " visual autocomplete for command menu
+
+
     " automatic installation of vim-plug
     if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
