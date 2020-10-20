@@ -37,7 +37,7 @@ alias ipython="ipython --TerminalInteractiveShell.editing_mode=vi"
 alias pylab="ipython --pylab"
 
 # flask
-frun() { FLASK_APP=$1 FLASK_ENV=development flask run --host=0.0.0.0 }
+frun() { FLASK_APP=$1 FLASK_ENV=development flask run --host=0.0.0.0 ; }
 
 # misc
 alias dfs='df -hx"squashfs"' # dont show snaps
