@@ -1,15 +1,20 @@
 # .dotfiles
 
-Use to `bash install.sh` create symlinks.
+Use `bash install.sh` to create symlinks. Or, when us [nix](https://nixos.org/) and [home-manager](https://github.com/nix-community/home-manager):
+
+```sh
+ln -sfv home.nix $HOME/.config/nixpkgs/home.nix
+home-manager switch
+```
 
 ## Additional Configuration (Linux)
 
-### Add desktop files provided by Nix
+### Add desktop files & shell completion provided by Nix
 
 add this to `~/.profile`:
 
 ```sh
-# show desktop files provided by nix
+# add desktop files & shell completion provided by Nix
 if [ -d "$HOME/.nix-profile" ] ; then 
     export XDG_DATA_DIRS="$HOME/.nix-profile/share:${XDG_DATA_DIRS}"
 fi

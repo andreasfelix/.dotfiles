@@ -4,7 +4,7 @@ alias reshell='exec sudo --login --user $USER'
 alias view_changed_packages='sudo debsums -c | xargs -rd '\n' -- dpkg -S | cut -d : -f 1 | sort -u'
 
 # file management
-alias l='clear && ls -alFh'
+alias ll='ls -alFh'
 c() { builtin cd "$@" && clear && ll ; }
 # alias bcd='builtin cd'
 # alias c='cd'
@@ -51,7 +51,7 @@ alias record-gif='ffmpeg -video_size 1920x1080 -f x11grab -i :0.0+0,420 -y video
 # edit config files
 alias avim='vim $HOME/.bash_aliases'
 alias bvim='vim $HOME/.bashrc'
-alias cvim='vim $HOME/.bash_custom'
+alias cvim='vim $HOME/.bash_config'
 alias gvim='vim $HOME/.gitconfig'
 alias hvim='vim $HOME/.config/nixpkgs/home.nix'
 alias pvim='vim $HOME/.bash_private'
