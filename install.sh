@@ -5,6 +5,7 @@ mkdir -p $HOME/.local/bin $HOME/.config/nixpkgs $HOME/.config/nvim
 
 ln -sfv $dotfiles/aliases.bash $HOME/.bash_aliases
 ln -sfv $dotfiles/config.bash $HOME/.bash_config
+ln -sfv $dotfiles/config.nix $HOME/.config/nixpkgs/config.nix
 ln -sfv $dotfiles/gitconfig $HOME/.gitconfig
 ln -sfv $dotfiles/ideavimrc $HOME/.ideavimrc
 ln -sfv $dotfiles/inputrc $HOME/.inputrc
@@ -13,11 +14,21 @@ ln -sfv $dotfiles/init.vim $HOME/.vimrc
 ln -sfv $dotfiles/vscode-settings.json $HOME/.config/Code/User/settings.json
 ln -sfv $dotfiles/focus-application/focus-application.sh $HOME/.local/bin/focus-application
 
-# if [ -e $HOME/.bashrc ] && ! grep -q '.bash_config' $HOME/.bashrc ; then
-# echo "\
-# # added by Felix's dotfiles installer
-# if [ -f $HOME/.bash_config ]; then
-#     . $HOME/.bash_config
-# fi
-# " >> $HOME/.bashrc
-# fi
+if [ ! -f $HOME/.bashrc ] || ! grep -q '.bash_config' $HOME/.bashrc ; then
+echo "\
+# added by felix's dotfiles installer
+if [ -f $HOME/.bash_config ]; then
+    . $HOME/.bash_config
+fi
+" >> $HOME/.bashrc
+fi
+
+if [ ! -f $HOME/.profile ] || ! grep -q 'hm-session-vars.sh' $HOME/.profile ; then
+echo "\
+# added by felix's dotfiles installer
+export dotfiles=$dotfiles
+if [ -f $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh ]; then
+    . $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+fi
+" >> $HOME/.profile
+fi

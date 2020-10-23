@@ -4,25 +4,31 @@
   programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
 
+  # does overwrite .bashrc and .profile, which disables autocompletion and colored ls
+  # targets.genericLinux.enable = true; 
+
   home = {
     activation.dotfiles = lib.hm.dag.entryAfter [ "writeBoundary" ] (builtins.readFile ./install.sh);
     sessionVariables = {
       EDITOR = "nvim";
-      QT_XCB_GL_INTEGRATION = "none"; # fix: "Could not initialize GLX"
+      XDG_DATA_DIRS="\${HOME}/.nix-profile/share:\${XDG_DATA_DIRS}";
+      # QT_XCB_GL_INTEGRATION = "none"; # fix: "Could not initialize GLX"
     };
+    sessionVariablesExtra = "export PATH=$HOME/go/bin:$PATH\n";
     packages = with pkgs; [
       # desktop
       firefox
       google-chrome
       vscode
       nextcloud-client
-      # media 
+      # media
       ffmpeg
       blender
       gimp
       inkscape
       # developing
       git
+      docker
       clang
       python38
       python38Packages.pip
@@ -42,18 +48,14 @@
   };
 
   programs = {
-    bash = {
-      enable = true; 
-      initExtra = ''
-          . ~/.bash_aliases
-          . ~/.bash_config
-      '';
-      profileExtra = ''
-        . ${config.home.homeDirectory}/.nix-profile/etc/profile.d/nix.sh
-        export PATH=$HOME/.local/bin:$PATH
-        export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
-      '';
-    };
+   # sames issues as targets.genericLinux.enable: overwrites default bashrc
+   # bash = {
+   #   enable = true;
+   #   initExtra = ''
+   #     . ~/.bash_aliases
+   #     . ~/.bash_config
+   #   '';
+   #  };
     bat = {
       enable = true;
       config = {
@@ -84,10 +86,6 @@
         vim-surround
         vim-commentary
       ];
-    };
-    pazi = {
-      enable = true;
-      enableBashIntegration = true;
     };
   };
 
