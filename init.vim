@@ -1,5 +1,6 @@
 " basics
-set splitbelow splitright " splits open at bottom and right
+set mouse=a                                    " enable mouse
+set splitbelow splitright                      " splits open at bottom and right
 autocmd FileType * setlocal formatoptions-=cro " don't comment new lines
 
 " whitespace
@@ -30,6 +31,9 @@ noremap <C-v> "+p
 nnoremap <C-f> /
 nnoremap <PageUp> 4<C-y>
 nnoremap <PageDown> 4<C-e>
+" needs vim-commentary
+nnoremap <C-_> :Commentary<CR>
+vnoremap <C-_> :Commentary<CR>gv
 
 " easier moving of code blocks
 vnoremap > >gv
@@ -48,7 +52,6 @@ if !has('nvim')
     " defaults in neovim
     syntax enable
     filetype plugin indent on " load filetype-specific indent files
-    set mouse=a               " enable mouse
     set hlsearch              " highlight matches
     set incsearch             " search as characters are entered
     set showcmd               " show command in status bar
@@ -69,8 +72,6 @@ if !has('nvim')
     " IDE features
     " vim-commentary, toggle comments
     Plug 'tpope/vim-commentary'
-    nnoremap <C-_> :Commentary<CR>
-    vnoremap <C-_> :Commentary<CR>gv
 
     " vim-multiple-cursor, multiple selections for Vim
     Plug 'https://github.com/terryma/vim-multiple-cursors.git'
