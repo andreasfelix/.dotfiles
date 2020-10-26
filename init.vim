@@ -1,21 +1,9 @@
 " basics
 set mouse=a                                    " enable mouse
+set number                                     " enable line numbering
+set expandtab tabstop=4 shiftwidth=4           " indent using 4 spaces
 set splitbelow splitright                      " splits open at bottom and right
 autocmd FileType * setlocal formatoptions-=cro " don't comment new lines
-
-" whitespace
-set tabstop=4 " number of visual spaces per TAB
-set expandtab " tabs are spaces
-set shiftwidth=4
-set smartindent
-
-" relative line numbers
-:set number relativenumber
-:augroup numbertoggle
-:  autocmd!
-:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-:augroup END
 
 " standard editor commands
 nnoremap <Tab> >>
@@ -52,12 +40,12 @@ if !has('nvim')
     " defaults in neovim
     syntax enable
     filetype plugin indent on " load filetype-specific indent files
+    set autoindent            " use indentation of previous line
     set hlsearch              " highlight matches
     set incsearch             " search as characters are entered
     set showcmd               " show command in status bar
     set ttimeoutlen=0         " reduce O delay
     set wildmenu              " visual autocomplete for command menu
-
 
     " automatic installation of vim-plug
     if empty(glob('~/.vim/autoload/plug.vim'))
