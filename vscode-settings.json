@@ -44,7 +44,7 @@
   /* PLUGINS */
   "cSpell.enabledLanguageIds": [
     "markdown",
-    "plaintext",
+    "plaintext"
   ],
   "bracket-pair-colorizer-2.colors": [
     "#0a3d62",
@@ -59,12 +59,12 @@
   "liveServer.settings.host": "0.0.0.0",
   "mesonbuild.configureOnOpen": true,
   /* vim */
-  "vim.leader": ",",
   "vim.useCtrlKeys": false,
   "vim.handleKeys": {
     "<C-c>": false,
     "<C-d>": false,
   },
+  "vim.hlsearch": true,
   "vim.camelCaseMotion.enable": true,
   "vim.easymotion": true,
   "vim.easymotionMarkerForegroundColorOneChar": "#000",
@@ -87,20 +87,27 @@
     },
     {
       "before": [
-        ">"
+        "<leader>",
+        "v"
       ],
       "after": [
-        ">",
+        "ctrl+v"
+      ]
+    },
+    {
+      "before": [
         ">"
+      ],
+      "commands": [
+        "editor.action.indentLines"
       ]
     },
     {
       "before": [
         "<"
       ],
-      "after": [
-        "<",
-        "<"
+      "commands": [
+        "editor.action.outdentLines"
       ]
     }
   ],
@@ -134,5 +141,5 @@
     "MADX",
     "Twiss",
     "quadrupoles"
-  ],
+  ]
 }
