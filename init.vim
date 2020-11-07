@@ -15,7 +15,7 @@ noremap <C-a> moGVgg
 " needs +clipboard (check with vim --version)
 vnoremap <C-c> "*y :let @+=@*<CR>gv
 vnoremap <C-x> "+ygvd
-noremap <C-v> "+p
+noremap <C-v> "+P
 nnoremap <C-f> /
 nnoremap <PageUp> 4<C-y>
 nnoremap <PageDown> 4<C-e>
@@ -29,8 +29,6 @@ vnoremap < <gv
 nnoremap > >>
 nnoremap < <<
 
-" remaps
-let mapleader=','
 " remap visual block mode to leader v
 nnoremap <leader>v <C-v>
 " clear search highlight
