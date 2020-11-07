@@ -23,12 +23,11 @@ alias ebuild="rm -rf build ; meson build --prefix=/usr && ninja -C build"
 # alias reinstall_gala="sudo apt install --reinstall gala libgala0 libgala-dev"
 
 # python
-pydis() { echo "$@" | python -m dis; }
-alias pytime="python -m timeit"
 alias py="python"
 alias ipython="ipython --TerminalInteractiveShell.editing_mode=vi"
 alias pylab="ipython --pylab"
-frun() { FLASK_APP=$1 FLASK_ENV=development flask run --host=0.0.0.0 ; }
+pydis() { echo "$@" | python -m dis; }
+alias pytime="python -m timeit"
 
 # docker
 alias docker-remove-all-container='docker rm $(docker ps -aq)'
@@ -45,11 +44,11 @@ svg2png() { for file in *.svg; do inkscape -d=768 $file -e ${file%svg}png; done 
 watch-cpu() { watch -n 0.5 $'mpstat 1 1 | awk \'/^Average/ {print 100-$NF,"%"}\''; }
 
 # edit config files
-alias avim='vim $HOME/.bash_aliases'
-alias bvim='vim $HOME/.bashrc'
-alias cvim='vim $HOME/.bash_config'
-alias gvim='vim $HOME/.gitconfig'
-alias hvim='vim $HOME/.config/nixpkgs/home.nix'
-alias pvim='vim $HOME/.bash_private'
-alias svim='vim $HOME/.ssh/config'
-alias vvim='vim $HOME/.config/nvim/init.vim'
+alias avi='vim $HOME/.bash_aliases'
+alias bvi='vim $HOME/.bashrc'
+alias cvi='vim $HOME/.bash_config'
+alias gvi='vim $HOME/.gitconfig'
+alias hvi='vim $HOME/.config/nixpkgs/home.nix'
+alias pvi='vim $HOME/.bash_private'
+alias svi='vim $HOME/.ssh/config'
+alias vvi='vim $HOME/.config/nvim/init.vim'
