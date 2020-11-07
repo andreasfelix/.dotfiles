@@ -1,5 +1,5 @@
 # dotfiles=$(dirname $(readlink -f $0)) # does not work with home-manager
-dotfiles=$HOME/Projects/andreasfelix/dotfiles
+dotfiles=$HOME/.dotfiles
 
 mkdir -p $HOME/.local/bin $HOME/.config/nixpkgs $HOME/.config/nvim
 

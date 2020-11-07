@@ -12,9 +12,10 @@
     sessionVariables = {
       EDITOR = "nvim";
       XDG_DATA_DIRS="\${HOME}/.nix-profile/share:\${XDG_DATA_DIRS}";
+      PATH="$HOME/go/bin:$PATH";
+      # LD_LIBRARY_PATH="\${LD_LIBRARY_PATH}:${pkgs.stdenv.cc.cc.lib}/lib"; # cannot import pandas or scipy
       # QT_XCB_GL_INTEGRATION = "none"; # fix: "Could not initialize GLX"
     };
-    sessionVariablesExtra = "export PATH=$HOME/go/bin:$PATH\n";
     packages = with pkgs; [
       # desktop
       firefox
@@ -29,21 +30,28 @@
       # developing
       git
       docker
-      clang
-      python38
-      python38Packages.pip
+      docker-compose
+      # clang # shadows system ld
+      # # creates virtual env. does not allow to install other packages see:
+      # # https://nixos.org/manual/nixpkgs/stable/#python
+      (python38.withPackages(ps: with ps; [ pip numpy matplotlib scipy pandas requests pytest pylint black isort ]))
+      poetry
       nodejs
       go
       rustc
       cargo
       # cli utils
       bat
+      curl
       exa
       fd
+      fzf
       hyperfine
-      pazi
+      zoxide
       ripgrep
       tree
+      # fonts
+      jetbrains-mono
     ];
   };
 
@@ -105,4 +113,3 @@
   #   ".local/bin/focus-application".source = ./focus-application/focus-application.sh;
   # };
 }
-
