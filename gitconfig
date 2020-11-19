@@ -8,15 +8,15 @@
     graph = l --graph --all
 
     a = add
-    aa = add -A
+    aa = add --all
     c = commit --verbose
     cm = commit --message
     m = commit --amend --verbose
     mn = commit --amend --verbose --no-edit
-    ca = "!git add --all && git commit --verbose"
-    cam = "!m=${@:-commit all}; f() { git add --all && git commit --message \"$m\" ; }; f"
+    ca = "!git aa && git commit --verbose"
+    cam = "!git aa && git cm"
     pa = "!git ca ; git push"
-    pam = "!m=${@:-commit all}; f() { git add --all && git commit --message \"$m\" ; git push ; }; f"
+    pam = "!f() { git aa && git cm \"$1\" ; git push ; }; f"
 
     d = diff
     ds = diff --stat
@@ -24,11 +24,9 @@
 
     s = status -uall
     ss = status -s
-    co = checkout
-    cob = checkout -b
     sw = switch
     swd = switch --detach
-    swc = switch -c
+    swc = switch --create
     b = branch
 
     # list aliases
