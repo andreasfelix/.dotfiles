@@ -2,6 +2,12 @@
     email = felix.andreas95@googlemail.com
     name = Felix Andreas
 
+[core]
+	excludesfile = ~/.gitignore
+
+[pull]
+	ff = only
+
 [alias] # based on https://gist.github.com/mwhite/6887990
     l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%f%Cblue\\ [%cn]" --decorate --date=short
     la = l --all
@@ -13,7 +19,7 @@
     cm = commit --message
     m = commit --amend --verbose
     mn = commit --amend --verbose --no-edit
-    ca = "!git aa && git commit --verbose"
+    ca = "!git aa && git c"
     cam = "!git aa && git cm"
     pa = "!git ca ; git push"
     pam = "!f() { git aa && git cm \"$1\" ; git push ; }; f"
@@ -35,8 +41,8 @@
     # list branches sorted by last modified
     lsb = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
 
-    # show all (squash-)merged branches (based on https://stackoverflow.com/questions/43489303)
-    show-merged = "! \
+    # list all (squash-)merged branches (based on https://stackoverflow.com/questions/43489303)
+    ls-merged = "! \
         git switch -q master && \
         git for-each-ref refs/heads/ '--format=%(refname:short)' | \
         while read branch; do \
@@ -45,6 +51,3 @@
                 echo $branch; \
             esac; \
         done"
-
-[pull]
-	ff = only
