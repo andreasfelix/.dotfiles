@@ -1,24 +1,26 @@
 {
+  /* Behavior */
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
+  "update.mode": "manual", /* disable update notifications */
+  "git.confirmSync": false,
+  "explorer.confirmDragAndDrop": false,
+  /* Looks */
   "workbench.colorTheme": "GitHub Light",
   "workbench.editor.tabSizing": "shrink",
-  "window.menuBarVisibility": "visible",
-  "window.titleBarStyle": "custom",
   "window.zoomLevel": 0,
-  "git.confirmSync": false,
-  /* editor */
+  "window.menuBarVisibility": "toggle",
+  /* Editor */
+  // "files.insertFinalNewline": true, /* conflicts with default HTML formatter */
   "editor.mouseWheelZoom": true,
-  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
   "editor.fontFamily": "JetBrains Mono, Ubuntu Mono",
   "editor.formatOnSave": true,
-  // "files.insertFinalNewline": true, /* conflicts with default HTML formatter */
   "editor.renderLineHighlight": "gutter",
   "editor.cursorBlinking": "solid",
   "editor.wordWrap": "on",
   "editor.minimap.enabled": false,
   "editor.scrollBeyondLastColumn": 0,
-  "editor.tabCompletion": "on",
   "editor.rulers": [
     88,
     100,
@@ -31,15 +33,12 @@
   "emmet.triggerExpansionOnTab": true,
   /* Python */
   "python.formatting.provider": "black",
-  "python.dataScience.askForKernelRestart": false,
-  "python.testing.pytestEnabled": true,
   "python.linting.pylintArgs": [
     "--generate-members"
   ],
   "python.testing.autoTestDiscoverOnSaveEnabled": false,
-  "python.dataScience.sendSelectionToInteractiveWindow": true,
   "python.terminal.activateEnvironment": false,
-  /* c/c++ */
+  /* C/C++ */
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }",
   /* PLUGINS */
   "cSpell.enabledLanguageIds": [
@@ -54,11 +53,10 @@
   "bracket-pair-colorizer-2.unmatchedScopeColor": "#b71540",
   "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
   "bracket-pair-colorizer-2.showVerticalScopeLine": false,
-  "explorer.confirmDragAndDrop": false,
   "liveServer.settings.donotShowInfoMsg": true,
   "liveServer.settings.host": "0.0.0.0",
   "mesonbuild.configureOnOpen": true,
-  /* vim */
+  /* Vim */
   "vim.useCtrlKeys": false,
   "vim.handleKeys": {
     "<C-c>": false,
@@ -69,7 +67,7 @@
   "vim.easymotion": true,
   "vim.easymotionMarkerForegroundColorOneChar": "#000",
   "vim.easymotionMarkerForegroundColorTwoCharFirst": "#000",
-  "vim.easymotionMarkerForegroundColorTwoCharSecond": "#000",
+  "vim.easymotiorMarkerForegroundColorTwoCharSecond": "#000",
   "vim.easymotionMarkerBackgroundColor": "#FFDF5D",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
@@ -129,7 +127,7 @@
       ]
     }
   ],
-  /* neovim */
+  /* Neovim */
   "vim.enableNeovim": true,
   "vim.neovimPath": "/home/felix/.nix-profile/bin/nvim",
   "vscode-neovim.neovimExecutablePaths.linux": "/home/felix/.nix-profile/bin/nvim",
@@ -141,5 +139,7 @@
     "MADX",
     "Twiss",
     "quadrupoles"
-  ]
+  ],
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 }
