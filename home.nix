@@ -1,20 +1,34 @@
 { config, pkgs, lib, ... }:
 
+# TODO: use nixGL to patch programs that use OpenGL (e.g. blender and obs)
+# let 
+#   nixGLIntel = (
+#     pkgs.callPackage "${builtins.fetchTarball {
+#       url = https://github.com/guibou/nixGL/archive/7d6bc1b21316bab6cf4a6520c2639a11c25a220e.tar.gz;
+#       sha256 = "02y38zmdplk7a9ihsxvnrzhhv7324mmf5g8hmxqizaid5k5ydpr3";
+#     }}/nixGL.nix" {}
+#   ).nixGLIntel;
+# in 
+# TODO: use something like this:
+#     ''
+#     #!/bin/sh
+#     ${nixGLIntel}/bin/nixGLIntel ${pkgs.obs-studio} "$@"
+#     '';
+
 {
   programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
-
+  fonts.fontconfig.enable = true;
   # does overwrite .bashrc and .profile, which disables autocompletion and colored ls
   # targets.genericLinux.enable = true; 
 
-  home = {
+ home = {
     activation.dotfiles = lib.hm.dag.entryAfter [ "writeBoundary" ] (builtins.readFile ./install.sh);
     sessionVariables = {
       EDITOR = "nvim";
       XDG_DATA_DIRS="\${HOME}/.nix-profile/share:\${XDG_DATA_DIRS}";
       PATH="$HOME/go/bin:$PATH";
       # LD_LIBRARY_PATH="\${LD_LIBRARY_PATH}:${pkgs.stdenv.cc.cc.lib}/lib"; # cannot import pandas or scipy
-      # QT_XCB_GL_INTEGRATION = "none"; # fix: "Could not initialize GLX"
     };
     packages = with pkgs; [
       # desktop
@@ -23,10 +37,11 @@
       vscode
       nextcloud-client
       # media
-      ffmpeg
-      blender
       gimp
       inkscape
+      blender
+      ffmpeg
+      vlc
       # developing
       git
       docker
@@ -34,12 +49,14 @@
       # clang # shadows system ld
       # # creates virtual env. does not allow to install other packages see:
       # # https://nixos.org/manual/nixpkgs/stable/#python
-      (python38.withPackages(ps: with ps; [ pip numpy matplotlib scipy pandas requests pytest pylint black isort ]))
+      # (python38.withPackages(ps: with ps; [ pip numpy matplotlib scipy pandas httpx pytest pylint mypy black rope isort ]))
+      pypy3
       poetry
       nodejs
       go
       rustc
       cargo
+      vala-language-server
       # cli utils
       bat
       curl
@@ -47,9 +64,12 @@
       fd
       fzf
       hyperfine
-      zoxide
+      neofetch
       ripgrep
+      # starship # better prompt
       tree
+      tldr
+      zoxide
       # fonts
       jetbrains-mono
     ];
@@ -95,6 +115,9 @@
         vim-commentary
       ];
     };
+    obs-studio = {
+      enable = true;
+      plugins = with pkgs; [ obs-v4l2sink ];
   };
 
   services.nextcloud-client.enable = true;
