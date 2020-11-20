@@ -16,7 +16,7 @@ alias open='xdg-open'
 alias trash='gio trash'
 
 # elementary
-export G_MESSAGES_DEBUG=all
+alias gdebug="export G_MESSAGES_DEBUG=all"
 files() { nohup io.elementary.files -t $([ $# -gt 0 ] && echo "$@" || echo "." ) &>/dev/null & }
 alias ebuild="rm -rf build ; meson build --prefix=/usr && ninja -C build"
 # alias reinstall_granite="sudo apt install --reinstall gir1.2-granite-1.0 granite-demo libgranite-common libgranite-dev libgranite5"
