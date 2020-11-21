@@ -57,6 +57,7 @@
       rustc
       cargo
       vala-language-server
+      wasmer
       # cli utils
       bat
       curl
