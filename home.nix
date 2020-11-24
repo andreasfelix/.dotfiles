@@ -1,21 +1,13 @@
 { config, pkgs, lib, ... }:
 
-# TODO: use nixGL to patch programs that use OpenGL (e.g. blender and obs)
-# let 
-#   nixGLIntel = (
-#     pkgs.callPackage "${builtins.fetchTarball {
-#       url = https://github.com/guibou/nixGL/archive/7d6bc1b21316bab6cf4a6520c2639a11c25a220e.tar.gz;
-#       sha256 = "02y38zmdplk7a9ihsxvnrzhhv7324mmf5g8hmxqizaid5k5ydpr3";
-#     }}/nixGL.nix" {}
-#   ).nixGLIntel;
-# in 
-# TODO: use something like this:
-#     ''
-#     #!/bin/sh
-#     ${nixGLIntel}/bin/nixGLIntel ${pkgs.obs-studio} "$@"
-#     '';
-
-{
+let # use nixGL to patch programs that use OpenGL (e.g. blender and obs)
+  nixGLIntel = (
+    pkgs.callPackage "${builtins.fetchTarball {
+      url = https://github.com/guibou/nixGL/archive/7d6bc1b21316bab6cf4a6520c2639a11c25a220e.tar.gz;
+      sha256 = "02y38zmdplk7a9ihsxvnrzhhv7324mmf5g8hmxqizaid5k5ydpr3";
+    }}/nixGL.nix" {}
+  ).nixGLIntel;
+in {
   programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
   fonts.fontconfig.enable = true;
@@ -36,6 +28,7 @@
       google-chrome
       vscode
       nextcloud-client
+      nixGLIntel
       # media
       gimp
       inkscape
@@ -126,6 +119,7 @@
 
   # alternative to home.activation.dotfiles, but makes dotfiles readonly
   # -> other programs cannot edit (e.g. vscode cannot edit settings.json)
+  # see: https://github.com/nix-community/home-manager/issues/257
   # home.file = {
   #   ".bash_aliases".source = ./aliases.bash;
   #   ".bash_config".source = ./config.bash;
