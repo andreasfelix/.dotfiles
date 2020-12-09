@@ -8,18 +8,18 @@
   /* Looks */
   "workbench.colorTheme": "GitHub Light",
   "workbench.editor.tabSizing": "shrink",
-  "window.zoomLevel": 0,
   "window.menuBarVisibility": "toggle",
+  "window.zoomLevel": 0,
   /* Editor */
   // "files.insertFinalNewline": true, /* conflicts with default HTML formatter */
-  "editor.mouseWheelZoom": true,
-  "editor.fontLigatures": true,
-  "editor.fontFamily": "JetBrains Mono, Ubuntu Mono",
-  "editor.formatOnSave": true,
-  "editor.renderLineHighlight": "gutter",
   "editor.cursorBlinking": "solid",
-  "editor.wordWrap": "on",
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
+  "editor.mouseWheelZoom": true,
+  "editor.renderLineHighlight": "gutter",
+  "editor.renderWhitespace": "trailing",
   "editor.scrollBeyondLastColumn": 0,
   "editor.rulers": [
     88,
@@ -27,17 +27,16 @@
     120
   ],
   "[markdown]": {
-    "editor.wordWrapColumn": 88,
-    "editor.wordWrap": "wordWrapColumn"
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 88
   },
+  /* HTML */
   "emmet.triggerExpansionOnTab": true,
   /* Python */
   "python.formatting.provider": "black",
   "python.linting.pylintArgs": [
     "--generate-members"
   ],
-  "python.testing.autoTestDiscoverOnSaveEnabled": false,
-  "python.terminal.activateEnvironment": false,
   /* C/C++ */
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }",
   /* PLUGINS */
@@ -56,7 +55,14 @@
   "liveServer.settings.donotShowInfoMsg": true,
   "liveServer.settings.host": "0.0.0.0",
   "mesonbuild.configureOnOpen": true,
-  /* Vim */
+  /* Neovim */
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/home/felix/.nix-profile/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.linux": "/home/felix/.nix-profile/bin/nvim",
+  "vscode-neovim.useCtrlKeysForNormalMode": false,
+  "vscode-neovim.useCtrlKeysForInsertMode": false,
+  /* VSCodeVim */
+  "vim.foldfix": true,
   "vim.useCtrlKeys": false,
   "vim.handleKeys": {
     "<C-c>": false,
@@ -127,19 +133,4 @@
       ]
     }
   ],
-  /* Neovim */
-  "vim.enableNeovim": true,
-  "vim.neovimPath": "/home/felix/.nix-profile/bin/nvim",
-  "vscode-neovim.neovimExecutablePaths.linux": "/home/felix/.nix-profile/bin/nvim",
-  "vscode-neovim.useCtrlKeysForNormalMode": false,
-  "vscode-neovim.useCtrlKeysForInsertMode": false,
-  /* Spelling should be in workspace-specific settings */
-  "cSpell.userWords": [
-    "BESSY",
-    "MADX",
-    "Twiss",
-    "quadrupoles"
-  ],
-  "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 }
