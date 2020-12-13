@@ -9,31 +9,34 @@
 	ff = only
 
 [alias] # based on https://gist.github.com/mwhite/6887990
-    l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%f%Cblue\\ [%cn]" --decorate --date=short
-    la = l --all
+    test  = !echo $1 && echo done && :
+    l     = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%f%Cblue\\ [%cn]" --decorate --date=short
+    la    = l --all
     graph = l --graph --all
 
-    a = add
-    aa = add --all
-    c = commit --verbose
-    cm = commit --message
-    m = commit --amend --verbose
-    mn = commit --amend --verbose --no-edit
-    ca = "!git aa && git c"
-    cam = "!git aa && git cm"
-    pa = "!git ca ; git push"
-    pam = "!f() { git aa && git cm \"$1\" ; git push ; }; f"
+    a     = add
+    aa    = a --all
+    c     = commit --verbose
+    cm    = c --message
+    m     = c --amend
+    mn    = c --no-edit
+    cp    = !git c && git push
+    cmp   = !git cm "$1" && git push && :
+    aac   = !git aa && git c
+    aacm  = !git aa && git cm
+    aacp  = !git aa && git cp
+    aacmp = !git aa && git cmp
 
-    d = diff
-    ds = diff --stat
-    dc = diff --cached
+    d     = diff
+    ds    = diff --stat
+    dc    = diff --cached
 
-    s = status -uall
-    ss = status -s
-    sw = switch
-    swd = switch --detach
-    swc = switch --create
-    b = branch
+    s     = status -uall
+    ss    = status -s
+    sw    = switch
+    swd   = switch --detach
+    swc   = switch --create
+    b     = branch
 
     # list aliases
     lsa = "!git config -l | grep alias | cut -c 7-"
@@ -42,12 +45,15 @@
     lsb = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
 
     # list all (squash-)merged branches (based on https://stackoverflow.com/questions/43489303)
-    ls-merged = "! \
-        git switch -q master && \
+    ls-merged = "!f() { \
+        base=$1 ; \
+        if [ -z $base ] ; then echo first argument must be name of base branch; exit 1; fi ; \
+        git switch -q $base && \
         git for-each-ref refs/heads/ '--format=%(refname:short)' | \
         while read branch; do \
-            mergeBase=$(git merge-base master $branch); \
-            case $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) in ('-'*) \
+            mergeBase=$(git merge-base $base $branch); \
+            case $(git cherry $base $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) in ('-'*) \
                 echo $branch; \
             esac; \
-        done"
+        done \
+    }; f"
