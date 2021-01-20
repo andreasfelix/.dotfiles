@@ -1,4 +1,5 @@
 {
+  "remote.SSH.useLocalServer": false,
   /* Behavior */
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
@@ -27,6 +28,10 @@
     120
   ],
   "[markdown]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 88
+  },
+  "[restructuredtext]": {
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 88
   },
@@ -133,5 +138,5 @@
       ]
     }
   ],
-  "workbench.sideBar.location": "right",
+  "workbench.sideBar.location": "right"
 }

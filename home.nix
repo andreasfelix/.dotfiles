@@ -27,13 +27,13 @@ in {
       firefox
       google-chrome
       vscode
-      nextcloud-client
+      # nextcloud-client
       nixGLIntel
       # media
       gimp
       inkscape
       blender
-      ffmpeg
+      ffmpeg-full
       vlc
       # developing
       git
@@ -44,13 +44,19 @@ in {
       # # https://nixos.org/manual/nixpkgs/stable/#python
       # (python38.withPackages(ps: with ps; [ pip numpy matplotlib scipy pandas httpx pytest pylint mypy black rope isort ]))
       pypy3
-      poetry
+      # poetry
       nodejs
+      yarn
+      nodePackages.live-server
       go
       rustc
       cargo
+      rust-analyzer
       vala-language-server
       wasmer
+      # cli tools
+      htop
+      nmap
       # cli utils
       bat
       curl
@@ -115,7 +121,7 @@ in {
     };
   };
 
-  services.nextcloud-client.enable = true;
+  # services.nextcloud-client.enable = true;
 
   # alternative to home.activation.dotfiles, but makes dotfiles readonly
   # -> other programs cannot edit (e.g. vscode cannot edit settings.json)
