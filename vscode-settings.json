@@ -44,6 +44,11 @@
   ],
   /* C/C++ */
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }",
+  /* Rust */
+  "rust-analyzer.server.path": "~/.nix-profile/bin/rust-analyzer",
+  // "rust-analyzer.rustfmt.overrideCommand": [
+  //   "~/.nix-profile/bin/rust-rustfmt"
+  // ],
   /* PLUGINS */
   "cSpell.enabledLanguageIds": [
     "markdown",
@@ -61,12 +66,12 @@
   "liveServer.settings.host": "0.0.0.0",
   "mesonbuild.configureOnOpen": true,
   /* Neovim */
-  "vim.enableNeovim": true,
-  "vim.neovimPath": "/home/felix/.nix-profile/bin/nvim",
-  "vscode-neovim.neovimExecutablePaths.linux": "/home/felix/.nix-profile/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.linux": "~/.nix-profile/bin/nvim",
   "vscode-neovim.useCtrlKeysForNormalMode": false,
   "vscode-neovim.useCtrlKeysForInsertMode": false,
   /* VSCodeVim */
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/home/felix/.nix-profile/bin/nvim",
   "vim.foldfix": true,
   "vim.useCtrlKeys": false,
   "vim.handleKeys": {
@@ -78,7 +83,7 @@
   "vim.easymotion": true,
   "vim.easymotionMarkerForegroundColorOneChar": "#000",
   "vim.easymotionMarkerForegroundColorTwoCharFirst": "#000",
-  "vim.easymotiorMarkerForegroundColorTwoCharSecond": "#000",
+  "vim.easymotionMarkerForegroundColorTwoCharSecond": "#000",
   "vim.easymotionMarkerBackgroundColor": "#FFDF5D",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
@@ -138,5 +143,15 @@
       ]
     }
   ],
-  "workbench.sideBar.location": "right"
+  "workbench.editorAssociations": [
+    {
+      "viewType": "hexEditor.hexedit",
+      "filenamePattern": "*.out"
+    },
+    {
+      "viewType": "hexEditor.hexedit",
+      "filenamePattern": "*.wasm"
+    }
+  ],
+  // "rust-analyzer.inlayHints.typeHints": false,
 }

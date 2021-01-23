@@ -6,10 +6,6 @@ set splitbelow splitright                      " splits open at bottom and right
 autocmd FileType * setlocal formatoptions-=cro " don't comment new lines
 
 " standard editor commands
-nnoremap <Tab> >>
-nnoremap <S-Tab> <<
-vnoremap <Tab> >gv
-vnoremap <S-Tab> <gv
 noremap <C-s> :w <Enter>
 noremap <C-a> moGVgg
 " needs +clipboard (check with vim --version)
@@ -17,11 +13,13 @@ vnoremap <C-c> "*y :let @+=@*<CR>gv
 vnoremap <C-x> "+ygvd
 noremap <C-v> "+P
 nnoremap <C-f> /
-nnoremap <PageUp> 4<C-y>
-nnoremap <PageDown> 4<C-e>
-" needs vim-commentary
+" toggle comment with ctrl + / (needs vim-commentary)
 nnoremap <C-_> :Commentary<CR>
 vnoremap <C-_> :Commentary<CR>gv
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 
 " easier moving of code blocks
 vnoremap > >gv

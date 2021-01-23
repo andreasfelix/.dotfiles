@@ -50,10 +50,12 @@ in {
       nodePackages.live-server
       go
       rustc
+      rustfmt
       cargo
       rust-analyzer
       vala-language-server
       wasmer
+      wabt
       # cli tools
       htop
       nmap
