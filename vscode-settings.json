@@ -10,7 +10,6 @@
   "workbench.colorTheme": "GitHub Light",
   "workbench.editor.tabSizing": "shrink",
   "window.menuBarVisibility": "toggle",
-  "window.zoomLevel": 0,
   /* Editor */
   // "files.insertFinalNewline": true, /* conflicts with default HTML formatter */
   "editor.cursorBlinking": "solid",
@@ -19,6 +18,7 @@
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   "editor.mouseWheelZoom": true,
+  "editor.renderControlCharacters": true,
   "editor.renderLineHighlight": "gutter",
   "editor.renderWhitespace": "trailing",
   "editor.scrollBeyondLastColumn": 0,
@@ -28,10 +28,6 @@
     120
   ],
   "[markdown]": {
-    "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 88
-  },
-  "[restructuredtext]": {
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 88
   },
@@ -45,7 +41,9 @@
   /* C/C++ */
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }",
   /* Rust */
+  "rust-analyzer.checkOnSave.command": "clippy",
   "rust-analyzer.server.path": "~/.nix-profile/bin/rust-analyzer",
+  "rust-analyzer.inlayHints.typeHints": false,
   // "rust-analyzer.rustfmt.overrideCommand": [
   //   "~/.nix-profile/bin/rust-rustfmt"
   // ],
@@ -143,15 +141,4 @@
       ]
     }
   ],
-  "workbench.editorAssociations": [
-    {
-      "viewType": "hexEditor.hexedit",
-      "filenamePattern": "*.out"
-    },
-    {
-      "viewType": "hexEditor.hexedit",
-      "filenamePattern": "*.wasm"
-    }
-  ],
-  // "rust-analyzer.inlayHints.typeHints": false,
 }

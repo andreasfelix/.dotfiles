@@ -1,10 +1,10 @@
 { config, pkgs, lib, ... }:
 
-let # use nixGL to patch programs that use OpenGL (e.g. blender and obs)
+let # use nixGL to patch programs that use OpenGL (e.g. blender, obs, google-chrome??)
   nixGLIntel = (
     pkgs.callPackage "${builtins.fetchTarball {
-      url = https://github.com/guibou/nixGL/archive/7d6bc1b21316bab6cf4a6520c2639a11c25a220e.tar.gz;
-      sha256 = "02y38zmdplk7a9ihsxvnrzhhv7324mmf5g8hmxqizaid5k5ydpr3";
+      url = https://github.com/guibou/nixGL/archive/3ab1aae698dc45d11cc2699dd4e36de9cdc5aa4c.tar.gz;
+      sha256 = "192k02fd2s3mfpkdwjghiggcn0ighwvmw0fqrzf0vax52v6l9nch";
     }}/nixGL.nix" {}
   ).nixGLIntel;
 in {
@@ -12,109 +12,97 @@ in {
   nixpkgs.config.allowUnfree = true;
   fonts.fontconfig.enable = true;
   # does overwrite .bashrc and .profile, which disables autocompletion and colored ls
-  # targets.genericLinux.enable = true; 
+  # targets.genericLinux.enable = true;
 
  home = {
     activation.dotfiles = lib.hm.dag.entryAfter [ "writeBoundary" ] (builtins.readFile ./install.sh);
     sessionVariables = {
       EDITOR = "nvim";
       XDG_DATA_DIRS="\${HOME}/.nix-profile/share:\${XDG_DATA_DIRS}";
-      PATH="$HOME/go/bin:$PATH";
+      PATH="$HOME/.cargo/bin:$HOME/go/bin:$PATH";
+      CHTSH_QUERY_OPTIONS="style=manni";
       # LD_LIBRARY_PATH="\${LD_LIBRARY_PATH}:${pkgs.stdenv.cc.cc.lib}/lib"; # cannot import pandas or scipy
     };
     packages = with pkgs; [
       # desktop
-      firefox
-      google-chrome
+      nixGLIntel
+      # firefox
+      # google-chrome # webgl does not work properly (e.g. google-maps is not 3d)
       vscode
       # nextcloud-client
-      nixGLIntel
       # media
-      gimp
-      inkscape
-      blender
-      ffmpeg-full
-      vlc
-      # developing
-      git
-      docker
-      docker-compose
-      # clang # shadows system ld
+      gimp inkscape blender ffmpeg-full vlc
+      # git
+      git git-lfs
+      # databases
+      redis
+      # nix
+      nixfmt nix-index
+      # docker
+      docker docker-compose
+      # c
+      # gcc # clang # shadows system ld
+      # python
       # # creates virtual env. does not allow to install other packages see:
       # # https://nixos.org/manual/nixpkgs/stable/#python
       # (python38.withPackages(ps: with ps; [ pip numpy matplotlib scipy pandas httpx pytest pylint mypy black rope isort ]))
-      pypy3
-      # poetry
+      pypy3 poetry
+      # javascript
       nodejs
       yarn
       nodePackages.live-server
+      # go
       go
-      rustc
-      rustfmt
-      cargo
-      rust-analyzer
+      # rust
+      rustup rust-analyzer # rustc cargo rustfmt clippy
+      # vala
       vala-language-server
-      wasmer
-      wabt
+      # wasm
+      wasmer wabt
       # cli tools
-      htop
-      nmap
+      htop radare2 nmap # starship
       # cli utils
-      bat
-      curl
-      exa
-      fd
-      fzf
-      hyperfine
-      neofetch
-      ripgrep
-      # starship # better prompt
-      tree
-      tldr
-      zoxide
+      bat cht-sh curl exa fd fzf hyperfine hexyl neofetch pastel ripgrep tealdeer zoxide
       # fonts
       jetbrains-mono
     ];
   };
 
   programs = {
-   # sames issues as targets.genericLinux.enable: overwrites default bashrc
-   # bash = {
-   #   enable = true;
-   #   initExtra = ''
-   #     . ~/.bash_aliases
-   #     . ~/.bash_config
-   #   '';
-   #  };
+    # sames issues as targets.genericLinux.enable: overwrites default bashrc
+    # bash = {
+    #   enable = true;
+    #   shellAliases = {
+    #   };
+    #   initExtra = ''
+    #     . ~/.bash_aliases
+    #     . ~/.bash_config
+    #   '';
+    # };
     bat = {
       enable = true;
-      config = {
-        theme = "GitHub";
-      };
+      config.theme = "GitHub";
     };
     direnv = {
       enable = true;
       enableNixDirenvIntegration = true;
     };
-    firefox = {
-      enable = true;
-      profiles = {
-        myprofile = {
-          settings = {
-            "general.smoothScroll" = false;
-          };
-        };
-      };
-    };
     neovim = {
       enable = true;
       viAlias = true;
       vimAlias = true;
+      vimdiffAlias = true;
       extraConfig = builtins.readFile ./init.vim;
+      withNodeJs = true;
+      withPython3 = true;
+      extraPackages = with pkgs; [ (python3.withPackages (ps: with ps; [ black isort pylint ])) ];
       plugins = with pkgs.vimPlugins; [
         vim-nix
         vim-surround
         vim-commentary
+        coc-nvim
+        coc-pyright
+        coc-rust-analyzer
       ];
     };
     obs-studio = {

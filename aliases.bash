@@ -4,16 +4,21 @@ alias reshell='exec sudo --login --user $USER'
 alias view_changed_packages='sudo debsums -c | xargs -rd '\n' -- dpkg -S | cut -d : -f 1 | sort -u'
 
 # file management
-alias ll='ls -alFh'
 c() { builtin cd "$@" && clear && ll ; }
 alias cd..='cd ..'
 alias ..='cd ..'
-alias ...="cd ../.."
-alias ....="cd ../../.."
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias cd-='cd -'
 mkcd() { mkdir -p "$1" && cd "$1" ; }
 alias open='xdg-open'
 alias trash='gio trash'
+if command -v exa &> /dev/null; then
+  alias ll='exa -alFhg --git'
+  alias lt='exa -T'
+else
+  alias ll='ls -alFh'
+fi
 
 # elementary
 alias gdebug="export G_MESSAGES_DEBUG=all"
