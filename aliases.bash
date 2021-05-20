@@ -14,8 +14,8 @@ mkcd() { mkdir -p "$1" && cd "$1" ; }
 alias open='xdg-open'
 alias trash='gio trash'
 if command -v exa &> /dev/null; then
-  alias ll='exa -alFhg --git'
-  alias lt='exa -T'
+  alias ll='exa --git -alFhg'
+  alias lt='exa --git -alFhgT'
 else
   alias ll='ls -alFh'
 fi

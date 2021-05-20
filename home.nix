@@ -28,7 +28,7 @@ in {
       nixGLIntel
       # firefox
       # google-chrome # webgl does not work properly (e.g. google-maps is not 3d)
-      vscode
+      vscode # vscodium # does not support live share
       # nextcloud-client
       # media
       gimp inkscape blender ffmpeg-full vlc
@@ -48,15 +48,13 @@ in {
       # (python38.withPackages(ps: with ps; [ pip numpy matplotlib scipy pandas httpx pytest pylint mypy black rope isort ]))
       pypy3 poetry
       # javascript
-      nodejs
-      yarn
-      nodePackages.live-server
+      nodejs nodePackages.pnpm nodePackages.live-server
       # go
       go
       # rust
       rustup rust-analyzer # rustc cargo rustfmt clippy
       # vala
-      vala-language-server
+      vala-language-server # vala-lint
       # wasm
       wasmer wabt
       # cli tools
