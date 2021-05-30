@@ -2,10 +2,12 @@
 
 let # use nixGL to patch programs that use OpenGL (e.g. blender, obs, google-chrome??)
   nixGLIntel = (
-    pkgs.callPackage "${builtins.fetchTarball {
-      url = https://github.com/guibou/nixGL/archive/3ab1aae698dc45d11cc2699dd4e36de9cdc5aa4c.tar.gz;
-      sha256 = "192k02fd2s3mfpkdwjghiggcn0ighwvmw0fqrzf0vax52v6l9nch";
-    }}/nixGL.nix" {}
+    pkgs.callPackage "${
+      builtins.fetchTarball {
+        url = https://github.com/guibou/nixGL/archive/3ab1aae698dc45d11cc2699dd4e36de9cdc5aa4c.tar.gz;
+        sha256 = "192k02fd2s3mfpkdwjghiggcn0ighwvmw0fqrzf0vax52v6l9nch";
+      }
+    }/nixGL.nix" { }
   ).nixGLIntel;
 in {
   programs.home-manager.enable = true;
@@ -18,9 +20,9 @@ in {
     activation.dotfiles = lib.hm.dag.entryAfter [ "writeBoundary" ] (builtins.readFile ./install.sh);
     sessionVariables = {
       EDITOR = "nvim";
-      XDG_DATA_DIRS="\${HOME}/.nix-profile/share:\${XDG_DATA_DIRS}";
-      PATH="$HOME/.cargo/bin:$HOME/go/bin:$PATH";
-      CHTSH_QUERY_OPTIONS="style=manni";
+      XDG_DATA_DIRS = "\${HOME}/.nix-profile/share:\${XDG_DATA_DIRS}";
+      PATH = "$HOME/.cargo/bin:$HOME/go/bin:$PATH";
+      CHTSH_QUERY_OPTIONS = "style=manni";
       # LD_LIBRARY_PATH="\${LD_LIBRARY_PATH}:${pkgs.stdenv.cc.cc.lib}/lib"; # cannot import pandas or scipy
     };
     packages = with pkgs; [
