@@ -57,12 +57,17 @@ in {
       vala-language-server # vala-lint
       # wasm
       wasmer wabt
-      # cli tools
-      htop radare2 nmap # starship
+      # zig
+      zig
+      # shell prompt
+      starship
+      # cli programs
+      htop radare2 nmap 
       # cli utils
       bat cht-sh curl exa fd fzf hyperfine hexyl neofetch pastel ripgrep tealdeer zoxide
       # fonts
       jetbrains-mono
+      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
   };
 

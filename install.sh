@@ -9,9 +9,11 @@ ln -sfv $dotfiles/config.nix $HOME/.config/nixpkgs/config.nix
 ln -sfv $dotfiles/gitconfig $HOME/.gitconfig
 ln -sfv $dotfiles/ideavimrc $HOME/.ideavimrc
 ln -sfv $dotfiles/inputrc $HOME/.inputrc
-# ln -sfv $dotfiles/init.vim $HOME/.config/nvim/init.vim # handled by home-manager
+ln -sfv $dotfiles/init.vim $HOME/.config/nvim/init.vim # handled by home-manager
 ln -sfv $dotfiles/init.vim $HOME/.vimrc
+ln -sfv $dotfiles/starship.toml $HOME/.config/starship.toml
 ln -sfv $dotfiles/vscode-settings.json $HOME/.config/Code/User/settings.json
+# ln -sfv $dotfiles/vscode-settings.json $HOME/.config/VSCodium/User/settings.json
 ln -sfv $dotfiles/focus-application/focus-application.sh $HOME/.local/bin/focus-application
 
 if [ ! -f $HOME/.bashrc ] || ! grep -q '.bash_config' $HOME/.bashrc ; then

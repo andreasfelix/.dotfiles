@@ -1,0 +1,21 @@
+add_newline = false
+
+[username]
+show_always = true
+format = "[$user](bold red) "
+
+[hostname]
+ssh_only = false
+format = "at [$hostname](bold blue) "
+
+[directory]
+format = "in [$path]($style)[$read_only]($read_only_style) "
+
+[git_branch]
+format = "on [$branch](bold green)"
+
+[character] # use inputrc to display vim mode
+format = " "
+
+[jobs] # for some reason the symbol is also shown when switching directories
+disabled = true
