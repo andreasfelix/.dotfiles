@@ -39,10 +39,11 @@ in {
       # databases
       redis
       # nix
-      nixfmt nix-index
+      nix-index rnix-lsp nixpkgs-fmt
       # docker
       docker docker-compose
       # c
+      valgrind
       # gcc # clang # shadows system ld
       # python
       # # creates virtual env. does not allow to install other packages see:
@@ -65,8 +66,10 @@ in {
       starship
       # cli programs
       htop radare2 nmap 
-      # cli utils
-      bat cht-sh curl exa fd fzf hyperfine hexyl neofetch pastel ripgrep tealdeer zoxide
+      buku bukubrow
+      yj
+      # modern unix commands
+      bat cht-sh curl duf du-dust exa fd fzf hyperfine hexyl mcfly neofetch pastel ripgrep tealdeer zoxide
       # fonts
       jetbrains-mono
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
@@ -90,7 +93,7 @@ in {
     };
     direnv = {
       enable = true;
-      enableNixDirenvIntegration = true;
+      nix-direnv.enable = true;
     };
     neovim = {
       enable = true;
