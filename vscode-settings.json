@@ -6,7 +6,8 @@
   "git.confirmSync": false,
   "explorer.confirmDragAndDrop": false,
   /* Looks */
-  "workbench.colorTheme": "GitHub Light",
+  "workbench.colorTheme": "GitHub Light Default",
+  "workbench.iconTheme": "file-icons",
   "workbench.editor.tabSizing": "shrink",
   "window.menuBarVisibility": "toggle",
   /* Editor */
@@ -45,10 +46,8 @@
   /* Rust */
   "rust-analyzer.checkOnSave.command": "clippy",
   "rust-analyzer.server.path": "~/.nix-profile/bin/rust-analyzer",
-  "rust-analyzer.inlayHints.typeHints": false,
-  // "rust-analyzer.rustfmt.overrideCommand": [
-  //   "~/.nix-profile/bin/rust-rustfmt"
-  // ],
+  /* Nix */
+  "nix.enableLanguageServer": true,
   /* Windi CSS */
   "windicss.sortOnSave": true,
   /* PLUGINS */
@@ -56,16 +55,11 @@
     "markdown",
     "plaintext"
   ],
-  "bracket-pair-colorizer-2.colors": [
-    "#0a3d62",
-    "#e58e26",
-    "#079992"
-  ],
-  "bracket-pair-colorizer-2.unmatchedScopeColor": "#b71540",
-  "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
-  "bracket-pair-colorizer-2.showVerticalScopeLine": false,
   "liveServer.settings.donotShowInfoMsg": true,
   "liveServer.settings.host": "0.0.0.0",
+  /* Meson */
+  "mesonbuild.configureOnOpen": false,
+  "mesonbuild.buildFolder": "build",
   /* Neovim */
   "vscode-neovim.neovimExecutablePaths.linux": "~/.nix-profile/bin/nvim",
   "vscode-neovim.useCtrlKeysForNormalMode": false,
@@ -144,4 +138,7 @@
       ]
     }
   ],
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  }
 }
