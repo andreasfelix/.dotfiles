@@ -2,6 +2,7 @@
 alias rebash='exec sudo -u $USER bash'
 alias reshell='exec sudo --login --user $USER'
 alias view_changed_packages='sudo debsums -c | xargs -rd '\n' -- dpkg -S | cut -d : -f 1 | sort -u'
+,() { nix run n#"$1" -- "${@:2}"; }
 
 # file management
 c() { builtin cd "$@" && clear && ll ; }
@@ -15,7 +16,7 @@ alias open='xdg-open'
 alias trash='gio trash'
 if command -v exa &> /dev/null; then
   alias ll='exa --git -alFhg'
-  alias lt='exa --git -alFhgT'
+  alias lt='exa --git -alFhgT --git-ignore'
 else
   alias ll='ls -alFh'
 fi

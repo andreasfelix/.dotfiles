@@ -12,7 +12,7 @@ format = "at [$hostname](bold blue) "
 format = "in [$path]($style)[$read_only]($read_only_style) "
 
 [git_branch]
-format = "on [$branch](bold green)"
+format = "on [$branch](bold green) "
 
 [character] # use inputrc to display vim mode
 format = " "
