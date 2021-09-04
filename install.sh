@@ -1,7 +1,7 @@
 # dotfiles=$(dirname $(readlink -f $0)) # does not work with home-manager
 dotfiles=$HOME/.dotfiles
 
-mkdir -p $HOME/.local/bin $HOME/.config/nixpkgs $HOME/.config/nvim
+mkdir -p $HOME/.local/bin $HOME/.config/{nixpkgs,nu,nvim}
 
 ln -sfv $dotfiles/aliases.bash $HOME/.bash_aliases
 ln -sfv $dotfiles/config.bash $HOME/.bash_config
@@ -9,8 +9,9 @@ ln -sfv $dotfiles/config.nix $HOME/.config/nixpkgs/config.nix
 ln -sfv $dotfiles/gitconfig $HOME/.gitconfig
 ln -sfv $dotfiles/ideavimrc $HOME/.ideavimrc
 ln -sfv $dotfiles/inputrc $HOME/.inputrc
-ln -sfv $dotfiles/init.vim $HOME/.config/nvim/init.vim # handled by home-manager
+# ln -sfv $dotfiles/init.vim $HOME/.config/nvim/init.vim # handled by home-manager
 ln -sfv $dotfiles/init.vim $HOME/.vimrc
+ln -sfv $dotfiles/nushell.toml $HOME/.config/nu/config.toml
 ln -sfv $dotfiles/starship.toml $HOME/.config/starship.toml
 ln -sfv $dotfiles/vscode-settings.json $HOME/.config/Code/User/settings.json
 # ln -sfv $dotfiles/vscode-settings.json $HOME/.config/VSCodium/User/settings.json

@@ -60,8 +60,8 @@
   /* Meson */
   "mesonbuild.configureOnOpen": false,
   "mesonbuild.buildFolder": "build",
-  /* Neovim */
-  "vscode-neovim.neovimExecutablePaths.linux": "~/.nix-profile/bin/nvim",
+  /* Neovim */ // does not support remote :(
+  // "vscode-neovim.neovimExecutablePaths.linux": "/home/felix/.nix-profile/bin/nvim",
   "vscode-neovim.useCtrlKeysForNormalMode": false,
   "vscode-neovim.useCtrlKeysForInsertMode": false,
   /* VSCodeVim */
@@ -138,7 +138,5 @@
       ]
     }
   ],
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
-  }
+  "grammarly.domain": "academic"
 }

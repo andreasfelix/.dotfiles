@@ -1,0 +1,12 @@
+skip_welcome_message = true
+disable_table_indexes = true
+prompt = "__zoxide_hook; STARSHIP_SHELL= starship prompt"
+startup = [
+    "zoxide init nushell --hook prompt | save ~/.zoxide.nu",
+    "source ~/.zoxide.nu",
+]
+table_mode = "none"
+
+[line_editor]
+keyseq_timeout_ms = 0
+edit_mode = "vi"

@@ -49,9 +49,11 @@ in {
       # # creates virtual env. does not allow to install other packages see:
       # # https://nixos.org/manual/nixpkgs/stable/#python
       # (python38.withPackages(ps: with ps; [ pip numpy matplotlib scipy pandas httpx pytest pylint mypy black rope isort ]))
-      pypy3 poetry
+      # poetry
+      pypy3 
       # javascript
-      nodejs nodePackages.pnpm nodePackages.live-server
+      nodejs yarn nodePackages.pnpm 
+      nodePackages.live-server
       # go
       go
       # rust
@@ -66,10 +68,9 @@ in {
       starship
       # cli programs
       htop radare2 nmap 
-      buku bukubrow
       yj
       # modern unix commands
-      bat cht-sh curl duf du-dust exa fd fzf hyperfine hexyl mcfly neofetch pastel ripgrep tealdeer zoxide
+      bat curl dogdns duf du-dust exa fd fzf hyperfine hexyl mcfly neofetch pastel procs ripgrep tealdeer zoxide
       # fonts
       jetbrains-mono
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
@@ -103,19 +104,21 @@ in {
       extraConfig = builtins.readFile ./init.vim;
       withNodeJs = true;
       withPython3 = true;
-      extraPackages = with pkgs; [ (python3.withPackages (ps: with ps; [ black isort pylint ])) ];
+      extraPackages = with pkgs; [ (python3.withPackages (ps: with ps; [ black isort pylint ])) nodePackages.pyright ];
       plugins = with pkgs.vimPlugins; [
+        nvim-lspconfig
+        nvim-treesitter
+        telescope-nvim
         vim-nix
         vim-surround
         vim-commentary
-        coc-nvim
-        coc-pyright
-        coc-rust-analyzer
+        # coc-nvim
+        # coc-pyright
+        # coc-rust-analyzer
       ];
     };
     obs-studio = {
       enable = true;
-      plugins = with pkgs; [ obs-v4l2sink ];
     };
   };
 

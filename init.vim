@@ -32,6 +32,12 @@ nnoremap <leader>v <C-v>
 " clear search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
+if has('nvim')
+lua << EOF
+require'lspconfig'.pyright.setup{}
+EOF
+endif
+
 if !has('nvim')
     " defaults in neovim
     syntax enable
