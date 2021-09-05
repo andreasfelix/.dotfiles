@@ -1,7 +1,7 @@
 # dotfiles=$(dirname $(readlink -f $0)) # does not work with home-manager
 dotfiles=$HOME/.dotfiles
 
-mkdir -p $HOME/.local/bin $HOME/.config/{nixpkgs,nu,nvim}
+mkdir -p $HOME/.local/bin $HOME/.config/{nixpkgs,nu,nvim,Code/User}
 
 ln -sfv $dotfiles/aliases.bash $HOME/.bash_aliases
 ln -sfv $dotfiles/config.bash $HOME/.bash_config
