@@ -52,7 +52,7 @@ in {
       # poetry
       pypy3 
       # javascript
-      nodejs yarn nodePackages.pnpm 
+      nodejs yarn nodePackages.pnpm
       nodePackages.live-server
       # go
       go
@@ -67,10 +67,9 @@ in {
       # shell prompt
       starship
       # cli programs
-      htop radare2 nmap 
-      yj
+      htop neofetch nmap radare2
       # modern unix commands
-      bat curl dogdns duf du-dust exa fd fzf hyperfine hexyl neofetch pastel procs ripgrep tealdeer zoxide
+      bat curl dogdns duf du-dust exa fd fzf hyperfine hexyl pastel procs ripgrep tealdeer xcolor yj zoxide
       # fonts
       jetbrains-mono
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })

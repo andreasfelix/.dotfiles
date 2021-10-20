@@ -119,6 +119,15 @@
       "commands": [
         "editor.action.outdentLines"
       ]
+    },
+    {
+      "before": [
+        "<leader>",
+        " "
+      ],
+      "commands": [
+        ":nohl"
+      ]
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
