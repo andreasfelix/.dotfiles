@@ -12,6 +12,7 @@
   "window.menuBarVisibility": "toggle",
   /* Editor */
   // "files.insertFinalNewline": true, /* conflicts with default HTML formatter */
+  "editor.bracketPairColorization.enabled": true,
   "editor.cursorBlinking": "solid",
   "editor.fontLigatures": true,
   "editor.fontFamily": "JetBrains Mono",

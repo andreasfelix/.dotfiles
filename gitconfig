@@ -28,6 +28,7 @@
     aacmp = !git aa && git cmp
 
     d     = diff
+    dw    = diff --word-diff
     ds    = diff --stat
     dc    = diff --cached
 

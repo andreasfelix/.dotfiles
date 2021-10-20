@@ -7,6 +7,7 @@ ln -sfv $dotfiles/aliases.bash $HOME/.bash_aliases
 ln -sfv $dotfiles/config.bash $HOME/.bash_config
 ln -sfv $dotfiles/config.nix $HOME/.config/nixpkgs/config.nix
 ln -sfv $dotfiles/gitconfig $HOME/.gitconfig
+ln -sfv $dotfiles/gitignore $HOME/.gitignore
 ln -sfv $dotfiles/ideavimrc $HOME/.ideavimrc
 ln -sfv $dotfiles/inputrc $HOME/.inputrc
 # ln -sfv $dotfiles/init.vim $HOME/.config/nvim/init.vim # handled by home-manager

@@ -7,7 +7,7 @@ let # use nixGL to patch programs that use OpenGL (e.g. blender, obs, google-chr
         url = https://github.com/guibou/nixGL/archive/3ab1aae698dc45d11cc2699dd4e36de9cdc5aa4c.tar.gz;
         sha256 = "192k02fd2s3mfpkdwjghiggcn0ighwvmw0fqrzf0vax52v6l9nch";
       }
-    }/nixGL.nix" { }
+    }/nixGL.nix" {}
   ).nixGLIntel;
 in {
   programs.home-manager.enable = true;
@@ -70,7 +70,7 @@ in {
       htop radare2 nmap 
       yj
       # modern unix commands
-      bat curl dogdns duf du-dust exa fd fzf hyperfine hexyl mcfly neofetch pastel procs ripgrep tealdeer zoxide
+      bat curl dogdns duf du-dust exa fd fzf hyperfine hexyl neofetch pastel procs ripgrep tealdeer zoxide
       # fonts
       jetbrains-mono
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
