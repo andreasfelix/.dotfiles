@@ -4,5 +4,6 @@
     [ "chrome", "google-chrome-stable", "d"],
     ["Navigator", "firefox", "r"],
     [ "code", "code", "v"],
-    [ "evince", "evince", "e"]
+    [ "evince", "evince", "e"],
+    [ "Alacritty", "'nixGLIntel alacritty'", "g" ]
 ]

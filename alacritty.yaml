@@ -1,0 +1,48 @@
+window:
+  dimensions:
+    columns: 128
+    lines: 32
+  padding:
+    x: 16
+    y: 16
+font:
+  size: 12
+  normal:
+    family: JetBrains Mono
+    style: Regular
+  bold:
+    family: JetBrains Mono
+    style: Bold
+  italic:
+    family: JetBrains Mono
+    style: Italic
+  bold_italic:
+    family: JetBrains Mono
+    style: Bold Italic
+schemes:
+  github: &github
+    # github colors
+    # https://github.com/primer/primitives/blob/main/data/colors/themes/light.ts
+    # https://github.com/primer/primitives/blob/main/data/colors/vars/component_light.ts
+    primary:
+      background: "0xffffff"
+      foreground: "0x0e141f"
+    normal:
+      black: "0x24292f"
+      red: "0xcf222e"
+      green: "0x116329"
+      yellow: "0x4d2d00"
+      blue: "0x0969da"
+      magenta: "0x8250df"
+      cyan: "0x0e9a83"
+      white: "0x6e7781"
+    bright:
+      black: "0x57606a"
+      red: "0xa40e26"
+      green: "0x1a7f37"
+      yellow: "0x633c01"
+      blue: "0x218bff"
+      magenta: "0xa475f9"
+      cyan: "0x1b7c83"
+      white: "0x3192aa"
+colors: *github
