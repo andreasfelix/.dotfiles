@@ -2,10 +2,7 @@
 alias rebash='exec sudo -u $USER bash'
 alias reshell='exec sudo --login --user $USER'
 alias view-changed-packages='sudo debsums -c | xargs -rd '\n' -- dpkg -S | cut -d : -f 1 | sort -u'
-
-# nix
-,() { nix run n#"$1" -- "${@:2}"; }
-shell() { nix shell $(printf "n#%s " "$@"); }
+alias path='echo $PATH | tr : \\n'
 
 # file management
 alias cd..='cd ..'
@@ -21,6 +18,10 @@ if command -v exa &> /dev/null; then
 else
   alias ll='ls -alFh'
 fi
+
+# nix
+,() { nix run n#"$1" -- "${@:2}"; }
+shell() { nix shell $(printf "n#%s " "$@"); }
 
 # elementary
 files() { nohup io.elementary.files -t $([ $# -gt 0 ] && echo "$@" || echo "." ) &>/dev/null & }
