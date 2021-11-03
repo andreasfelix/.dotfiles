@@ -15,7 +15,7 @@ format = "in [$path]($style)[$read_only]($read_only_style) "
 format = "on [$branch](bold green) "
 
 [character]
-format = "> "
+format = " "
 
 [jobs] # for some reason the symbol is also shown when switching directories
 disabled = true
