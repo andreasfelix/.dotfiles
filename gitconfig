@@ -19,7 +19,7 @@
     c     = commit --verbose
     cm    = c --message
     ca    = c --amend
-    can   = m --no-edit
+    can   = ca --no-edit
     cp    = !git c && git push
     cmp   = !git cm \"$1\" && git push && :
     aac   = !git aa && git c

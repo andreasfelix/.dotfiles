@@ -1,22 +1,24 @@
 { config, pkgs, lib, ... }:
 
-let # use nixGL to patch programs that use OpenGL (e.g. blender, obs, google-chrome??)
-  nixGLIntel = (
+let
+  # use nixGL to patch programs that use OpenGL (e.g. blender, obs, google-chrome??)
+  nixGL = (
     pkgs.callPackage "${
-      builtins.fetchTarball {
-        url = https://github.com/guibou/nixGL/archive/3ab1aae698dc45d11cc2699dd4e36de9cdc5aa4c.tar.gz;
-        sha256 = "192k02fd2s3mfpkdwjghiggcn0ighwvmw0fqrzf0vax52v6l9nch";
-      }
+    builtins.fetchTarball {
+      url = https://github.com/guibou/nixGL/archive/c4aa5aa15af5d75e2f614a70063a2d341e8e3461.tar.gz;
+      sha256 = "09p7pvdlf4sh35d855lgjk6ciapagrhly9fy8bdiswbylnb3pw5d";
+    }
     }/nixGL.nix" {}
-  ).nixGLIntel;
-in {
+  );
+in
+{
   programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
   fonts.fontconfig.enable = true;
   # does overwrite .bashrc and .profile, which disables autocompletion and colored ls
   # targets.genericLinux.enable = true;
 
- home = {
+  home = {
     activation.dotfiles = lib.hm.dag.entryAfter [ "writeBoundary" ] (builtins.readFile ./install.sh);
     sessionVariables = {
       EDITOR = "nvim";
@@ -27,7 +29,8 @@ in {
     };
     packages = with pkgs; [
       # desktop
-      nixGLIntel
+      # nixGL.nixGLCommon
+      nixGL.nixGLIntel
       # firefox
       # google-chrome # webgl does not work properly (e.g. google-maps is not 3d)
       vscode # vscodium # does not support live share
@@ -50,9 +53,9 @@ in {
       # # https://nixos.org/manual/nixpkgs/stable/#python
       # (python38.withPackages(ps: with ps; [ pip numpy matplotlib scipy pandas httpx pytest pylint mypy black rope isort ]))
       # poetry
-      pypy3 
+      pypy3
       # javascript
-      nodejs yarn nodePackages.pnpm
+      nodejs yarn nodePackages.pnpm 
       nodePackages.live-server
       # go
       go
@@ -107,6 +110,7 @@ in {
       plugins = with pkgs.vimPlugins; [
         nvim-lspconfig
         nvim-treesitter
+        nvim-treesitter-textobjects
         telescope-nvim
         vim-nix
         vim-surround
