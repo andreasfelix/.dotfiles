@@ -2,6 +2,7 @@
   /* Behavior */
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
+  "redhat.telemetry.enabled": false,
   "update.mode": "manual", /* disable update notifications */
   "git.confirmSync": false,
   "explorer.confirmDragAndDrop": false,
@@ -29,6 +30,10 @@
     120
   ],
   "[markdown]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 88
+  },
+  "[yaml]": {
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 88
   },
@@ -148,5 +153,11 @@
       ]
     }
   ],
-  "grammarly.domain": "academic"
+  "grammarly.domain": "academic",
+  "github.copilot.enable": {
+    "*": false,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": false
+  }
 }
