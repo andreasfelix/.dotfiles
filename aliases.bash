@@ -45,6 +45,7 @@ alias activate-canon="gphoto2 --stdout --capture-movie | ffmpeg -i - -vf format=
 alias activate-v4l2loopback="sudo modprobe v4l2loopback exclusive_caps=1 max_buffers=2"
 alias dfs='df -hx"squashfs"' # dont show snaps
 alias record-gif='ffmpeg -video_size 1920x1080 -f x11grab -i :0.0+0,420 -y video.gif -vf "fps=10,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0'
+alias start-qemu='qemu-system-x86_64 -enable-kvm -cpu host -smp 4 -m 6G -vga virtio -display sdl,gl=on -hda'
 svg2png() { for file in *.svg; do inkscape -d=768 $file -e ${file%svg}png; done ; }
 watch-cpu() { watch -n 0.5 $'mpstat 1 1 | awk \'/^Average/ {print 100-$NF,"%"}\''; }
 

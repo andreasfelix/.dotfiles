@@ -72,7 +72,7 @@
   "vim.useCtrlKeys": false,
   "vim.handleKeys": {
     "<C-c>": false,
-    "<C-d>": false,
+    "<C-d>": false
   },
   "vim.hlsearch": true,
   "vim.camelCaseMotion.enable": true,

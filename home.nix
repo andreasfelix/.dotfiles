@@ -31,6 +31,7 @@ in
       # desktop
       # nixGL.nixGLCommon
       nixGL.nixGLIntel
+      qemu
       # firefox
       # google-chrome # webgl does not work properly (e.g. google-maps is not 3d)
       vscode # vscodium # does not support live share
@@ -44,7 +45,7 @@ in
       # nix
       nix-index rnix-lsp nixpkgs-fmt
       # docker
-      docker docker-compose
+      docker docker-compose dive
       # c
       valgrind
       # gcc # clang # shadows system ld
@@ -72,7 +73,7 @@ in
       # cli programs
       htop neofetch nmap radare2
       # modern unix commands
-      bat curl dogdns duf du-dust exa fd fzf hyperfine hexyl pastel procs ripgrep tealdeer xcolor yj zoxide
+      bat curl dogdns duf du-dust exa fd fzf hyperfine hexyl jq pastel procs ripgrep tealdeer xcolor yj zoxide
       # fonts
       jetbrains-mono
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
@@ -97,6 +98,7 @@ in
     direnv = {
       enable = true;
       nix-direnv.enable = true;
+      nix-direnv.enableFlakes = true;
     };
     neovim = {
       enable = true;

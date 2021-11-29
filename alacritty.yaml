@@ -30,19 +30,50 @@ schemes:
     normal:
       black: "0x24292f"
       red: "0xcf222e"
-      green: "0x116329"
-      yellow: "0x4d2d00"
-      blue: "0x0969da"
-      magenta: "0x8250df"
+      green: "0x1a7f37"
+      yellow: "0xbf8700"
+      blue: "0x218bff"
+      magenta: "0xbf3989"
       cyan: "0x0e9a83"
-      white: "0x6e7781"
+      white: "0x8c959f"
     bright:
       black: "0x57606a"
-      red: "0xa40e26"
+      red: "0xfa4549"
       green: "0x1a7f37"
-      yellow: "0x633c01"
+      yellow: "0xbf8700"
       blue: "0x218bff"
-      magenta: "0xa475f9"
+      magenta: "0xe85aad"
+      cyan: "0x0e9a83"
+      white: "0x8250df"
+  github-nvim-theme: &github-nvim-theme
+  # https://github.com/projekt0n/github-nvim-theme/blob/main/extras/alacritty/light_default.yml
+    primary:
+      background: "0xffffff"
+      foreground: "0x4d5566"
+
+    # Normal colors
+    normal:
+      black: "0x24292e"
+      red: "0xd73a49"
+      green: "0x22863a"
+      yellow: "0xb08800"
+      blue: "0x0366d6"
+      magenta: "0x6f42c1"
       cyan: "0x1b7c83"
-      white: "0x3192aa"
-colors: *github
+      white: "0x4d5566"
+
+    # Bright colors
+    bright:
+      black: "0x586069"
+      red: "0xcb2431"
+      green: "0x28a745"
+      yellow: "0xdbab09"
+      blue: "0x2188ff"
+      magenta: "0x8a63d2"
+      cyan: "0x1b7c83"
+      white: "0x4d5566"
+
+    indexed_colors:
+      - { index: 16, color: "0xd18616" }
+      - { index: 17, color: "0xcb2431" }
+colors: *github-nvim-theme
