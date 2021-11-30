@@ -12,6 +12,9 @@
     };
     packages = with pkgs; [
       # desktop
+      wmctrl
+      xdotool
+      (writeScriptBin "focus-application" (builtins.readFile ./focus-application/focus-application.sh))
       qemu
       firefox
       google-chrome
@@ -88,7 +91,6 @@
     direnv = {
       enable = true;
       nix-direnv.enable = true;
-      nix-direnv.enableFlakes = true;
     };
     neovim = {
       enable = true;

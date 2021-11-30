@@ -7,13 +7,17 @@
 
   outputs = { self, nixpkgs, home-manager }: {
     homeManagerConfigurations = {
-      desktop = home-manager.lib.homeManagerConfigurations {
+      desktop = home-manager.lib.homeManagerConfiguration {
         system = "x86_64-linux";
         configuration.imports = [ ./home.nix ];
+        username = "felix";
+        homeDirectory = "/home/felix";
       };
-      laptop = home-manager.lib.homeManagerConfigurations {
+      laptop = home-manager.lib.homeManagerConfiguration {
         system = "x86_64-linux";
         configuration.imports = [ ./home-laptop.nix ];
+        username = "felix";
+        homeDirectory = "/home/felix";
       };
     };
     nixosConfigurations = {

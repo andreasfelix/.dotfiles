@@ -20,8 +20,8 @@ else
 fi
 
 # nix
-,() { nix run n#"$1" -- "${@:2}"; }
-shell() { nix shell $(printf "n#%s " "$@"); }
+,() { nix run nixpkgs#"$1" -- "${@:2}"; }
+shell() { nix shell $(printf "nixpkgs#%s " "$@"); }
 
 # elementary
 files() { nohup io.elementary.files -t $([ $# -gt 0 ] && echo "$@" || echo "." ) &>/dev/null & }
@@ -50,6 +50,7 @@ svg2png() { for file in *.svg; do inkscape -d=768 $file -e ${file%svg}png; done 
 watch-cpu() { watch -n 0.5 $'mpstat 1 1 | awk \'/^Average/ {print 100-$NF,"%"}\''; }
 
 # edit config files
+alias dotfiles='code $HOME/.dotfiles'
 alias avi='vim $HOME/.bash_aliases'
 alias bvi='vim $HOME/.bashrc'
 alias cvi='vim $HOME/.bash_config'
