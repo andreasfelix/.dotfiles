@@ -6,7 +6,6 @@
     extraOptions = "experimental-features = nix-command flakes";
   };
 
-
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -27,6 +26,11 @@
     };
   };
 
+  # Remove sound.enable or turn it off if you had it set previously, it seems to cause conflicts with pipewire
+  hardware.pulseaudio.enable = false;
+  sound.enable = false;
+
+  security.rtkit.enable = true;
   services = {
     xserver = {
       enable = true;
@@ -35,11 +39,17 @@
       libinput = {
         enable = true;
         mouse.accelProfile = "flat";
-        touchpad.accelProfile = "flat";
         mouse.scrollMethod = "button";
         mouse.scrollButton = 9;
+        # touchpad.accelProfile = "flat";
       };
+    };
 
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
     };
     # flatpak.enable = true;
   };
