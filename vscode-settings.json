@@ -6,6 +6,7 @@
   "update.mode": "manual", /* disable update notifications */
   "git.confirmSync": false,
   "explorer.confirmDragAndDrop": false,
+  "extensions.ignoreRecommendations": true,
   /* Looks */
   "workbench.colorTheme": "GitHub Light Default",
   "workbench.iconTheme": "file-icons",
