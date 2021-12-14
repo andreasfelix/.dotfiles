@@ -12,13 +12,13 @@
     };
     packages = with pkgs; [
       # desktop
+      vscode
+      google-chrome
+      firefox
+      qemu
       wmctrl
       xdotool
       (writeScriptBin "focus-application" (builtins.readFile ./focus-application/focus-application.sh))
-      qemu
-      firefox
-      google-chrome
-      vscode
       # git
       git
       git-lfs
@@ -35,7 +35,7 @@
       clang
       valgrind
       # python
-      (python39.withPackages (ps: with ps; [ pip numpy matplotlib scipy pandas httpx pytest pylint mypy black rope isort ]))
+      (python39.withPackages (ps: with ps; [ pip ipython numpy matplotlib scipy pandas httpx pytest pylint mypy black rope isort ]))
       poetry
       # javascript
       nodejs
@@ -46,7 +46,6 @@
       go
       # rust
       rustup
-      rust-analyzer
       # wasm
       wasmer
       wabt

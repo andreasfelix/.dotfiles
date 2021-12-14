@@ -6,6 +6,10 @@
   };
 
   outputs = { self, nixpkgs, home-manager }: {
+    packages."x86_64-linux" = {
+      laptop = self.homeManagerConfigurations.laptop.activationPackage;
+      desktop = self.homeManagerConfigurations.desktop.activationPackage;
+    };
     homeManagerConfigurations = {
       desktop = home-manager.lib.homeManagerConfiguration {
         system = "x86_64-linux";
