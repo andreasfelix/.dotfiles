@@ -15,6 +15,8 @@
       vscode
       google-chrome
       firefox
+      easyeffects
+      insomnia
       qemu
       wmctrl
       xdotool

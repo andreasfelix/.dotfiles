@@ -34,6 +34,10 @@
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 88
   },
+  "[toml]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 88
+  },
   "[yaml]": {
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 88
@@ -160,5 +164,6 @@
     "yaml": false,
     "plaintext": false,
     "markdown": false
-  }
+  },
+  "window.zoomLevel": 3,
 }
