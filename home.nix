@@ -8,7 +8,8 @@ let
       url = https://github.com/guibou/nixGL/archive/c4aa5aa15af5d75e2f614a70063a2d341e8e3461.tar.gz;
       sha256 = "09p7pvdlf4sh35d855lgjk6ciapagrhly9fy8bdiswbylnb3pw5d";
     }
-    }/nixGL.nix" {}
+    }/nixGL.nix"
+      { }
   );
 in
 {
@@ -37,15 +38,23 @@ in
       vscode # vscodium # does not support live share
       # nextcloud-client
       # media
-      gimp inkscape blender ffmpeg-full vlc
+      gimp
+      inkscape
+      blender
+      ffmpeg-full
+      vlc
       # git
-      git git-lfs
+      git
+      git-lfs
       # databases
       redis
       # nix
-      nix-index rnix-lsp nixpkgs-fmt
+      nix-index
+      rnix-lsp
+      nixpkgs-fmt
       # docker
-      docker docker-compose dive
+      docker
+      dive
       # c
       valgrind
       # gcc # clang # shadows system ld
@@ -56,24 +65,48 @@ in
       # poetry
       pypy3
       # javascript
-      nodejs yarn nodePackages.pnpm 
+      nodejs
+      yarn
+      nodePackages.pnpm
       nodePackages.live-server
       # go
       go
       # rust
-      rustup rust-analyzer # rustc cargo rustfmt clippy
+      rustup
+      rust-analyzer # rustc cargo rustfmt clippy
       # vala
       vala-language-server # vala-lint
       # wasm
-      wasmer wabt
+      wasmer
+      wabt
       # zig
       zig
       # shell prompt
       starship
       # cli programs
-      htop neofetch nmap radare2
+      htop
+      neofetch
+      nmap
+      radare2
       # modern unix commands
-      bat curl dogdns duf du-dust exa fd fzf hyperfine hexyl jq pastel procs ripgrep tealdeer xcolor yj zoxide
+      bat
+      curl
+      dogdns
+      duf
+      du-dust
+      exa
+      fd
+      fzf
+      hyperfine
+      hexyl
+      jq
+      pastel
+      procs
+      ripgrep
+      tealdeer
+      xcolor
+      yj
+      zoxide
       # fonts
       jetbrains-mono
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
@@ -132,6 +165,7 @@ in
   # alternative to home.activation.dotfiles, but makes dotfiles readonly
   # -> other programs cannot edit (e.g. vscode cannot edit settings.json)
   # see: https://github.com/nix-community/home-manager/issues/257
+  # or use mkOutOfStoreSymlink ???
   # home.file = {
   #   ".bash_aliases".source = ./aliases.bash;
   #   ".bash_config".source = ./config.bash;
@@ -141,6 +175,5 @@ in
   #   ".inputrc".source = ./inputrc;
   #   ".vimrc".source = ./init.vim;
   #   ".ideavimrc".source = ./ideavimrc;
-  #   ".local/bin/focus-application".source = ./focus-application/focus-application.sh;
   # };
 }

@@ -13,5 +13,5 @@ subprocess.run(["gsettings", "set", schema, "custom-keybindings", str(paths)])
 for path, (wm_class, app, key) in zip(paths, applications):
     tmp = ["gsettings", "set", f"{schema}.custom-keybinding:{path}"]
     subprocess.run(tmp + ["name", wm_class])
-    subprocess.run(tmp + ["command", f"focus-application {wm_class} {app}"])
+    subprocess.run(tmp + ["command", f"launch-or-focus {wm_class} {app}"])
     subprocess.run(tmp + ["binding", f"<Super>{key}"])

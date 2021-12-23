@@ -20,9 +20,11 @@
       easyeffects
       insomnia
       qemu
-      wmctrl
-      xdotool
-      (writeScriptBin "focus-application" (builtins.readFile ./focus-application/focus-application.sh))
+      (writeShellApplication {
+        name = "launch-or-focus";
+        text = (builtins.readFile ./launch-or-focus/launch-or-focus.sh);
+        runtimeInputs = [ wmctrl xdotool ];
+      })
       # ci
       fly
       # git
@@ -35,7 +37,6 @@
       nixpkgs-fmt
       # docker
       docker
-      docker-compose
       dive
       # c
       clang

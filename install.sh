@@ -17,7 +17,7 @@ ln -sfv $dotfiles/nushell.toml $HOME/.config/nu/config.toml
 ln -sfv $dotfiles/starship.toml $HOME/.config/starship.toml
 ln -sfv $dotfiles/vscode-settings.json $HOME/.config/Code/User/settings.json
 # ln -sfv $dotfiles/vscode-settings.json $HOME/.config/VSCodium/User/settings.json
-ln -sfv $dotfiles/focus-application/focus-application.sh $HOME/.local/bin/focus-application
+ln -sfv $dotfiles/launch-or-focus/launch-or-focus.sh $HOME/.local/bin/launch-or-focus
 
 if [ ! -f $HOME/.bashrc ] || ! grep -q '.bash_config' $HOME/.bashrc ; then
 echo "\
