@@ -7,6 +7,7 @@
   "git.confirmSync": false,
   "explorer.confirmDragAndDrop": false,
   "extensions.ignoreRecommendations": true,
+  "keyboard.dispatch": "keyCode",
   /* Looks */
   "workbench.colorTheme": "GitHub Light Default",
   "workbench.iconTheme": "file-icons",
@@ -165,5 +166,5 @@
     "plaintext": false,
     "markdown": false
   },
-  "window.zoomLevel": 3,
+  "window.zoomLevel": -1,
 }

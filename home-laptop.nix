@@ -6,6 +6,7 @@
   fonts.fontconfig.enable = true;
 
   home = {
+    # keyboard = null; # use xkb layout of system
     activation.dotfiles = lib.hm.dag.entryAfter [ "writeBoundary" ] (builtins.readFile ./install.sh);
     sessionVariables = {
       EDITOR = "nvim";
@@ -15,12 +16,15 @@
       vscode
       google-chrome
       firefox
+      gnome.dconf-editor
       easyeffects
       insomnia
       qemu
       wmctrl
       xdotool
       (writeScriptBin "focus-application" (builtins.readFile ./focus-application/focus-application.sh))
+      # ci
+      fly
       # git
       git
       git-lfs

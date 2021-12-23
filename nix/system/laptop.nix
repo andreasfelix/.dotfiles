@@ -29,8 +29,15 @@
   # Remove sound.enable or turn it off if you had it set previously, it seems to cause conflicts with pipewire
   hardware.pulseaudio.enable = false;
   sound.enable = false;
-
   security.rtkit.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    pantheon.appcenter
+  ];
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
   services = {
     xserver = {
       enable = true;
@@ -43,16 +50,24 @@
         mouse.scrollButton = 9;
         # touchpad.accelProfile = "flat";
       };
-    };
 
+      extraLayouts.us-felix = {
+        description = "Personal Keyboard Layout";
+        languages = [ "eng" ];
+        symbolsFile = ../../xkb/symbols/us-felix;
+      };
+      layout = "us-felix";
+    };
     pipewire = {
       enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-    # flatpak.enable = true;
+    flatpak.enable = true;
   };
+
+
 
   virtualisation.docker.enable = true;
 
