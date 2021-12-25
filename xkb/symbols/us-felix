@@ -1,9 +1,10 @@
 xkb_symbols "us-felix"
 {
-  include "us" // includes the base US keys
+  include "us"
 
   key <CAPS> {[ Escape ]};
   key <LALT> {[ ISO_Level3_Shift ]};
+  key <LSGT> {[ Shift_L ]};
 
   key <AD01> {[ q, Q, Home,      Home      ]};
   key <AD02> {[ w, W, Up,        Up        ]};

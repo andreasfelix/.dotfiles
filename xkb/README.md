@@ -22,11 +22,13 @@ gsettings reset org.gnome.desktop.input-sources sources
 
 * <kbd>Caps Lock</kbd> -> <kbd>Escape</kbd>
 * <kbd>Left Alt</kbd> -> <kbd>Level 3 Shift</kbd>
+* <kbd>ISO &gt;&lt;</kbd> -> <kbd>Shift</kbd>
 
 ## Level 3 Layout
 
 * <kbd>h</kbd> <kbd>j</kbd> <kbd>k</kbd> <kbd>l</kbd> -> <kbd>←</kbd> <kbd>↓</kbd> <kbd>↑</kbd> <kbd>→</kbd>
 * <kbd>w</kbd> <kbd>a</kbd> <kbd>s</kbd> <kbd>d</kbd> -> <kbd>↑</kbd> <kbd>←</kbd> <kbd>↓</kbd> <kbd>→</kbd>
+* <kbd>q</kbd> <kbd>e</kbd> -> <kbd>Home</kbd> <kbd>End</kbd>
 * <kbd>r</kbd> -> <kbd>Delete</kbd>
 * <kbd>f</kbd> -> <kbd>Backspace</kbd>
-* <kbd>v</kbd> -> <kbd>Return</kbd>
+* <kbd>v</kbd> -> <kbd>Enter</kbd>

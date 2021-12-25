@@ -11,10 +11,8 @@ class_ids=$(xdotool search --onlyvisible --classname "$1" \
 
 if [ -z "$class_ids" ] ; then
     # Case A
-    echo launch!!
     $2 & disown
 else
-    echo no launch!!
     current_id=$(xdotool getactivewindow)
     if echo "$class_ids" | !grep -q "$current_id" ; then
         # Case B
