@@ -19,21 +19,30 @@ ln -sfv $dotfiles/vscode-settings.json $HOME/.config/Code/User/settings.json
 # ln -sfv $dotfiles/vscode-settings.json $HOME/.config/VSCodium/User/settings.json
 ln -sfv $dotfiles/launch-or-focus/launch-or-focus.sh $HOME/.local/bin/launch-or-focus
 
+if [ ! -f $HOME/.bashrc ] || ! grep -q '.bash_aliases' $HOME/.bashrc ; then
+echo '
+# added by felix'"'"'s dotfiles installer
+if [ -f $HOME/.bash_aliases ]; then
+    . $HOME/.bash_aliases
+fi
+' >> $HOME/.bashrc
+fi
+
 if [ ! -f $HOME/.bashrc ] || ! grep -q '.bash_config' $HOME/.bashrc ; then
-echo "\
-# added by felix's dotfiles installer
+echo '
+# added by felix'"'"'s dotfiles installer
 if [ -f $HOME/.bash_config ]; then
     . $HOME/.bash_config
 fi
-" >> $HOME/.bashrc
+' >> $HOME/.bashrc
 fi
 
 if [ ! -f $HOME/.profile ] || ! grep -q 'hm-session-vars.sh' $HOME/.profile ; then
-echo "\
-# added by felix's dotfiles installer
+echo '
+# added by felix'"'"'s dotfiles installer
 export dotfiles=$dotfiles
 if [ -f $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh ]; then
     . $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 fi
-" >> $HOME/.profile
+' >> $HOME/.profile
 fi
