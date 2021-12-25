@@ -2,6 +2,7 @@
   imports = [ ./hardware-configuration.nix ];
 
   nix = {
+    # why is this necessary?
     package = pkgs.nixFlakes;
     extraOptions = "experimental-features = nix-command flakes";
   };
@@ -31,6 +32,7 @@
   sound.enable = false;
   security.rtkit.enable = true;
 
+  environment.variables.EDITOR = "nvim";
   environment.systemPackages = with pkgs; [
     pantheon.appcenter
   ];
@@ -48,7 +50,6 @@
         mouse.accelProfile = "flat";
         mouse.scrollMethod = "button";
         mouse.scrollButton = 9;
-        # touchpad.accelProfile = "flat";
       };
 
       extraLayouts.us-felix = {
