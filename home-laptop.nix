@@ -16,9 +16,12 @@
       vscode
       google-chrome
       firefox
+      owncloud-client
       gnome.dconf-editor
       easyeffects
       insomnia
+      teams
+      beekeeper-studio
       qemu
       (writeShellApplication {
         name = "launch-or-focus";
@@ -30,6 +33,7 @@
       # git
       git
       git-lfs
+      gh
       # databases
       # nix
       nix-index
@@ -81,6 +85,7 @@
       ripgrep
       tealdeer
       xcolor
+      xh
       yj
       zoxide
       # fonts
@@ -97,6 +102,7 @@
     direnv = {
       enable = true;
       nix-direnv.enable = true;
+      nix-direnv.enableFlakes = true;
     };
     neovim = {
       enable = true;
