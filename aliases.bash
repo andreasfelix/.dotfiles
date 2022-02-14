@@ -22,6 +22,7 @@ fi
 # nix
 ,() { nix run nixpkgs#"$1" -- "${@:2}"; }
 shell() { nix shell $(printf "nixpkgs#%s " "$@"); }
+pywith() { nix shell --impure --expr "(builtins.getFlake \"nixpkgs\").legacyPackages.x86_64-linux.python39.withPackages (p: with p; [ ipython black $* ])"; }
 
 # elementary
 files() { nohup io.elementary.files -t $([ $# -gt 0 ] && echo "$@" || echo "." ) &>/dev/null & }
@@ -59,3 +60,13 @@ alias hvi='vim $HOME/.config/nixpkgs/home.nix'
 alias pvi='vim $HOME/.bash_private'
 alias svi='vim $HOME/.ssh/config'
 alias vvi='vim $HOME/.config/nvim/init.vim'
+
+flakify() {
+  if [ ! -e flake.nix ]; then
+    nix flake new -t github:nix-community/nix-direnv .
+  elif [ ! -e .envrc ]; then
+    echo "use flake" > .envrc
+    direnv allow
+  fi
+  ${EDITOR:-vim} flake.nix
+}

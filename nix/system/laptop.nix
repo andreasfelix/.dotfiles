@@ -3,20 +3,35 @@
 
   nix = {
     # why is this necessary?
-    package = pkgs.nixFlakes;
+    package = pkgs.nix_2_4;
     extraOptions = "experimental-features = nix-command flakes";
   };
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    # Use the systemd-boot EFI boot loader.
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    tmpOnTmpfs = true;
+    supportedFilesystems = [ "ntfs" ];
+  };
 
-  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
-  # networking.useDHCP = false;
-  # networking.interfaces.enp3s0f4u1u4.useDHCP = true;
-  # networking.interfaces.wlp1s0.useDHCP = true;
+  systemd.extraConfig = ''
+    DefaultTimeoutStartSec=10s
+    DefaultTimeoutStopSec=10s
+  '';
+
+  networking = {
+    firewall.enable = false;
+    # The global useDHCP flag is deprecated, therefore explicitly set to false here.
+    # Per-interface useDHCP will be mandatory in the future, so this generated config
+    # replicates the default behaviour.
+    # useDHCP = false;
+    # # interfaces.enp3s0f4u1u4.useDHCP = true;
+    # interfaces.enp3s0f3u1u4u2.useDHCP = true;
+    # interfaces.wlp1s0.useDHCP = true;
+  };
 
   users = {
     mutableUsers = false;
@@ -27,19 +42,25 @@
     };
   };
 
+  # hardware.opengl.driSupport32Bit = true;
+  # hardware.pulseaudio.support32Bit = true;
   # Remove sound.enable or turn it off if you had it set previously, it seems to cause conflicts with pipewire
   hardware.pulseaudio.enable = false;
   sound.enable = false;
   security.rtkit.enable = true;
 
-  environment.variables.EDITOR = "nvim";
-  environment.systemPackages = with pkgs; [
-    pantheon.appcenter
-  ];
+  environment = {
+    variables.EDITOR = "nvim";
+    systemPackages = with pkgs; [
+      pantheon.appcenter
+    ];
+  };
+
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
+
   services = {
     xserver = {
       enable = true;
@@ -52,23 +73,23 @@
         mouse.scrollButton = 9;
       };
 
+      layout = "us-felix";
       extraLayouts.us-felix = {
+        symbolsFile = ../../xkb/symbols/us-felix;
         description = "Personal Keyboard Layout";
         languages = [ "eng" ];
-        symbolsFile = ../../xkb/symbols/us-felix;
       };
-      layout = "us-felix";
     };
+
     pipewire = {
       enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+
     flatpak.enable = true;
   };
-
-
 
   virtualisation.docker.enable = true;
 

@@ -13,16 +13,20 @@
     };
     packages = with pkgs; [
       # desktop
-      vscode
-      google-chrome
-      firefox
-      owncloud-client
-      gnome.dconf-editor
-      easyeffects
-      insomnia
-      teams
       beekeeper-studio
+      easyeffects
+      emote
+      firefox
+      gnome.dconf-editor
+      google-chrome
+      gimp
+      helvum
+      insomnia
+      onlyoffice-bin
+      owncloud-client
+      teams
       qemu
+      vscode
       (writeShellApplication {
         name = "launch-or-focus";
         text = (builtins.readFile ./launch-or-focus/launch-or-focus.sh);
@@ -42,9 +46,16 @@
       # docker
       docker
       dive
+      cntr
+      # kubernetes
+      minikube
+      kubectl
       # c
       clang
       valgrind
+      # elm
+      elmPackages.elm
+      elmPackages.elm-test
       # python
       (python39.withPackages (ps: with ps; [ pip ipython numpy matplotlib scipy pandas httpx pytest pylint mypy black rope isort ]))
       poetry
@@ -57,6 +68,7 @@
       go
       # rust
       rustup
+      rust-analyzer
       # wasm
       wasmer
       wabt
@@ -65,12 +77,16 @@
       # shell prompt
       starship
       # cli programs
+      file
+      lsof
+      dstat
+      curl
       htop
       neofetch
       nmap
+      pandoc
       # modern unix commands
       bat
-      curl
       dogdns
       duf
       du-dust
@@ -83,6 +99,7 @@
       pastel
       procs
       ripgrep
+      sd
       tealdeer
       xcolor
       xh
@@ -121,6 +138,20 @@
         vim-nix
         vim-surround
         vim-commentary
+      ];
+    };
+    vscode = {
+      enable = true;
+      extensions = with pkgs.vscode-extensions; [
+        github.github-vscode-theme
+        vscodevim.vim
+        bbenoist.nix
+        ms-vsliveshare.vsliveshare
+        ms-vscode.cpptools
+        ms-python.python
+        tamasfe.even-better-toml
+        matklad.rust-analyzer
+        antfu.slidev
       ];
     };
   };

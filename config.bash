@@ -27,3 +27,11 @@ fi
 if command -v direnv &>/dev/null; then
     eval "$(direnv hook bash)"
 fi
+
+# enable fzf
+if command -v fzf-share >/dev/null; then
+  source "$(fzf-share)/key-bindings.bash"
+  source "$(fzf-share)/completion.bash"
+  export FZF_DEFAULT_COMMAND='fd'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+fi
