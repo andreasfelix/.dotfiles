@@ -11,7 +11,6 @@
   "workbench.colorTheme": "GitHub Light Default",
   "window.menuBarVisibility": "toggle",
   /* Editor */
-  // "files.insertFinalNewline": true, /* conflicts with default HTML formatter */
   "editor.bracketPairColorization.enabled": true,
   "editor.cursorBlinking": "solid",
   "editor.fontLigatures": true,
@@ -28,6 +27,10 @@
     100,
     120
   ],
+  "files.associations": {
+    "*.roc": "coffeescript"
+  },
+  // "files.insertFinalNewline": true, /* conflicts with default HTML formatter */
   "[markdown]": {
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 88
@@ -157,4 +160,6 @@
     }
   ],
   "volar.takeOverMode.enabled": true,
+  "i18n-ally.displayLanguage": "de",
+  "window.zoomLevel": -1,
 }

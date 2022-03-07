@@ -19,6 +19,10 @@ else
   alias ll='ls -alFh'
 fi
 
+# meetap
+alias diary="vi $HOME/Projects/felix/diary.md"
+alias todo="vi $HOME/todo.md"
+
 # nix
 ,() { nix run nixpkgs#"$1" -- "${@:2}"; }
 shell() { nix shell $(printf "nixpkgs#%s " "$@"); }
@@ -28,6 +32,10 @@ pywith() { nix shell --impure --expr "(builtins.getFlake \"nixpkgs\").legacyPack
 files() { nohup io.elementary.files -t $([ $# -gt 0 ] && echo "$@" || echo "." ) &>/dev/null & }
 alias gdebug="export G_MESSAGES_DEBUG=all"
 alias ebuild="rm -rf build ; meson build --prefix=/usr && ninja -C build"
+
+# roc
+alias roc-shell="nix-shell $HOME/Projects/roc/shell.nix"
+alias roc="$HOME/Projects/roc/target/release/roc"
 
 # python
 alias py="python"

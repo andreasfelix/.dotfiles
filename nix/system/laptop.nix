@@ -33,18 +33,22 @@
     # interfaces.wlp1s0.useDHCP = true;
   };
 
+  programs.adb.enable = true;
+
   users = {
     mutableUsers = false;
     users.felix = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" "docker" ];
+      extraGroups = [ "wheel" "networkmanager" "docker" "adbusers" ];
       password = "2863";
     };
   };
 
+
   # hardware.opengl.driSupport32Bit = true;
   # hardware.pulseaudio.support32Bit = true;
   # Remove sound.enable or turn it off if you had it set previously, it seems to cause conflicts with pipewire
+  hardware.opengl.enable = true;
   hardware.pulseaudio.enable = false;
   sound.enable = false;
   security.rtkit.enable = true;

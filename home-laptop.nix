@@ -6,7 +6,6 @@
   fonts.fontconfig.enable = true;
 
   home = {
-    # keyboard = null; # use xkb layout of system
     activation.dotfiles = lib.hm.dag.entryAfter [ "writeBoundary" ] (builtins.readFile ./install.sh);
     sessionVariables = {
       EDITOR = "nvim";
@@ -95,6 +94,7 @@
       fzf
       hyperfine
       hexyl
+      # jless
       jq
       pastel
       procs
