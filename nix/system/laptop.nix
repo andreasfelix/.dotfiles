@@ -2,7 +2,6 @@
   imports = [ ./hardware-configuration.nix ];
 
   nix = {
-    # why is this necessary?
     package = pkgs.nix_2_4;
     extraOptions = "experimental-features = nix-command flakes";
   };

@@ -25,6 +25,8 @@
       owncloud-client
       teams
       qemu
+      xclip # necessary to copy from (neo)vim
+      # wl-copy and wl-paste # for wayland
       vscode
       (writeShellApplication {
         name = "launch-or-focus";

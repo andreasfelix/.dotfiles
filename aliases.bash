@@ -21,6 +21,7 @@ fi
 
 # meetap
 alias diary="vi $HOME/Projects/felix/diary.md"
+alias notes="vi $HOME/notes.md"
 alias todo="vi $HOME/todo.md"
 
 # nix

@@ -29,7 +29,10 @@ nnoremap <leader>v <C-v>
 " clear search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
+
 if has('nvim')
+nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>
+
 lua << EOF
 require'lspconfig'.pyright.setup{}
 EOF
@@ -62,7 +65,7 @@ if !has('nvim')
     " vim-multiple-cursor, multiple selections for Vim
     Plug 'https://github.com/terryma/vim-multiple-cursors.git'
 
-    " Vim Surround, change surronding brackets or quotes
+    " Vim Surround, change surrounding brackets or quotes
     Plug 'https://github.com/tpope/vim-surround.git'
 
     " vim-easymotion, enable additional jump motions
