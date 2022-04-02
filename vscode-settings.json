@@ -161,5 +161,6 @@
   ],
   "volar.takeOverMode.enabled": true,
   "i18n-ally.displayLanguage": "de",
+  "rest-client.previewOption": "exchange",
   "grammarly.autoActivate": false
 }

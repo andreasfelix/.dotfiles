@@ -12,6 +12,8 @@
     };
     packages = with pkgs; [
       # desktop
+      alacritty
+      kitty
       beekeeper-studio
       easyeffects
       emote
@@ -27,7 +29,8 @@
       qemu
       xclip # necessary to copy from (neo)vim
       # wl-copy and wl-paste # for wayland
-      vscode
+      # vscode
+      # vscode-fhs
       (writeShellApplication {
         name = "launch-or-focus";
         text = (builtins.readFile ./launch-or-focus/launch-or-focus.sh);
@@ -144,6 +147,7 @@
     };
     vscode = {
       enable = true;
+      package = pkgs.vscode-fhs;
       extensions = with pkgs.vscode-extensions; [
         github.github-vscode-theme
         vscodevim.vim

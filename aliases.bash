@@ -16,7 +16,7 @@ if command -v exa &> /dev/null; then
   alias ll='exa --git -alFhg'
   alias lt='exa --git -alFhgT --git-ignore'
 else
-  alias ll='ls -alFh'
+  alias ll='ls -alFh --hyperlink=auto'
 fi
 
 # meetap

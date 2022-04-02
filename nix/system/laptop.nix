@@ -55,19 +55,22 @@
   environment = {
     variables.EDITOR = "nvim";
     systemPackages = with pkgs; [
-      pantheon.appcenter
+      # pantheon.appcenter
     ];
   };
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  };
+  # xdg.portal = {
+  #   enable = true;
+  #   extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  # };
 
   services = {
     xserver = {
+
       enable = true;
-      desktopManager.pantheon.enable = true;
+      # desktopManager.pantheon.enable = true;
+      desktopManager.gnome.enable = true;
+      displayManager.gdm.enable = true;
 
       libinput = {
         enable = true;

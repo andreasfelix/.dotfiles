@@ -1,10 +1,11 @@
 # dotfiles=$(dirname $(readlink -f $0)) # does not work with home-manager
 dotfiles=$HOME/.dotfiles
 
-mkdir -p $HOME/.local/bin $HOME/.config/{alacritty,Code/User,nixpkgs,nu,nvim}
+mkdir -p $HOME/.local/bin $HOME/.config/{alacritty,Code/User,nixpkgs,nu,nvim,kitty}
 
 ln -sfv $dotfiles/aliases.bash $HOME/.bash_aliases
 ln -sfv $dotfiles/alacritty.yaml $HOME/.config/alacritty/alacritty.yml
+ln -sfv $dotfiles/kitty.conf $HOME/.config/kitty/kitty.conf
 ln -sfv $dotfiles/config.bash $HOME/.bash_config
 ln -sfv $dotfiles/config.nix $HOME/.config/nixpkgs/config.nix
 ln -sfv $dotfiles/gitconfig $HOME/.gitconfig

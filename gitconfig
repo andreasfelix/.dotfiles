@@ -27,6 +27,8 @@
     aacp  = !git aa && git cp
     aacmp = !git aa && git cmp
 
+    fm    = !git fetch && git merge origin/main
+
     d     = diff
     dw    = diff --word-diff
     ds    = diff --stat
