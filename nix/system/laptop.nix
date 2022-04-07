@@ -2,7 +2,6 @@
   imports = [ ./hardware-configuration.nix ];
 
   nix = {
-    package = pkgs.nix_2_4;
     extraOptions = "experimental-features = nix-command flakes";
   };
 
@@ -59,14 +58,21 @@
     ];
   };
 
-  # xdg.portal = {
-  #   enable = true;
-  #   extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  # };
+  # from https://nixos.wiki/wiki/Firefox
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-wlr
+        # todo leads to collision -> error: collision between
+        # xdg-desktop-portal-gtk
+      ];
+      gtkUsePortal = true;
+    };
+  };
 
   services = {
     xserver = {
-
       enable = true;
       # desktopManager.pantheon.enable = true;
       desktopManager.gnome.enable = true;

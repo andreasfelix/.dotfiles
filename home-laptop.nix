@@ -111,6 +111,7 @@
       yj
       zoxide
       # fonts
+      inter
       jetbrains-mono
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
@@ -124,7 +125,6 @@
     direnv = {
       enable = true;
       nix-direnv.enable = true;
-      nix-direnv.enableFlakes = true;
     };
     neovim = {
       enable = true;
