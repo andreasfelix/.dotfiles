@@ -7,8 +7,11 @@
   "explorer.confirmDragAndDrop": false,
   "extensions.ignoreRecommendations": true,
   "keyboard.dispatch": "keyCode",
-  /* Looks */
   "workbench.colorTheme": "GitHub Light Default",
+  "workbench.colorCustomizations": {
+    "editorInlayHint.foreground": "#999",
+    "editorInlayHint.background": "#00000000"
+  },
   "window.menuBarVisibility": "toggle",
   /* Editor */
   "editor.bracketPairColorization.enabled": true,
@@ -57,12 +60,17 @@
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }",
   /* Rust */
   "rust-analyzer.checkOnSave.command": "clippy",
-  "rust-analyzer.server.path": "~/.nix-profile/bin/rust-analyzer",
   /* Nix */
   "nix.enableLanguageServer": true,
+  /* Vue */
+  "volar.takeOverMode.enabled": true,
+  /* Zig */
+  "zigLanguageClient.path": "/home/felix/.nix-profile/bin/zls",
   /* Windi CSS */
   "windicss.sortOnSave": true,
   /* PLUGINS */
+  "rest-client.previewOption": "exchange",
+  "grammarly.autoActivate": false,
   "cSpell.enabledLanguageIds": [
     "markdown",
     "plaintext"
@@ -158,9 +166,5 @@
         "editor.action.outdentLines"
       ]
     }
-  ],
-  "volar.takeOverMode.enabled": true,
-  "i18n-ally.displayLanguage": "de",
-  "rest-client.previewOption": "exchange",
-  "grammarly.autoActivate": false
+  ]
 }

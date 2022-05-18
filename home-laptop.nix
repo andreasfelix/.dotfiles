@@ -47,8 +47,7 @@
       nix-index
       rnix-lsp
       nixpkgs-fmt
-      # docker
-      docker
+      # containers
       dive
       cntr
       # kubernetes
@@ -60,6 +59,7 @@
       # elm
       elmPackages.elm
       elmPackages.elm-test
+      elmPackages.elm-format
       # python
       (python39.withPackages (ps: with ps; [ pip ipython numpy matplotlib scipy pandas httpx pytest pylint mypy black rope isort ]))
       poetry
@@ -78,6 +78,7 @@
       wabt
       # zig
       zig
+      zls
       # shell prompt
       starship
       # cli programs
@@ -99,7 +100,7 @@
       fzf
       hyperfine
       hexyl
-      # jless
+      jless
       jq
       pastel
       procs
@@ -147,11 +148,13 @@
     };
     vscode = {
       enable = true;
-      package = pkgs.vscode-fhs;
+      # vscode-fhs leads to two problems
+      #  * can't open shell -> symbol error
+      #  * does not recognize python venv
+      package = pkgs.vscode;
       extensions = with pkgs.vscode-extensions; [
         github.github-vscode-theme
         vscodevim.vim
-        bbenoist.nix
         ms-vsliveshare.vsliveshare
         ms-vscode.cpptools
         ms-python.python

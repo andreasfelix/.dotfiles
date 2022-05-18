@@ -103,7 +103,11 @@
     flatpak.enable = true;
   };
 
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    podman.enable = true;
+    waydroid. enable = true;
+    lxd.enable = true;
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
