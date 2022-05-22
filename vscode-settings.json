@@ -64,6 +64,7 @@
   "nix.enableLanguageServer": true,
   /* Vue */
   "volar.takeOverMode.enabled": true,
+  "i18n-ally.displayLanguage": "de",
   /* Zig */
   "zigLanguageClient.path": "/home/felix/.nix-profile/bin/zls",
   /* Windi CSS */

@@ -104,6 +104,7 @@
   };
 
   virtualisation = {
+    docker.enable = true;
     podman.enable = true;
     waydroid. enable = true;
     lxd.enable = true;
