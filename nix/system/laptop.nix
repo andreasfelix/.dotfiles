@@ -1,9 +1,8 @@
 { config, lib, pkgs, ... }: {
   imports = [ ./hardware-configuration.nix ];
 
-  nix = {
-    extraOptions = "experimental-features = nix-command flakes";
-  };
+  nix.extraOptions = "experimental-features = nix-command flakes";
+  nixpkgs.config.allowUnfree = true;
 
   boot = {
     # Use the systemd-boot EFI boot loader.
@@ -42,7 +41,6 @@
     };
   };
 
-
   # hardware.opengl.driSupport32Bit = true;
   # hardware.pulseaudio.support32Bit = true;
   # Remove sound.enable or turn it off if you had it set previously, it seems to cause conflicts with pipewire
@@ -54,7 +52,6 @@
   environment = {
     variables.EDITOR = "nvim";
     systemPackages = with pkgs; [
-      # pantheon.appcenter
     ];
   };
 
@@ -88,7 +85,7 @@
       layout = "us-felix";
       extraLayouts.us-felix = {
         symbolsFile = ../../xkb/symbols/us-felix;
-        description = "Personal Keyboard Layout";
+        description = "Felix' Keyboard Layout";
         languages = [ "eng" ];
       };
     };
@@ -98,6 +95,7 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+      jack.enable = true;
     };
 
     flatpak.enable = true;
@@ -106,8 +104,9 @@
   virtualisation = {
     docker.enable = true;
     podman.enable = true;
-    waydroid. enable = true;
+    waydroid.enable = true;
     lxd.enable = true;
+    virtualbox.host.enable = true;
   };
 
   # This value determines the NixOS release from which the default

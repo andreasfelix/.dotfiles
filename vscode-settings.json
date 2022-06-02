@@ -167,5 +167,8 @@
         "editor.action.outdentLines"
       ]
     }
-  ]
+  ],
+  "rust-analyzer.inlayHints.enable": true,
+  "editor.inlayHints.enabled": true,
+  "window.zoomLevel": 3
 }

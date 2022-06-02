@@ -3,6 +3,8 @@
 {
   programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
+  # workaround from nix-community/home-manager/issues/2942
+  nixpkgs.config.allowUnfreePredicate = (pkg: true);
   fonts.fontconfig.enable = true;
 
   home = {
