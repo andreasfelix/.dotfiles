@@ -25,8 +25,8 @@ alias notes="vi $HOME/notes.md"
 alias todo="vi $HOME/todo.md"
 
 # nix
-,() { nix run nixpkgs#"$1" -- "${@:2}"; }
-shell() { nix shell $(printf "nixpkgs#%s " "$@"); }
+,() { NIXPKGS_ALLOW_UNFREE=1 nix run --impure nixpkgs#"$1" -- "${@:2}"; }
+shell() { NIXPKGS_ALLOW_UNFREE=1 nix shell --impure $(printf "nixpkgs#%s " "$@"); }
 pywith() { nix shell --impure --expr "(builtins.getFlake \"nixpkgs\").legacyPackages.x86_64-linux.python39.withPackages (p: with p; [ ipython black $* ])"; }
 
 # elementary

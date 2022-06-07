@@ -29,6 +29,16 @@ nnoremap <leader>v <C-v>
 " clear search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
+" folding
+setlocal foldmethod=indent
+set nofoldenable
+set foldlevel=99
+
+" theming
+if exists('g:neovide')
+    colorscheme github_light
+    set guifont=JetBrains\ Mono\ Nerd\ Font
+endif
 
 if has('nvim')
 nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>

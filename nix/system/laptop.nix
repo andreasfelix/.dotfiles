@@ -14,6 +14,9 @@
     supportedFilesystems = [ "ntfs" ];
   };
 
+  # powerManagement.enable = true;
+  # powerManagement.cpufreq.max = 1200;
+
   systemd.extraConfig = ''
     DefaultTimeoutStartSec=10s
     DefaultTimeoutStopSec=10s

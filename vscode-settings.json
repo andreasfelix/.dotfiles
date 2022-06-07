@@ -169,6 +169,6 @@
     }
   ],
   "rust-analyzer.inlayHints.enable": true,
-  "editor.inlayHints.enabled": true,
+  "editor.inlayHints.enabled": false,
   "window.zoomLevel": 3
 }
